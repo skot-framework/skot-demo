@@ -1,0 +1,1 @@
+/Users/mscotet/skot/skot-demo/buildSrc/build/classes/kotlin/main/Application.class:/Users/mscotet/skot/skot-demo/buildSrc/build/classes/kotlin/main/Versions$Android.class:/Users/mscotet/skot/skot-demo/buildSrc/build/classes/kotlin/main/Versions$Plugins.class:/Users/mscotet/skot/skot-demo/buildSrc/build/classes/kotlin/main/Versions.class
