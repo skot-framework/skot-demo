@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary</item>
+        <item name="colorAccent">@color/primary</item>
+
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <item name="android:windowBackground">@color/white</item>
+        <item name="backgroundColor">@color/white</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="textInputStyle">@style/AppTheme_TextInputLayout</item>
+        <item name="checkboxStyle">@style/AppTheme_CheckBox</item>
+        <item name="radioButtonStyle">@style/AppTheme_RadioButton</item>
+        <item name="snackbarStyle">@style/AppTheme_SnackBar</item>
+        <item name="snackbarButtonStyle">@style/AppTheme_SnackBarButton</item>
+        <item name="snackbarTextViewStyle">@style/AppTheme_SnackBarTextView</item>
+        <!--        <item name="buttonStyle">@style/Button</item>-->
+        <!--        <item name="radioButtonStyle">@style/AppTheme_RadioButton</item>-->
+        <!--        <item name="android:forceDarkAllowed" tools:targetApi="q">true</item>-->
+        <!--        <item name="autoCompleteTextViewStyle">@style/AppTheme_TextInputLayoutCombo</item>-->
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    <style name="AppTheme.Floating">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="backgroundColor">@android:color/transparent</item>
+    </style>
+
+
+    <style name="AppTheme_TextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="materialThemeOverlay">@style/AppTheme_TextInputLayoutThemeOverlay</item>
+
+    </style>
+
+    <style name="AppTheme_RadioButton" parent="@style/Widget.MaterialComponents.CompoundButton.RadioButton">
+
+    </style>
+
+    <style name="AppTheme_CheckBox" parent="@style/Widget.MaterialComponents.CompoundButton.CheckBox">
+
+    </style>
+
+    <style name="AppTheme_TextInputLayoutThemeOverlay">
+        <item name="editTextStyle">@style/AppTheme_TextInputEditText</item>
+    </style>
+
+    <style name="AppTheme_TextInputLayoutCombo" parent="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="materialThemeOverlay">@style/AppTheme_TextInputLayoutComboThemeOverlay</item>
+
+    </style>
+
+    <style name="AppTheme_TextInputLayoutComboThemeOverlay">
+        <item name="editTextStyle">@style/AppTheme_TextInputEditText</item>
+    </style>
+
+    <style name="AppTheme_TextInputEditText" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <!--Extrèmement important, c'est compliqué de styler les input globalement avec un theme material
+        mais sans cela si on oublie un saveEnabled à false, si on a des listes avec des input en include avec le même id
+        à la restoration (testable en positionnant "ne pas conserver les activités) tous les champs prennent la valeur du dernier !! -->
+        <item name="android:saveEnabled">false</item>
+
+    </style>
+
+
+    <style name="AppTheme_SnackBar" parent="@style/Widget.MaterialComponents.Snackbar">
+
+    </style>
+
+    <style name="AppTheme_SnackBarButton" parent="@style/Widget.MaterialComponents.Button.TextButton.Snackbar">
+
+    </style>
+
+    <style name="AppTheme_SnackBarTextView" parent="@style/Widget.MaterialComponents.Snackbar.TextView">
+
+    </style>
+
+
+
+
+    <style name="ActionBar_Button">
+
+    </style>
+
+
+
+
+
+
+    <style name="BottomSheetDialog" parent="Theme.MaterialComponents.Light.BottomSheetDialog">
+        <!--<item name="android:windowCloseOnTouchOutside">false</item>-->
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:colorBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.1</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+</resources>
