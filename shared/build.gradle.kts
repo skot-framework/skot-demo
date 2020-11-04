@@ -21,6 +21,7 @@ kotlin {
         binaries {
             framework {
                 baseName = "shared"
+                export(project(":contract"))
             }
         }
     }
@@ -28,6 +29,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(project(":viewmodel"))
+                api(project(":contract"))
             }
         }
 

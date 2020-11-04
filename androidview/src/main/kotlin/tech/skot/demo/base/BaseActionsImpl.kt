@@ -58,12 +58,13 @@ class BaseActionsImpl(
       }.show()
   }
 
-  override fun snack(message: String, long: Boolean, action: Pair<String, () -> Unit>?) {
+
+  override fun snack(message: String, long: Boolean, action: BaseActions.SnackAction?) {
     Snackbar.make(activity.findViewById(android.R.id.content), message, if (long) Snackbar.LENGTH_LONG else Snackbar.LENGTH_SHORT)
       .apply {
-        action?.let { (label, block) ->
-          setAction(label, View.OnClickListener {
-            block()
+        action?.let { action ->
+          setAction(action.label, View.OnClickListener {
+            action.action()
           })
 
         }

@@ -1,5 +1,7 @@
 import UIKit
 import SwiftUI
+import shared
+
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,6 +16,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Create the SwiftUI view that provides the window contents.
         let contentView = ContentView()
 
+        /*let essaiCor = EssaiCoroutines()
+        essaiCor.message { (message:String?, erreur:Error?) in
+            print(message)
+        }*/
+        
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

@@ -4,7 +4,6 @@ package tech.skot.demo.base
 import androidx.viewbinding.ViewBinding
 import kotlin.Boolean
 import kotlin.Function0
-import kotlin.Pair
 import kotlin.String
 import kotlin.Unit
 import tech.skot.components.MaxScreenViewImpl
@@ -56,7 +55,7 @@ abstract class BaseScreenViewImplGen<A : BaseActivity, F : BaseFragment, B : Vie
   final override fun snack(
     message: String,
     long: Boolean,
-    action: Pair<String, Function0<Unit>>?
+    action: BaseActions.SnackAction?
   ) {
     messages.post(BaseActionsAction.Snack(message, long, action))
   }

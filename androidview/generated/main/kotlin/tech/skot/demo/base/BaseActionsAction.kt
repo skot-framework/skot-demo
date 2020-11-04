@@ -3,7 +3,6 @@ package tech.skot.demo.base
 
 import kotlin.Boolean
 import kotlin.Function0
-import kotlin.Pair
 import kotlin.String
 import kotlin.Unit
 import tech.skot.view.Action
@@ -32,7 +31,7 @@ sealed class BaseActionsAction : Action() {
   class Snack(
     val message: String,
     val long: Boolean,
-    val action: Pair<String, Function0<Unit>>?
+    val action: BaseActions.SnackAction?
   ) : BaseActionsAction()
 
   class Toast(

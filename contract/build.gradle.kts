@@ -32,7 +32,7 @@ kotlin {
     ios {
         binaries {
             framework {
-                baseName = "shared"
+                baseName = "contract"
             }
         }
     }
