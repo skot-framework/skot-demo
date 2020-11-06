@@ -2,65 +2,34 @@
 //  SplashViewImpl.swift
 //  iosApp
 //
-//  Created by Mathieu Scotet on 08/10/2020.
-//  Copyright © 2020 orgName. All rights reserved.
+//  Created by Mathieu Scotet on 05/11/2020.
 //
 
 import Foundation
+import SwiftUI
 import shared
 
-class SplashViewImpl: SplashView {
-    var message: String = ""
+class SplashViewImpl: ScreenViewImpl, SplashView, ObservableObject {
     
-    var title: String = ""
+ 
+    @Published var title: String = ""
+    @Published var message:String  = "mess"
     
-    func closeKeyboard() {
+   let onTapButton: () -> Void
+    
+    
+    
+    
+    init(message:String, title:String, onTapButton:@escaping () -> Void) {
+        self.message = message
+        self.title = title
+        self.onTapButton = onTapButton
+        super.init()
+        
         
     }
+
     
-    func confirm(title: String?, message: String?, okLabel: String?, koLabel: String?, onOk: @escaping () -> Void) {
-        
-    }
-    
-    func displayAlert(title: String?, message: String?, onOk: (() -> Void)? = nil) {
-        
-    }
-    
-    func openExternalNavigator(url: String) {
-        
-    }
-    
-    func snack(message: String, long long_: Bool, action: BaseActionsSnackAction?) {
-        
-    }
-    
-    func toast(message: String, top: Bool, long long_: Bool) {
-        
-    }
-    
-    func dismiss() {
-        
-    }
-    
-    func openScreenWillFinish(screenToOpen: ContractScreenView) {
-        
-    }
-    
-    func showBottomSheetDialog(screen: ContractScreenView) {
-        
-    }
-    
-    var key: Int64 = 0
-    
-    var loading: Bool = false
-    
-    var onBack: (() -> Void)?
-    
-    var onTop: ContractScreenView?
-    
-    func onRemove() {
-        
-    }
     
     
 }

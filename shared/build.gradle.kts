@@ -22,6 +22,7 @@ kotlin {
             framework {
                 baseName = "shared"
                 export(project(":contract"))
+                export(project(":viewmodel"))
             }
         }
     }

@@ -1,14 +1,19 @@
-import SwiftUI
-import shared
+//
+//  ContentView.swift
+//  iosApp
+//
+//  Created by Mathieu Scotet on 04/11/2020.
+//
 
-func greet() -> String {
-    return Greeting().greeting()
-}
+import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text(greet())
+        Text("Title")
+            .border(Color.gray)
+            .padding()
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -16,3 +21,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
