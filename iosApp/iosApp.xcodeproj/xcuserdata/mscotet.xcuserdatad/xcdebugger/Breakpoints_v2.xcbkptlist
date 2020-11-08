@@ -18,38 +18,6 @@
             endingLineNumber = "22"
             landmarkName = "ScreenViewImpl"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "81263D62-78D9-4214-AF48-74B961B1256D - 7b40d8ad231beb1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iosApp.ScreenViewImpl.deinit"
-                  moduleName = "iosApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mscotet/skot/skot-demo/iosApp/iosApp/ScreenViewImpl.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "81263D62-78D9-4214-AF48-74B961B1256D - 3833d87ca05d9b5e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iosApp.ScreenViewImpl.__deallocating_deinit"
-                  moduleName = "iosApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mscotet/skot/skot-demo/iosApp/iosApp/ScreenViewImpl.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

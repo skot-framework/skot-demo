@@ -19,8 +19,9 @@ func getKey() -> Int64 {
 var screensViewImpl = [Int64 : ScreenViewImpl]()
 
 
-class ScreenViewImpl: ContractScreenView {
+class ScreenViewImpl: ContractScreenView, ObservableObject {
     
+    @Published var screenToPush:ScreenViewImpl?
     
     func ui() -> AnyView {
         AnyView(ContentView())
@@ -74,7 +75,8 @@ class ScreenViewImpl: ContractScreenView {
     
     @objc
     func openScreenWillFinish(screenToOpen: ContractScreenView) {
-        
+        print("root will change")
+        rootView?.screen = screenToOpen as! ScreenViewImpl
     }
     
     @objc
@@ -94,7 +96,17 @@ class ScreenViewImpl: ContractScreenView {
     
     var onBack: (() -> Void)? = nil
     
-    var onTop: ContractScreenView? = nil
+    private var _onTop: ContractScreenView?
+    var onTop: ContractScreenView? {
+        get {
+            _onTop
+        }
+        set(newVal) {
+            _onTop = newVal
+            screenToPush = newVal as? ScreenViewImpl
+        }
+    
+    }
     
     func onRemove() {
         

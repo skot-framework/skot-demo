@@ -33,19 +33,12 @@ struct SplashUI: View {
          )
          */
         return VStack {
-            Text(view.title)
+            Text("Skot-Demo")
             Text(view.message)
-            Button(action: {
-                view.onTapButton()
-            }, label: {
-                Text("Display Alert")
-            })
-            Button(action: {
-                view.onTapButton2()
-            }, label: {
-                Text("Display Alert 2")
-            })
-        }.alert(isPresented: Binding<Bool>(
+            
+        }
+        
+        /*.alert(isPresented: Binding<Bool>(
             get: { view.presentAlert },
             set: { newVal in view.presentAlert = newVal}
         ), content: {
@@ -62,7 +55,7 @@ struct SplashUI: View {
                 message: messageText)
             
             
-        })
+        })*/
         
         /*.alert(isPresented: Binding<Bool> {
          get { view.presentAlert }
@@ -78,10 +71,6 @@ struct SplashUI: View {
 struct SplashUI_Previews: PreviewProvider {
     static var previews: some View {
         SplashUI(
-            view: SplashViewImpl(message: "message", title: "Titre", onTapButton: {
-                print("button1")
-            }, onTapButton2: {
-                print("button2")
-            }))
+            view: SplashViewImpl(message: "message"))
     }
 }

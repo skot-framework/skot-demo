@@ -9,8 +9,6 @@ import SwiftUI
 import shared
 
 
-let vm = ViewModel()
-
 @main
 struct iosAppApp: App {
     
@@ -18,19 +16,22 @@ struct iosAppApp: App {
         StarterKt.start(viewInjector: ViewInjectorImpl())
     
         Greeting().greetingCor()
-        let spl = Splash()
+        let splash = Splash()
+        splash.setAsRoot()
+        
+        rootView = Root(startScreen: splash.view as! ScreenViewImpl)
     }
     
     
     var body: some Scene {
         WindowGroup {
-            
+            RootUI(root: rootView!)
             //router()
             //SplashViewImpl()
-            let screenView = screensViewImpl[Int64(1)]!
+            //let screenView = screensViewImpl[Int64(1)]!
             //(screenView as! SplashViewImpl).ui
             //SplashUI(view: screenView as! SplashViewImpl)
-            screenView.ui()
+            //screenView.ui()
             
             
             //SplashViewImpl(message:"message intial", title: "Titre initial").ui() as! ()

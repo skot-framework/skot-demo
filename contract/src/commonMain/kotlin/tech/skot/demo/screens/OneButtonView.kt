@@ -2,8 +2,8 @@ package tech.skot.demo.screens
 
 import tech.skot.demo.base.BaseScreenView
 
-interface SplashView:BaseScreenView {
+interface OneButtonView : BaseScreenView {
 
-    var message:String
+    val onTapButton:()->Unit
 
 }
