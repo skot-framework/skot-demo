@@ -8,7 +8,8 @@ class Splash : SplashGen() {
   override val view: SplashView = viewInjector.splash(
     message = "coucou",
     title = "Titre",
-    onTapButton = { onTap() }
+    onTapButton = { onTap() },
+    onTapButton2 = { onTap2() }
   )
 
   private fun onTap() {
@@ -16,6 +17,14 @@ class Splash : SplashGen() {
     view.displayAlert(
       title = "Titre alerte",
       message = "Message alerte"
+    )
+  }
+
+
+  private fun onTap2() {
+//    view.message = "Vous avez tapé"
+    view.displayAlert(
+      title = "Titre alerte 2"
     )
   }
 

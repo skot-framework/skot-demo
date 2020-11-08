@@ -9,6 +9,7 @@ class ViewInjectorImpl : ViewInjector {
   override fun splash(
     message: String,
     onTapButton: Function0<Unit>,
+    onTapButton2: Function0<Unit>,
     title: String
-  ) = SplashViewImpl(message, onTapButton, title)
+  ) = SplashViewImpl(message, onTapButton, onTapButton2, title)
 }

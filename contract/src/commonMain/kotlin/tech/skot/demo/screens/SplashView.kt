@@ -7,5 +7,6 @@ interface SplashView:BaseScreenView {
     val title:String
     var message:String
     val onTapButton:()->Unit
+    val onTapButton2:()->Unit
 
 }

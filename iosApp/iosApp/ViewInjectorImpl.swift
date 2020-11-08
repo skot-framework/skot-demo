@@ -9,8 +9,8 @@ import Foundation
 import shared
 
 class ViewInjectorImpl: ViewInjector {
-    func splash(message: String, onTapButton: @escaping () -> Void, title: String) -> SplashView {
-        return SplashViewImpl(message: message, title: title, onTapButton:onTapButton)
+    func splash(message: String, onTapButton: @escaping () -> Void, onTapButton2: @escaping () -> Void, title: String) -> SplashView {
+        return SplashViewImpl(message: message, title: title, onTapButton:onTapButton, onTapButton2: onTapButton2)
     }
     
     

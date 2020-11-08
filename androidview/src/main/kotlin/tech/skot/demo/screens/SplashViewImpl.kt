@@ -8,8 +8,9 @@ import kotlin.String
 class SplashViewImpl(
   messageInitial: String,
   onTapButton: Function0<Unit>,
+  onTapButton2: Function0<Unit>,
   title: String
-) : SplashViewImplGen(messageInitial, onTapButton, title) {
+) : SplashViewImplGen(messageInitial, onTapButton, onTapButton2, title) {
   override fun onMessage(message: String) {
     binding.tvMessage.text = message
   }
@@ -20,6 +21,10 @@ class SplashViewImpl(
 
   override fun onOnTapButton(onTapButton: () -> Unit) {
     binding.button.setOnClick(onTapButton)
+  }
+
+  override fun onOnTapButton2(onTapButton2: () -> Unit) {
+    binding.button2.setOnClick(onTapButton2)
   }
   override fun onLoading(loading: Boolean) {
     binding.progressBar.root.setVisible(loading)

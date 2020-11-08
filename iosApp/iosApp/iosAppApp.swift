@@ -28,7 +28,10 @@ struct iosAppApp: App {
             //router()
             //SplashViewImpl()
             let screenView = screensViewImpl[Int64(1)]!
-            SplashUI(view: screenView as! SplashViewImpl)
+            //(screenView as! SplashViewImpl).ui
+            //SplashUI(view: screenView as! SplashViewImpl)
+            screenView.ui()
+            
             
             //SplashViewImpl(message:"message intial", title: "Titre initial").ui() as! ()
         }

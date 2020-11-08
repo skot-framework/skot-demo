@@ -18,24 +18,36 @@ func getKey() -> Int64 {
 
 var screensViewImpl = [Int64 : ScreenViewImpl]()
 
+
 class ScreenViewImpl: ContractScreenView {
     
+    
+    func ui() -> AnyView {
+        AnyView(ContentView())
+    }
     
     
     @objc
     func closeKeyboard() {
         
     }
+   
     
-    @Published var presentAlert:Bool = false
     
     @objc(confirmTitle:message:okLabel:koLabel:onOk:)
     func confirm(title: String?, message: String?, okLabel: String?, koLabel: String?, onOk: @escaping () -> Void) {
         
     }
     
+    
+    @Published var presentAlert:Bool = false
+    var titleAlert:String?
+    var messageAlert:String?
+    
     @objc(displayAlertTitle:message:onOk:)
     func displayAlert(title: String?, message: String?, onOk: (() -> Void)? = nil) {
+        titleAlert = title
+        messageAlert = message
         print("---ALERTE!!!--"+(title ?? "pas de titre"))
         presentAlert = true
     }

@@ -15,6 +15,7 @@ import tech.skot.view.live.MutableSKLiveData
 abstract class SplashViewImplGen(
   messageInitial: String,
   override val onTapButton: Function0<Unit>,
+  override val onTapButton2: Function0<Unit>,
   override val title: String
 ) : BaseScreenViewImpl<BaseActivity, BaseFragment, SplashBinding>(), SplashView {
   private val messageLD: MutableSKLiveData<String> = MutableSKLiveData(messageInitial)
@@ -29,6 +30,8 @@ abstract class SplashViewImplGen(
 
   abstract fun onOnTapButton(onTapButton: Function0<Unit>)
 
+  abstract fun onOnTapButton2(onTapButton2: Function0<Unit>)
+
   abstract fun onTitle(title: String)
 
   final override fun inflateBinding(layoutInflater: LayoutInflater) =
@@ -37,6 +40,7 @@ abstract class SplashViewImplGen(
   final override fun linkTo(lifecycleOwner: LifecycleOwner) {
     super.linkTo(lifecycleOwner)
     onOnTapButton(onTapButton)
+    onOnTapButton2(onTapButton2)
     onTitle(title)
     messageLD.setObserver(lifecycleOwner) {
       onMessage(it)

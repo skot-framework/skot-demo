@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-protocol UiProducer {
-    associatedtype UiView
-    var uiview: Self.UiView { get }
+public protocol UiProducer {
+    associatedtype V:View
+    func ui() -> V
 }

@@ -9,6 +9,7 @@ interface ViewInjector {
   fun splash(
     message: String,
     onTapButton: Function0<Unit>,
+    onTapButton2: Function0<Unit>,
     title: String
   ): SplashView
 }
