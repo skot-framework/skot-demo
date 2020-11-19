@@ -8,8 +8,9 @@
 import Foundation
 import SwiftUI
 import shared
+import Combine
 
-final class SplashViewImpl: ScreenViewImpl, SplashView, ObservableObject {
+final class SplashViewImpl: BaseScreenViewImpl, SplashView  {
     
     
     override func ui() -> AnyView {
@@ -17,12 +18,22 @@ final class SplashViewImpl: ScreenViewImpl, SplashView, ObservableObject {
     }
     
     
-    @Published var message:String  = ""
+    @Published var message:String  = "" {
+        willSet {
+            self.objectWillChange.send()
+        }
+    }
+    
+    
+    
+    private var cancellableSet = Set<AnyCancellable>()
     
     
     init(message:String) {
         self.message = message
         super.init()
     }
-    
+
+
 }
+

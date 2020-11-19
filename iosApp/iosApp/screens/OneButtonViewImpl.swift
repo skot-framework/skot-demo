@@ -9,16 +9,20 @@ import Foundation
 import SwiftUI
 import shared
 
-final class OneButtonViewImpl:ScreenViewImpl, OneButtonView, ObservableObject {
+final class OneButtonViewImpl:BaseScreenViewImpl, OneButtonView {
+    
  
     override func ui() -> AnyView {
         AnyView(OneButtonUI(view:self))
     }
     
     let onTapButton: () -> Void
+    let onTapDemoBaseActions: () -> Void
     
-    init(onTapButton:@escaping () -> Void) {
+    
+    init(onTapButton:@escaping () -> Void, onTapDemoBaseActions:@escaping () -> Void) {
         self.onTapButton = onTapButton
+        self.onTapDemoBaseActions = onTapDemoBaseActions
         super.init()
         
     }

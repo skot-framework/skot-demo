@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import shared
 
-final class WithBackScreenViewImpl:ScreenViewImpl, WithBackScreenView, ObservableObject {
+final class WithBackScreenViewImpl:BaseScreenViewImpl, WithBackScreenView {
  
     override func ui() -> AnyView {
         AnyView(WithBackScreenUI(view:self))

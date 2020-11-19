@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC2A4B4D255C26EC00DCA879 /* BaseScreenViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2A4B4C255C26EC00DCA879 /* BaseScreenViewImpl.swift */; };
+		BC2A4B4F255C26FB00DCA879 /* BasesActionsImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2A4B4E255C26FB00DCA879 /* BasesActionsImpl.swift */; };
+		BC2A4B51255C271A00DCA879 /* ComponentViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */; };
+		BC2A4B53255C2C1300DCA879 /* ScreenUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2A4B52255C2C1300DCA879 /* ScreenUI.swift */; };
 		BC632E9B25543D700011F438 /* ScreenViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC632E9A25543D700011F438 /* ScreenViewImpl.swift */; };
 		BC632E9D255447B90011F438 /* UiProducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC632E9C255447B90011F438 /* UiProducer.swift */; };
 		BC632E9F25547BAC0011F438 /* ScreenErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC632E9E25547BAC0011F438 /* ScreenErrorView.swift */; };
@@ -27,6 +31,8 @@
 		BCFCCC4F25582B6300E29E5C /* Root.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCCC4E25582B6300E29E5C /* Root.swift */; };
 		BCFCCC5125582C3100E29E5C /* RootUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCCC5025582C3100E29E5C /* RootUI.swift */; };
 		BCFCCC5325585C7000E29E5C /* BaseUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCCC5225585C7000E29E5C /* BaseUI.swift */; };
+		BCFCCC552559ADCD00E29E5C /* DemoBaseActionsViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCCC542559ADCD00E29E5C /* DemoBaseActionsViewImpl.swift */; };
+		BCFCCC572559AFF200E29E5C /* DemoBaseActionsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFCCC562559AFF200E29E5C /* DemoBaseActionsUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BC2A4B4C255C26EC00DCA879 /* BaseScreenViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScreenViewImpl.swift; sourceTree = "<group>"; };
+		BC2A4B4E255C26FB00DCA879 /* BasesActionsImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasesActionsImpl.swift; sourceTree = "<group>"; };
+		BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewImpl.swift; sourceTree = "<group>"; };
+		BC2A4B52255C2C1300DCA879 /* ScreenUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenUI.swift; sourceTree = "<group>"; };
 		BC632E9A25543D700011F438 /* ScreenViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewImpl.swift; sourceTree = "<group>"; };
 		BC632E9C255447B90011F438 /* UiProducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiProducer.swift; sourceTree = "<group>"; };
 		BC632E9E25547BAC0011F438 /* ScreenErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenErrorView.swift; sourceTree = "<group>"; };
@@ -65,6 +75,8 @@
 		BCFCCC4E25582B6300E29E5C /* Root.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Root.swift; sourceTree = "<group>"; };
 		BCFCCC5025582C3100E29E5C /* RootUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootUI.swift; sourceTree = "<group>"; };
 		BCFCCC5225585C7000E29E5C /* BaseUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUI.swift; sourceTree = "<group>"; };
+		BCFCCC542559ADCD00E29E5C /* DemoBaseActionsViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBaseActionsViewImpl.swift; sourceTree = "<group>"; };
+		BCFCCC562559AFF200E29E5C /* DemoBaseActionsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoBaseActionsUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC2A4B4B255C26BE00DCA879 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				BCFCCC5225585C7000E29E5C /* BaseUI.swift */,
+				BC2A4B4C255C26EC00DCA879 /* BaseScreenViewImpl.swift */,
+				BC2A4B4E255C26FB00DCA879 /* BasesActionsImpl.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		BC907EAA2553E48D00BA3B18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +129,7 @@
 		BCDF36A8255322BF00C842C5 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				BC2A4B4B255C26BE00DCA879 /* base */,
 				BCFCCC45255828E500E29E5C /* skot */,
 				BCFCCC44255828DB00E29E5C /* screens */,
 				BCDF36A9255322BF00C842C5 /* iosAppApp.swift */,
@@ -139,6 +162,8 @@
 				BCFCCC482558294200E29E5C /* WithBackScreenViewImpl.swift */,
 				BCFCCC4A2558297300E29E5C /* OneButtonUI.swift */,
 				BCFCCC4C2558298B00E29E5C /* WithBackScreenUI.swift */,
+				BCFCCC542559ADCD00E29E5C /* DemoBaseActionsViewImpl.swift */,
+				BCFCCC562559AFF200E29E5C /* DemoBaseActionsUI.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -149,7 +174,8 @@
 				BC632E9A25543D700011F438 /* ScreenViewImpl.swift */,
 				BCFCCC4E25582B6300E29E5C /* Root.swift */,
 				BCFCCC5025582C3100E29E5C /* RootUI.swift */,
-				BCFCCC5225585C7000E29E5C /* BaseUI.swift */,
+				BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */,
+				BC2A4B52255C2C1300DCA879 /* ScreenUI.swift */,
 			);
 			path = skot;
 			sourceTree = "<group>";
@@ -226,18 +252,24 @@
 			files = (
 				BCFCCC5325585C7000E29E5C /* BaseUI.swift in Sources */,
 				BCFCCC4B2558297300E29E5C /* OneButtonUI.swift in Sources */,
+				BC2A4B4F255C26FB00DCA879 /* BasesActionsImpl.swift in Sources */,
 				BC632E9B25543D700011F438 /* ScreenViewImpl.swift in Sources */,
 				BCFCCC4D2558298B00E29E5C /* WithBackScreenUI.swift in Sources */,
+				BCFCCC552559ADCD00E29E5C /* DemoBaseActionsViewImpl.swift in Sources */,
 				BCA52D9D255544710064AC73 /* ViewModel.swift in Sources */,
 				BC632E9D255447B90011F438 /* UiProducer.swift in Sources */,
 				BC907EB42553EBE100BA3B18 /* ViewInjectorImpl.swift in Sources */,
 				BC907EB22553EA5200BA3B18 /* SplashViewImpl.swift in Sources */,
 				BC907EB62553F1F000BA3B18 /* SplashUI.swift in Sources */,
+				BC2A4B53255C2C1300DCA879 /* ScreenUI.swift in Sources */,
 				BCFCCC472558293200E29E5C /* OneButtonViewImpl.swift in Sources */,
 				BCFCCC4F25582B6300E29E5C /* Root.swift in Sources */,
+				BC2A4B4D255C26EC00DCA879 /* BaseScreenViewImpl.swift in Sources */,
 				BC632E9F25547BAC0011F438 /* ScreenErrorView.swift in Sources */,
 				BCFCCC492558294200E29E5C /* WithBackScreenViewImpl.swift in Sources */,
 				BCFCCC5125582C3100E29E5C /* RootUI.swift in Sources */,
+				BC2A4B51255C271A00DCA879 /* ComponentViewImpl.swift in Sources */,
+				BCFCCC572559AFF200E29E5C /* DemoBaseActionsUI.swift in Sources */,
 				BCDF36AC255322BF00C842C5 /* ContentView.swift in Sources */,
 				BCDF36AA255322BF00C842C5 /* iosAppApp.swift in Sources */,
 			);

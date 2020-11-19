@@ -19,7 +19,7 @@ struct iosAppApp: App {
         let splash = Splash()
         splash.setAsRoot()
         
-        rootView = Root(startScreen: splash.view as! ScreenViewImpl)
+        rootView = Root(startScreen: splash.view as! BaseScreenViewImpl)
     }
     
     

@@ -9,10 +9,10 @@ import Foundation
 
 class Root: ObservableObject {
     
-    @Published var screen:ScreenViewImpl
+    @Published var screen:BaseScreenViewImpl
     //@Published var oneScreenToPush:Bool = false
     
-    init(startScreen:ScreenViewImpl) {
+    init(startScreen:BaseScreenViewImpl) {
         screen = startScreen
     }
 }

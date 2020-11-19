@@ -30,6 +30,13 @@
             android:layout_marginTop="24dp"
             android:text="Ouvrir un écran par dessus" />
 
+        <Button
+            android:id="@+id/btnDemoBaseActions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Démo des actions de base" />
+
 
     </LinearLayout>
 

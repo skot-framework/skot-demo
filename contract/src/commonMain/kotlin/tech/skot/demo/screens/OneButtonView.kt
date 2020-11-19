@@ -6,4 +6,5 @@ interface OneButtonView : BaseScreenView {
 
     val onTapButton:()->Unit
 
+    val onTapDemoBaseActions:()->Unit
 }

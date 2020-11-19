@@ -11,9 +11,12 @@ import tech.skot.demo.androidview.databinding.OneButtonBinding
 import tech.skot.demo.base.BaseScreenViewImpl
 
 abstract class OneButtonViewImplGen(
-  override val onTapButton: Function0<Unit>
+  override val onTapButton: Function0<Unit>,
+  override val onTapDemoBaseActions: Function0<Unit>
 ) : BaseScreenViewImpl<BaseActivity, BaseFragment, OneButtonBinding>(), OneButtonView {
   abstract fun onOnTapButton(onTapButton: Function0<Unit>)
+
+  abstract fun onOnTapDemoBaseActions(onTapDemoBaseActions: Function0<Unit>)
 
   final override fun inflateBinding(layoutInflater: LayoutInflater) =
       OneButtonBinding.inflate(layoutInflater)
@@ -21,5 +24,6 @@ abstract class OneButtonViewImplGen(
   final override fun linkTo(lifecycleOwner: LifecycleOwner) {
     super.linkTo(lifecycleOwner)
     onOnTapButton(onTapButton)
+    onOnTapDemoBaseActions(onTapDemoBaseActions)
   }
 }

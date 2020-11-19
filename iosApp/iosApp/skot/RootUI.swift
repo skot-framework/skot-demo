@@ -31,44 +31,14 @@ struct RootUI: View {
     
     var body: some View {
         
-        let bdtp = Binding<Bool>(
-        get:{
-            root.screenToPush != nil
-            },
-        set:{ _ in
-                root.screenToPush = nil
-            })
-            
+    
         return NavigationView {
-            VStack {
-                NavigationLink(
-                    destination: root.screenToPush?.ui()
-                        .navigationTitle("")
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true),
-                    isActive:bdtp
-                    , label:{
-                    EmptyView()
-                })
-                root.screen.ui()
-                    .navigationTitle("")
-                    .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
-            }
+            BaseUI(screenView: root.screen)
+                .navigationTitle("")
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
             
-        }
-        .navigationTitle("")
-        .navigationBarHidden(true)
-        .navigationBarBackButtonHidden(true)
-        /*.navigationBarTitle("")
-                .navigationBarHidden(self.navBarHidden)
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-                    self.navBarHidden = true
-                }
-                .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                    self.navBarHidden = false
-                }*/
-        
+    }
     }
 }
 

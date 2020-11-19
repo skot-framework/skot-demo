@@ -18,8 +18,7 @@ func getKey() -> Int64 {
 
 var screensViewImpl = [Int64 : ScreenViewImpl]()
 
-
-class ScreenViewImpl: ContractScreenView, ObservableObject {
+class ScreenViewImpl: ComponentViewImpl, ContractScreenView, ObservableObject {
     
     @Published var screenToPush:ScreenViewImpl?
     
@@ -35,39 +34,7 @@ class ScreenViewImpl: ContractScreenView, ObservableObject {
    
     
     
-    @objc(confirmTitle:message:okLabel:koLabel:onOk:)
-    func confirm(title: String?, message: String?, okLabel: String?, koLabel: String?, onOk: @escaping () -> Void) {
-        
-    }
-    
-    
-    @Published var presentAlert:Bool = false
-    var titleAlert:String?
-    var messageAlert:String?
-    
-    @objc(displayAlertTitle:message:onOk:)
-    func displayAlert(title: String?, message: String?, onOk: (() -> Void)? = nil) {
-        titleAlert = title
-        messageAlert = message
-        print("---ALERTE!!!--"+(title ?? "pas de titre"))
-        presentAlert = true
-    }
-    
-    @objc(openExternalNavigatorUrl:)
-    func openExternalNavigator(url: String) {
-        
-    }
-    
-    @objc(snackMessage:long:action:)
-    func snack(message: String, long long_: Bool, action: BaseActionsSnackAction?) {
-        
-    }
-    
-    @objc(toastMessage:top:long:)
-    func toast(message: String, top: Bool, long long_: Bool) {
-        
-    }
-    
+   
     @objc
     func dismiss() {
         
@@ -76,7 +43,7 @@ class ScreenViewImpl: ContractScreenView, ObservableObject {
     @objc
     func openScreenWillFinish(screenToOpen: ContractScreenView) {
         print("root will change")
-        rootView?.screen = screenToOpen as! ScreenViewImpl
+        rootView?.screen = screenToOpen as! BaseScreenViewImpl
     }
     
     @objc
@@ -87,7 +54,8 @@ class ScreenViewImpl: ContractScreenView, ObservableObject {
     let key: Int64 = getKey()
     
     
-    init() {
+    override init() {
+        super.init()
         screensViewImpl[key] = self
     }
     
@@ -103,14 +71,14 @@ class ScreenViewImpl: ContractScreenView, ObservableObject {
         }
         set(newVal) {
             _onTop = newVal
+            print("will set ontop to")
+            print(newVal ?? "rien")
             screenToPush = newVal as? ScreenViewImpl
         }
     
     }
     
-    func onRemove() {
-        
-    }
+
     
  
     

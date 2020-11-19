@@ -18,3 +18,9 @@ struct ScreenErrorView_Previews: PreviewProvider {
         ScreenErrorView()
     }
 }
+
+class ScreenErrorViewImpl: ScreenViewImpl {
+    override func ui() -> AnyView {
+        AnyView(Text("Ecran non trouvé !"))
+    }
+}

@@ -18,6 +18,11 @@ struct OneButtonUI: View {
             }, label: {
                 Text("Ouvrir un écran par dessus")
             })
+            Button(action: {
+                view.onTapDemoBaseActions()
+            }, label: {
+                Text("Démo des actions de base")
+            })
         }
         
     }
@@ -25,8 +30,11 @@ struct OneButtonUI: View {
 
 struct OneButtonUI_Previews: PreviewProvider {
     static var previews: some View {
-        OneButtonUI(view: OneButtonViewImpl(onTapButton: {
+        OneButtonUI(view: OneButtonViewImpl(
+                        onTapButton: {
             print("onTapButton")
+        }, onTapDemoBaseActions: {
+            print("onTapDemoBaseActions")
         }))
     }
 }

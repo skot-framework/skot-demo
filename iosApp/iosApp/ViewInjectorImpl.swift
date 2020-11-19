@@ -9,12 +9,15 @@ import Foundation
 import shared
 
 class ViewInjectorImpl: ViewInjector {
+
+    
+    
     func splash(message: String) -> SplashView {
         return SplashViewImpl(message: message)
     }
     
-    func oneButton(onTapButton: @escaping () -> Void) -> OneButtonView {
-        return OneButtonViewImpl(onTapButton: onTapButton)
+    func oneButton(onTapButton: @escaping () -> Void, onTapDemoBaseActions: @escaping () -> Void) -> OneButtonView {
+        return OneButtonViewImpl(onTapButton: onTapButton, onTapDemoBaseActions: onTapDemoBaseActions)
     }
     
     func withBackScreen(onTapBack: @escaping () -> Void, onTapOpen: @escaping () -> Void) -> WithBackScreenView {
@@ -22,6 +25,9 @@ class ViewInjectorImpl: ViewInjector {
     }
     
     
+    func demoBaseActions(onTapAlert: @escaping () -> Void, onTapBack: @escaping () -> Void, onTapConfirm: @escaping () -> Void, onTapOpenExternalNavigator: @escaping () -> Void, onTapShortSnack: @escaping () -> Void, onTapSnack: @escaping () -> Void) -> DemoBaseActionsView {
+        return DemoBaseActionsViewImpl(onTapBack: onTapBack, onTapAlert: onTapAlert, onTapConfirm: onTapConfirm, onTapSnack: onTapSnack, onTapShortSnack: onTapShortSnack, onTapOpenExternalNavigator: onTapOpenExternalNavigator)
+    }
     
     
 }
