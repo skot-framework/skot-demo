@@ -6,6 +6,17 @@
         android:name=".android.DemoApplication"
         android:allowBackup="false"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"></application>
+        android:theme="@style/BaseAppTheme">
+
+        <activity
+            android:name="tech.skot.demo.android.MainActivity"
+            android:allowTaskReparenting="true"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>

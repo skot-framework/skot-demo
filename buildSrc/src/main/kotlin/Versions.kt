@@ -12,6 +12,8 @@ object Versions {
 
     object Android {
         const val plugin = "4.1.0"
+        const val appcompat = "1.2.0"
+        const val compose = "1.0.0-alpha07"
 
         const val compileSdk = 29
         const val minSdk = 24

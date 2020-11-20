@@ -1,26 +1,25 @@
 package tech.skot.demo.screens
 
-import tech.skot.demo.viewInjector
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import tech.skot.core.SKLog
+import kotlinx.coroutines.launch
+import tech.skot.demo.components.Stack
+import tech.skot.demo.di.viewInjector
+import tech.skot.viewmodel.Component
 
-class Splash : SplashGen() {
-  override val view: SplashView = viewInjector.splash(
-    message = "",
-  )
+class Splash(where:Stack) : Component<SplashView>() {
 
+    override val view = viewInjector.splash("Go !")
 
-  init {
-    view.message = "coucou toi"
-    launchNoCrash {
-      var compteur = 4
-      while(compteur > 0) {
-        view.message = "${compteur}s"
-        delay(1000)
-        compteur--
-      }
-    OneButton().setAsRoot()
+    init {
+        CoroutineScope(Dispatchers.Default).launch {
+            repeat(10+1) {
+                delay(1000)
+                view.message = "${(10-it)}s"
+            }
+            where.content = Hello()
+        }
     }
 
-  }
 }

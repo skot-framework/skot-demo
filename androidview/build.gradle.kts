@@ -17,17 +17,35 @@ android {
     lintOptions {
         isAbortOnError = false
     }
-    buildFeatures {
+    /*buildFeatures {
         viewBinding = true
-    }
+    }*/
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        useIR = true
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion  = Versions.Android.compose
+        kotlinCompilerVersion  = "1.4.10"
+    }
 }
 
 dependencies {
-    api("tech.skot:view:${Versions.skot}")
+    api("tech.skot:core:${Versions.skot}")
     api(project(":contract"))
+
+    api("androidx.appcompat:appcompat:${Versions.Android.appcompat}")
+    api("androidx.compose.ui:ui:${Versions.Android.compose}")
+    implementation("androidx.compose.material:material:${Versions.Android.compose}")
+    implementation("androidx.ui:ui-tooling:${Versions.Android.compose}")
+
 }

@@ -13,7 +13,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation(project(":shared"))
+    implementation(project(":viewmodel"))
     implementation(project(":androidview"))
 
 }
@@ -31,6 +31,24 @@ android {
 //            isMinifyEnabled = false
 //        }
 //    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+        useIR = true
+    }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion  = Versions.Android.compose
+        kotlinCompilerVersion  = "1.4.10"
+    }
+
 
     packagingOptions {
         exclude("META-INF/*.kotlin_module")
