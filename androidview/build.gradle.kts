@@ -40,8 +40,7 @@ android {
 }
 
 dependencies {
-    api("tech.skot:core:${Versions.skot}")
-    api(project(":contract"))
+    api(project(":viewmodel"))
 
     api("androidx.appcompat:appcompat:${Versions.Android.appcompat}")
     api("androidx.compose.ui:ui:${Versions.Android.compose}")

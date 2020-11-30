@@ -1,5 +1,6 @@
 package tech.skot.demo.screens
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import tech.skot.demo.components.ComponentViewImpl
@@ -10,6 +11,6 @@ class RootViewImpl(override val stack:StackViewImpl) :ComponentViewImpl(), RootV
 
     @Composable
     override fun ui(modifier: Modifier) {
-        stack.ui(modifier = modifier)
+        stack.ui(modifier = modifier.fillMaxSize())
     }
 }

@@ -43,19 +43,19 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api("tech.skot:contract:${Versions.skot}")
+                api("tech.skot:core:${Versions.skot}")
             }
         }
-
-        val androidMain by getting
-
-        val jvmMain by getting {
-            dependencies {
-                api("tech.skot:contract-jvm:${Versions.skot}")
-            }
-        }
-
-        val iosMain by getting
+//
+//        val androidMain by getting
+//
+//        val jvmMain by getting {
+//            dependencies {
+//                api("tech.skot:contract-jvm:${Versions.skot}")
+//            }
+//        }
+//
+//        val iosMain by getting
 
     }
 }

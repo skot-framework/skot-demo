@@ -8,6 +8,7 @@ import tech.skot.demo.components.ComponentViewImpl
 import tech.skot.demo.di.androidviewModule
 import tech.skot.demo.di.viewmodelAndroidModule
 import tech.skot.demo.start
+import timber.log.Timber
 
 var startScreen:ComponentViewImpl? = null
 
@@ -23,6 +24,7 @@ class DemoApplication :Application() {
             ))
 
         startScreen = start() as ComponentViewImpl
+        Timber.plant(Timber.DebugTree())
 
         SKLog.d("----DemoApplication----- onCreate")
 

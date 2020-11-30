@@ -13,9 +13,9 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    implementation(project(":viewmodel"))
+//    implementation(project(":viewmodel"))
     implementation(project(":androidview"))
-
+    implementation(project(":shared"))
 }
 android {
     compileSdkVersion(Versions.Android.compileSdk)

@@ -46,6 +46,7 @@ android {
     defaultConfig {
         minSdkVersion(Versions.Android.minSdk)
     }
+
 }
 val packForXcode by tasks.creating(Sync::class) {
     group = "build"

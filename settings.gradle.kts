@@ -17,8 +17,8 @@ rootProject.name = "Skot-Demo"
 
 
 include(":androidApp")
-//include(":shared")
+include(":shared")
 include(":contract")
 include(":viewmodel")
 include(":androidview")
-include(":tools")
+//include(":tools")

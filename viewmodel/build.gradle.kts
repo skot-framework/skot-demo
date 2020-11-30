@@ -24,7 +24,6 @@ kotlin {
     sourceSets {
         val commonMain by getting {
            dependencies {
-               api("tech.skot:core:${Versions.skot}")
                api(project(":contract"))
            }
         }
