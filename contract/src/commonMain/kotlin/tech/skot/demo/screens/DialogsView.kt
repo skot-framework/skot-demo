@@ -1,13 +1,13 @@
 package tech.skot.demo.screens
 
-import tech.skot.contract.view.ComponentView
-import tech.skot.demo.components.AlertView
-import tech.skot.demo.components.SnackBarView
+import tech.skot.core.components.AlertView
+import tech.skot.core.components.ScreenView
+import tech.skot.core.components.SnackBarView
 
-interface DialogsView : ComponentView {
-    val alert:AlertView
-    val snackBar:SnackBarView
+interface DialogsView : ScreenView {
+    val alert: AlertView
+    val snackBar: SnackBarView
 
-    val onTapAlert:()->Unit
-    val onTapSnack:()->Unit
+    val onTapAlert: () -> Unit
+    val onTapSnack: () -> Unit
 }

@@ -1,7 +1,7 @@
 package tech.skot.demo.screens
 
-import tech.skot.contract.view.ComponentView
+import tech.skot.core.components.ScreenView
 
-interface SplashView: ComponentView {
-    var message:String?
+interface SplashView: ScreenView {
+    var message:String
 }

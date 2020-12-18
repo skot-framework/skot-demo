@@ -1,24 +1,22 @@
 package tech.skot.demo.di
 
-import tech.skot.demo.components.AlertView
-import tech.skot.demo.components.SnackBarView
-import tech.skot.demo.components.StackView
-import tech.skot.demo.components.TabView
+import tech.skot.core.components.AlertView
+import tech.skot.core.components.SnackBarView
+import tech.skot.core.components.StackView
+import tech.skot.demo.components.*
 import tech.skot.demo.screens.*
 
 
 interface ViewInjector {
-    fun statck():StackView
     fun tabView(label:String, onTap:()->Unit, selectedInitial:Boolean):TabView
-    fun alert():AlertView
-    fun snackBar():SnackBarView
 
 
-    fun root(stack:StackView):RootView
-    fun hello():HelloView
-    fun splash(message:String?):SplashView
-    fun main(tabs:List<TabView>,content:StackView):MainView
-    fun dialogs(alert: AlertView, snackBar:SnackBarView, onTapSnack:()->Unit, onTapAlert:()->Unit):DialogsView
+    fun hello(onTapBack:()->Unit, onOpenAnotherHello:()->Unit):HelloView
+    fun splash(message:String):SplashView
+    fun main(tabs:List<TabView>,stack: StackView):MainView
+    fun dialogs(alert: AlertView, snackBar: SnackBarView, onTapSnack:()->Unit, onTapAlert:()->Unit):DialogsView
     fun navigation(onTapOpenModale:()->Unit):NavigationView
-    fun auDessus(title:String, onTapOpenAnother:()->Unit, onTapClose:()->Unit):AuDessusView
+    fun navigationInStack(content:StackView, onTapPushScreen:()->Unit, onTapBack:()->Unit):NavigationInStackView
+    fun auDessus(title:String, onTapOpenAnother:()->Unit, onTapClose:()->Unit, lines:List<AuDessusView.Line>):AuDessusView
+    fun aScreenInAStackView(title:String, lines:List<AScreenInAStackView.Line>):AScreenInAStackView
 }

@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    api(project(":viewmodel"))
+    api(project(":contract"))
 
     api("androidx.appcompat:appcompat:${Versions.Android.appcompat}")
     api("androidx.compose.ui:ui:${Versions.Android.compose}")

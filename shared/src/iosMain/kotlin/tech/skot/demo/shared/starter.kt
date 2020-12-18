@@ -14,4 +14,5 @@ fun start(viewInjector: ViewInjector) {
     SKLog.d("creating injector")
     injector = BaseInjector(listOf(fromIosModule))
 
+    tech.skot.demo.start()
 }

@@ -8,10 +8,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import tech.skot.demo.components.ComponentViewImpl
 
-class SplashViewImpl(messageInitial:String?) : ComponentViewImpl(),SplashView {
+class SplashViewImpl(messageInitial:String) : ComponentViewImpl(),SplashView {
 
-    val _message: MutableState<String?> = mutableStateOf(messageInitial)
-    override var message: String? by _message
+    val _message: MutableState<String> = mutableStateOf(messageInitial)
+    override var message: String by _message
 
     @Composable
     override fun ui(modifier: Modifier) {

@@ -27,10 +27,10 @@ class SnackBarViewImpl : ComponentViewImpl(), SnackBarView {
                 }
             )
 
-            LaunchedEffect(subject = state, block = {
-                delay(3000)
-                state = null
-            })
+//            LaunchedEffect(subject = state, block = {
+//                delay(3000)
+//                state = null
+//            })
         }
 
     }

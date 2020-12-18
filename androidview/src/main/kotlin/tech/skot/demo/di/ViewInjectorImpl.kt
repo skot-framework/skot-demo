@@ -7,7 +7,8 @@ import kotlin.String
 import kotlin.Unit
 
 class ViewInjectorImpl : ViewInjector {
-    override fun statck(): StackView {
+
+    override fun stack(): StackView {
         return StackViewImpl()
     }
 
@@ -27,11 +28,11 @@ class ViewInjectorImpl : ViewInjector {
         return RootViewImpl(stack = stack as StackViewImpl)
     }
 
-    override fun hello(): HelloView {
-        return HelloViewImpl()
+    override fun hello(onTapBack:()->Unit): HelloView {
+        return HelloViewImpl(onTapBack)
     }
 
-    override fun splash(message: String?): SplashView {
+    override fun splash(message: String): SplashView {
         return SplashViewImpl(messageInitial = message)
     }
 
@@ -47,8 +48,8 @@ class ViewInjectorImpl : ViewInjector {
         return NavigationViewImpl(onTapOpenModale = onTapOpenModale)
     }
 
-    override fun auDessus(title: String, onTapOpenAnother: () -> Unit, onTapClose:()->Unit): AuDessusView {
-        return AuDessusViewImpl(title = title, onTapOpenAnother = onTapOpenAnother, onTapClose = onTapClose)
+    override fun auDessus(title: String, onTapOpenAnother: () -> Unit, onTapClose:()->Unit, lines:List<AuDessusView.Line>): AuDessusView {
+        return AuDessusViewImpl(title = title, onTapOpenAnother = onTapOpenAnother, onTapClose = onTapClose, lines = lines)
     }
 
 }

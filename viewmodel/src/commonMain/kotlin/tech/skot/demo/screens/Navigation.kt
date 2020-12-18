@@ -1,10 +1,11 @@
 package tech.skot.demo.screens
 
+import tech.skot.core.SKLog
+import tech.skot.core.components.RootStack
+import tech.skot.core.components.Screen
 import tech.skot.demo.di.viewInjector
-import tech.skot.demo.root
-import tech.skot.viewmodel.Component
 
-class Navigation : Component<NavigationView>() {
+class Navigation : Screen<NavigationView>() {
 
     override val view = viewInjector.navigation(onTapOpenModale = {
         openModale()
@@ -12,7 +13,9 @@ class Navigation : Component<NavigationView>() {
 
 
     private fun openModale() {
-        root?.stack?.push(AuDessus(1))
+        SKLog.d("open Modale !!!")
+        RootStack.push(AuDessus(1))
+//        root?.stack?.push(AuDessus(1))
     }
 
 }

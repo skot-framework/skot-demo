@@ -9,23 +9,23 @@ import SwiftUI
 import shared
 
 
+
 @main
 struct iosAppApp: App {
     
     init() {
         StarterKt.start(viewInjector: ViewInjectorImpl())
-    
-        Greeting().greetingCor()
-        let splash = Splash()
-        splash.setAsRoot()
-        
-        rootView = Root(startScreen: splash.view as! BaseScreenViewImpl)
     }
     
     
     var body: some Scene {
         WindowGroup {
-            RootUI(root: rootView!)
+            (StartKt.root?.view as! RootViewImpl).ui()
+            //SplashUI(state: Splash().view as! SplashViewImpl)
+           // (Splash().view as! SplashViewImpl).ui()
+            
+            
+            //RootUI(root: rootView!)
             //router()
             //SplashViewImpl()
             //let screenView = screensViewImpl[Int64(1)]!

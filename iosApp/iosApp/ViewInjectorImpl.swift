@@ -9,25 +9,53 @@ import Foundation
 import shared
 
 class ViewInjectorImpl: ViewInjector {
-
     
+    func statck() -> StackView {
+        return StackViewImpl()
+    }
+    
+    func tabView(label: String, onTap: @escaping () -> Void, selectedInitial: Bool) -> TabView {
+        return TabViewImpl(label: label, onTap: onTap, selected: selectedInitial)
+    }
+    
+    func alert() -> AlertView {
+        return AlertViewImpl()
+    }
+    
+    func snackBar() -> SnackBarView {
+        return SnackBarViewImpl()
+    }
+    
+    
+    
+    func root(stack: StackView) -> RootView {
+        return RootViewImpl(stack: stack as! StackViewImpl)
+    }
+    
+    func hello() -> HelloView {
+        return HelloViewImpl()
+    }
     
     func splash(message: String) -> SplashView {
         return SplashViewImpl(message: message)
     }
     
-    func oneButton(onTapButton: @escaping () -> Void, onTapDemoBaseActions: @escaping () -> Void) -> OneButtonView {
-        return OneButtonViewImpl(onTapButton: onTapButton, onTapDemoBaseActions: onTapDemoBaseActions)
+    func main(tabs: [TabView], content: StackView) -> MainView {
+        return MainViewImpl(content: content as! StackViewImpl, tabs: tabs as! Array<TabViewImpl>)
     }
     
-    func withBackScreen(onTapBack: @escaping () -> Void, onTapOpen: @escaping () -> Void) -> WithBackScreenView {
-        return WithBackScreenViewImpl(onTapBack: onTapBack, onTapOpen: onTapOpen)
+    func dialogs(alert: AlertView, snackBar: SnackBarView, onTapSnack: @escaping () -> Void, onTapAlert: @escaping () -> Void) -> DialogsView {
+        return DialogsViewImpl(alert: alert as! AlertViewImpl, snackBar: snackBar as! SnackBarViewImpl, onTapAlert: onTapAlert, onTapSnack: onTapSnack)
     }
     
-    
-    func demoBaseActions(onTapAlert: @escaping () -> Void, onTapBack: @escaping () -> Void, onTapConfirm: @escaping () -> Void, onTapOpenExternalNavigator: @escaping () -> Void, onTapShortSnack: @escaping () -> Void, onTapSnack: @escaping () -> Void) -> DemoBaseActionsView {
-        return DemoBaseActionsViewImpl(onTapBack: onTapBack, onTapAlert: onTapAlert, onTapConfirm: onTapConfirm, onTapSnack: onTapSnack, onTapShortSnack: onTapShortSnack, onTapOpenExternalNavigator: onTapOpenExternalNavigator)
+    func navigation(onTapOpenModale: @escaping () -> Void) -> NavigationView {
+        return NavigationViewImpl(onTapOpenModale: onTapOpenModale)
     }
     
+    func auDessus(title: String, onTapOpenAnother: @escaping () -> Void, onTapClose: @escaping () -> Void, lines:[AuDessusViewLine]) -> AuDessusView {
+        return AuDessusViewImpl(title: title, onTapOpenAnother: onTapOpenAnother, onTapClose: onTapClose, lines: lines)
+    }
     
+   
+
 }

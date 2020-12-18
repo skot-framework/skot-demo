@@ -1,6 +1,7 @@
 package tech.skot.demo.components
 
-import tech.skot.contract.view.ComponentView
+import tech.skot.core.components.ComponentView
+
 
 interface TabView : ComponentView {
     val label: String

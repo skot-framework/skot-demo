@@ -9,11 +9,11 @@ class MainViewImpl(override val tabs:List<TabViewImpl>, override val content: St
 
     @Composable
     override fun ui(modifier: Modifier) {
-        Column(modifier = modifier.fillMaxWidth().fillMaxHeight(), verticalArrangement = Arrangement.SpaceBetween) {
+        Column(modifier = modifier.fillMaxSize(), verticalArrangement = Arrangement.SpaceBetween) {
             content.ui(
-                Modifier.weight(1f, true)
+                Modifier.fillMaxWidth().weight(1f)
             )
-            Spacer(modifier = Modifier.wrapContentHeight())
+            //Spacer(modifier = Modifier.wrapContentHeight())
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceAround) {
                 tabs.forEach { it.ui(Modifier.weight(1f)) }
             }

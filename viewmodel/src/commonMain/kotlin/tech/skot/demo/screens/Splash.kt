@@ -1,29 +1,28 @@
 package tech.skot.demo.screens
 
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import tech.skot.demo.components.Stack
+import tech.skot.core.components.RootStack
+import tech.skot.core.components.Screen
 import tech.skot.demo.di.viewInjector
-import tech.skot.viewmodel.Component
 
-const val NB_SECONDS_TIMER = 2
+const val NB_SECONDS_TIMER = 4
 
-class Splash(where:Stack) : Component<SplashView>() {
+class Splash : Screen<SplashView>() {
 
-    override val view = viewInjector.splash("Go !")
-
+    override val view = viewInjector.splash("Got it !")
 
 
     init {
-        CoroutineScope(Dispatchers.Default).launch {
-            repeat(NB_SECONDS_TIMER+1) {
+        launch {
+            repeat(NB_SECONDS_TIMER + 1) {
                 delay(1000)
-                view.message = "${(NB_SECONDS_TIMER-it)}s"
+                view.message = "${(NB_SECONDS_TIMER - it)} secondes"
             }
-            where.content = Main()
+//            RootStack.content = Hello()
+
+            RootStack.content = Main()
         }
+
     }
 
 }

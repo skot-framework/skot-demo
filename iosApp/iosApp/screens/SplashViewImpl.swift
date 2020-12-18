@@ -2,7 +2,7 @@
 //  SplashViewImpl.swift
 //  iosApp
 //
-//  Created by Mathieu Scotet on 05/11/2020.
+//  Created by Mathieu Scotet on 30/11/2020.
 //
 
 import Foundation
@@ -10,30 +10,35 @@ import SwiftUI
 import shared
 import Combine
 
-final class SplashViewImpl: BaseScreenViewImpl, SplashView  {
+
+class SplashViewImpl: ComponentViewImpl, SplashView, ObservableObject {
+    
+    @Published
+    var message: String
     
     
     override func ui() -> AnyView {
-        AnyView(SplashUI(view:self))
+        AnyView(SplashUI(state:self))
     }
-    
-    
-    @Published var message:String  = "" {
-        willSet {
-            self.objectWillChange.send()
-        }
-    }
-    
-    
-    
-    private var cancellableSet = Set<AnyCancellable>()
-    
     
     init(message:String) {
         self.message = message
         super.init()
     }
-
-
+    
 }
 
+
+struct SplashUI: View {
+    
+    @ObservedObject var state:SplashViewImpl
+    
+    var body: some View {
+        
+        VStack {
+            Text(state.message)
+        }
+    }
+    
+    
+}

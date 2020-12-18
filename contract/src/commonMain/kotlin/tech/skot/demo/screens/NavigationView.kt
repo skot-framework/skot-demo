@@ -1,7 +1,8 @@
 package tech.skot.demo.screens
 
-import tech.skot.contract.view.ComponentView
+import tech.skot.core.components.ScreenView
 
-interface NavigationView:ComponentView {
-    val onTapOpenModale:()->Unit
+
+interface NavigationView : ScreenView {
+    val onTapOpenModale: () -> Unit
 }

@@ -23,7 +23,8 @@ class AlertViewImpl : ComponentViewImpl(), AlertView {
                             Text(text = it.label)
                         }
                     }
-                }
+                },
+                text = it.message?.let { { Text(it) } }
             )
         }
     }

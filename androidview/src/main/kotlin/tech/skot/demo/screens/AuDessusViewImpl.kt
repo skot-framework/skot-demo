@@ -18,7 +18,8 @@ import tech.skot.demo.components.ComponentViewImpl
 
 
 
-class AuDessusViewImpl(override val title:String, override val onTapOpenAnother:()->Unit, override val onTapClose:()->Unit):ComponentViewImpl(),AuDessusView {
+class AuDessusViewImpl(override val title:String, override val onTapOpenAnother:()->Unit, override val onTapClose:()->Unit,
+                       override val lines: List<AuDessusView.Line>):ComponentViewImpl(),AuDessusView {
 
 
     @Composable
@@ -37,9 +38,10 @@ class AuDessusViewImpl(override val title:String, override val onTapOpenAnother:
                 modifier = Modifier.fillMaxSize().background(Color.Gray),
                 scrollState = skScrollState()
             ) {
-                repeat(60) {
-                    Text(text = "Ligne $it", fontSize = 28.sp, modifier = Modifier.padding(12.dp))
+                lines.map {
+                    Text(text = "Ligne ${it.id}", fontSize = 28.sp, modifier = Modifier.padding(12.dp))
                 }
+
             }
         }
     }
@@ -47,7 +49,3 @@ class AuDessusViewImpl(override val title:String, override val onTapOpenAnother:
 
 }
 
-@Composable
-fun AuDessusUI(modifier: Modifier) {
-
-}

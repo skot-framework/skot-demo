@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("kotlin-android-extensions")
     id("com.squareup.sqldelight")
 }
 group = Application.group
@@ -48,20 +47,67 @@ android {
     }
 
 }
+
+
+
+
 val packForXcode by tasks.creating(Sync::class) {
     group = "build"
-    val mode = System.getenv("CONFIGURATION") ?: "DEBUG"
-    val sdkName = System.getenv("SDK_NAME") ?: "iphonesimulator"
-    val targetName = "ios" + if (sdkName.startsWith("iphoneos")) "Arm64" else "X64"
-    val framework = kotlin.targets.getByName<KotlinNativeTarget>(targetName).binaries.getFramework(mode)
-    inputs.property("mode", mode)
-    dependsOn(framework.linkTask)
-    val targetDir = File(buildDir, "xcode-frameworks")
-    from({ framework.outputDirectory })
-    into(targetDir)
+    fun buildFramework(mode: String) {
+        val frameworkArm =
+            kotlin.targets.getByName<KotlinNativeTarget>("iosArm64").binaries.getFramework(mode)
+        val frameworkX64 =
+            kotlin.targets.getByName<KotlinNativeTarget>("iosX64").binaries.getFramework(mode)
+        inputs.property("mode", mode)
+        dependsOn(frameworkArm.linkTask)
+        dependsOn(frameworkX64.linkTask)
+    }
+
+    buildFramework("DEBUG")
+    buildFramework("RELEASE")
+
 }
 tasks.getByName("build").dependsOn(packForXcode)
 
+val buildUniversalFrameworkDebug = tasks.create<Exec>("buildUniversalFrameworkDebug") {
+    group = "build"
+    workingDir(".")
+    commandLine(
+        "xcodebuild",
+        "-create-xcframework",
+        "-framework",
+        "build/bin/iosArm64/debugFramework/shared.framework",
+        "-framework",
+        "build/bin/iosX64/debugFramework/shared.framework",
+        "-output",
+        "build/framework/debug/shared.xcframework"
+    )
+}
+
+val buildUniversalFrameworkRelease = tasks.create<Exec>("buildUniversalFrameworkRelease") {
+    group = "build"
+    workingDir(".")
+    commandLine(
+        "xcodebuild",
+        "-create-xcframework",
+        "-framework",
+        "build/bin/iosArm64/releaseFramework/shared.framework",
+        "-framework",
+        "build/bin/iosX64/releaseFramework/shared.framework",
+        "-output",
+        "build/framework/release/shared.xcframework"
+    )
+}
+
+val buildFrameworks = tasks.create("buildUniversalFrameworks") {
+    group = "build"
+    dependsOn(packForXcode)
+    dependsOn(buildUniversalFrameworkDebug)
+    dependsOn(buildUniversalFrameworkRelease)
+}
+
+buildUniversalFrameworkDebug.mustRunAfter(packForXcode)
+buildUniversalFrameworkRelease.mustRunAfter(packForXcode)
 
 sqldelight {
     linkSqlite = true

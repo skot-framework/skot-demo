@@ -1,12 +1,11 @@
 package tech.skot.demo.screens
 
-import tech.skot.demo.components.Alert
-import tech.skot.demo.components.SnackBar
-import tech.skot.demo.components.SnackBarView
+import tech.skot.core.components.Alert
+import tech.skot.core.components.Screen
+import tech.skot.core.components.SnackBar
 import tech.skot.demo.di.viewInjector
-import tech.skot.viewmodel.Component
 
-class Dialogs : Component<DialogsView>() {
+class Dialogs : Screen<DialogsView>() {
 
     val alert = Alert()
     val snackBar = SnackBar()

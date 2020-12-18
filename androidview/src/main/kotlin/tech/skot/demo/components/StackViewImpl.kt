@@ -17,19 +17,29 @@ import androidx.compose.runtime.onCommit
 import androidx.compose.runtime.remember
 import androidx.compose.ui.draw.drawOpacity
 import androidx.compose.ui.util.fastForEach
+import tech.skot.contract.view.ScreenView
 
 
 class StackViewImpl : ComponentViewImpl(),StackView {
 
-    val _screens: MutableState<List<ComponentView>> = mutableStateOf(emptyList())
-    override var screens: List<ComponentView> by _screens
+    val _screens: MutableState<List<ScreenView>> = mutableStateOf(emptyList())
+    override var screens: List<ScreenView> by _screens
 
 
     @Composable
     override fun ui(modifier: Modifier) {
-        Crossfade(current = screens.lastOrNull()) {
-            (it as? ComponentViewImpl?)?.ui(modifier = modifier)
+//        Crossfade(current = screens.lastOrNull()) {
+//            (it as? ComponentViewImpl?)?.ui(modifier = modifier)
+//        }
+        if (screens.size % 2 != 0) {
+            (screens.lastOrNull() as? ComponentViewImpl?)?.ui(modifier = modifier)
         }
+        else {
+            Box {
+                (screens.lastOrNull() as? ComponentViewImpl?)?.ui(modifier = modifier)
+            }
+        }
+
     }
 
 

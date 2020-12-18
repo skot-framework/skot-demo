@@ -1,11 +1,14 @@
 package tech.skot.demo
 
-import tech.skot.contract.view.ComponentView
-import tech.skot.demo.screens.Root
+import tech.skot.core.SKLog
+import tech.skot.core.components.RootStack
+import tech.skot.demo.screens.Splash
 
-var root:Root? = null
+//var root:Root? = null
 
 
-fun start():ComponentView {
-    return Root().apply { root =this }.run { view }
+fun start() {
+    SKLog.d("---- start !!")
+    RootStack.push(Splash())
+//    return Root().apply { root =this }.run { view }//Splash().view//
 }
