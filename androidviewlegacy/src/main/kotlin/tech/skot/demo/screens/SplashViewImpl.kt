@@ -12,22 +12,23 @@ import tech.skot.view.live.MutableSKLiveData
 
 class SplashViewProxy(
     messageInitial:String
-): ScreenViewProxy<SplashViewImpl>(), SplashView {
+): ScreenViewProxy<SplashBinding>(), SplashView {
 
     private val messageLD = MutableSKLiveData(messageInitial)
     override var message:String by messageLD
 
+    override fun inflate(layoutInflater: LayoutInflater) = SplashBinding.inflate(layoutInflater)
 
-    override fun inflateAndLinkChildren(
-        layoutInflater: LayoutInflater,
+    override fun bindTo(
         activity: SKActivity,
-        fragment: SKFragment?
-    ) = SplashViewImpl(activity, fragment, SplashBinding.inflate(layoutInflater))
-
-
-    override fun linkTo(impl: SplashViewImpl, lifeCycleOwner: LifecycleOwner) {
-        messageLD.observe(lifeCycleOwner) {
-            impl.onMessage(it)
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: SplashBinding
+    ) {
+        SplashViewImpl(activity, fragment, binding).apply {
+            messageLD.observe {
+                onMessage(it)
+            }
         }
     }
 

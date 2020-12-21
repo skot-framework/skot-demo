@@ -1,11 +1,8 @@
 package tech.skot.demo.screens
 
 import android.view.LayoutInflater
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.OnLifecycleEvent
-import tech.skot.core.SKLog
+import tech.skot.components.UiStateImpl
+import tech.skot.components.ViewImplWithState
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKFragment
 import tech.skot.demo.androidviewlegacy.databinding.AScreenInAStackBinding
@@ -16,14 +13,8 @@ import tech.skot.view.live.MutableSKLiveData
 class AScreenInAStackProxy(
     override val title: String,
     linesInitail: List<AScreenInAStackView.Line>
-):ScreenViewProxy<AScreenInAStackViewImpl>(),AScreenInAStackView {
+) : ScreenViewProxy<AScreenInAStackBinding>(), AScreenInAStackView {
 
-
-    override fun inflateAndLinkChildren(
-        layoutInflater: LayoutInflater,
-        activity: SKActivity,
-        fragment: SKFragment?
-    ) = AScreenInAStackViewImpl(activity, fragment, AScreenInAStackBinding.inflate(layoutInflater))
 
     private val linesLD = MutableSKLiveData(linesInitail)
     override var lines: List<AScreenInAStackView.Line>
@@ -32,45 +23,48 @@ class AScreenInAStackProxy(
             linesLD.postValue(newVal)
         }
 
-    var state:MutableMap<String,Any> = mutableMapOf()
+    override val scrollState = UiStateImpl<AScreenInAStackView.State>()
 
-    override fun linkTo(impl: AScreenInAStackViewImpl, lifeCycleOwner: LifecycleOwner) {
-        impl.onTitle(title)
+    override fun inflate(layoutInflater: LayoutInflater) =
+        AScreenInAStackBinding.inflate(layoutInflater)
 
-        linesLD.observe(lifeCycleOwner) {
-            impl.onLines(it)
-        }
-
-        impl.restoreState(state)
-        lifeCycleOwner.lifecycle.addObserver(object : LifecycleObserver {
-
-            @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
-            fun onDestroyView() {
-                SKLog.d("OnLifecycleEvent onDestroyView lifeCycleOwner ${lifeCycleOwner.hashCode()}")
-                impl.saveState(state)
+    override fun bindTo(
+        activity: SKActivity,
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: AScreenInAStackBinding
+    ) {
+        AScreenInAStackViewImpl(activity, fragment, binding).apply {
+            onTitle(title)
+            linesLD.observe() {
+                onLines(it)
             }
-        })
+
+            scrollState.bindTo(this)
+
+        }
     }
+
 }
 
 
-class AScreenInAStackViewImpl(activity: SKActivity, fragment: SKFragment?, binding: AScreenInAStackBinding) : ScreenViewImpl<AScreenInAStackBinding>(activity, fragment, binding) {
+class AScreenInAStackViewImpl(
+    activity: SKActivity,
+    fragment: SKFragment?,
+    binding: AScreenInAStackBinding
+) : ScreenViewImpl<AScreenInAStackBinding>(activity, fragment, binding),
+    ViewImplWithState<AScreenInAStackView.State> {
 
-    fun saveState(state:MutableMap<String,Any>) {
-        state.put("SCROLL", binding.sv.scrollY)
-    }
+    override fun saveState() =
+        AScreenInAStackView.State(scroll = binding.sv.scrollY)
 
-    fun restoreState(state: Map<String, Any>) {
-        SKLog.d("restoreState --- $state")
-        (state.get("SCROLL") as? Int?)?.let {
-            SKLog.d("restoreState --- scroll: $it")
-            binding.sv.post {
-                binding.sv.scrollY = it
-            }
+    override fun restoreState(state: AScreenInAStackView.State) {
+        binding.sv.post {
+            binding.sv.scrollY = state.scroll
         }
     }
 
-    fun onTitle(title:String) {
+    fun onTitle(title: String) {
         binding.tvTitle.text = title
     }
 

@@ -3,9 +3,11 @@ package tech.skot.demo.screens
 import android.view.LayoutInflater
 import androidx.lifecycle.LifecycleOwner
 import androidx.viewbinding.ViewBinding
+import tech.skot.components.UiStateImpl
 import tech.skot.core.SKLog
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKFragment
+import tech.skot.core.components.UiState
 import tech.skot.demo.androidviewlegacy.databinding.NavigationInStackBinding
 import tech.skot.view.extensions.setOnClick
 import tech.skot.view.legacy.*
@@ -15,21 +17,26 @@ class NavigationInStackProxy(
     override val stack: StackViewProxy,
     override val onTapPushScreen: () -> Unit,
     override val onTapBack: () -> Unit
-) : ScreenViewProxy<NavigationInStackViewImpl>(), NavigationInStackView {
+) : ScreenViewProxy<NavigationInStackBinding>(), NavigationInStackView {
 
-    override fun inflateAndLinkChildren(
-        layoutInflater: LayoutInflater,
+    override fun inflate(layoutInflater: LayoutInflater) = NavigationInStackBinding.inflate(layoutInflater)
+
+    override fun bindTo(
         activity: SKActivity,
-        fragment: SKFragment?
-    ) = NavigationInStackViewImpl(activity, fragment, NavigationInStackBinding.inflate(layoutInflater)).apply {
-        stack.linkTo(StackViewImpl(activity, fragment, binding.stack.id), fragment?.viewLifecycleOwner ?: activity)
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: NavigationInStackBinding
+    ) {
+        stack.bindTo(activity, fragment, layoutInflater, binding.stack.id)
+
+        NavigationInStackViewImpl(activity, fragment, binding).apply {
+            onOnTapPushScreen(onTapPushScreen)
+            onOnTapBack(onTapBack)
+
+        }
     }
 
 
-    override fun linkTo(impl: NavigationInStackViewImpl, lifeCycleOwner: LifecycleOwner) {
-        impl.onOnTapPushScreen(onTapPushScreen)
-        impl.onOnTapBack(onTapBack)
-    }
 }
 
 class NavigationInStackViewImpl(

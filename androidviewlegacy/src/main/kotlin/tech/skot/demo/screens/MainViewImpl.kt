@@ -14,24 +14,29 @@ import tech.skot.view.legacy.*
 
 class MainViewProxy(
     override val tabs:List<TabViewProxy>,
-    override val stack:StackViewProxy):ScreenViewProxy<MainViewImpl>(), MainView {
+    override val stack:StackViewProxy):ScreenViewProxy<MainBinding>(), MainView {
 
 
-    override fun inflateAndLinkChildren(
-        layoutInflater: LayoutInflater,
+    override fun inflate(layoutInflater: LayoutInflater) = MainBinding.inflate(layoutInflater)
+
+
+
+    override fun bindTo(
         activity: SKActivity,
-        fragment: SKFragment?
-    ): MainViewImpl {
-        return MainViewImpl(activity, fragment, MainBinding.inflate(layoutInflater)).apply {
-            inflateTabs(layoutInflater, tabs).forEach { (tabProxy, tabBinding) ->
-                tabProxy.linkTo(TabViewImpl(activity, fragment, tabBinding),fragment?.viewLifecycleOwner ?: activity)
-            }
-            stack.linkTo(StackViewImpl(activity, fragment, binding.stack.id),fragment?.viewLifecycleOwner ?: activity)
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: MainBinding
+    ) {
+
+        //Tabs
+        tabs.forEach {
+            val tabBinding = TabBinding.inflate(layoutInflater)
+            tabBinding.root.layoutParams = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT,1f)
+            binding.tabs.addView(tabBinding.root)
+            it.bindTo(activity, fragment, layoutInflater, tabBinding)
         }
-    }
 
-    override fun linkTo(impl: MainViewImpl, lifeCycleOwner: LifecycleOwner) {
-
+        stack.bindTo(activity, fragment, layoutInflater, binding.stack.id)
     }
 
 

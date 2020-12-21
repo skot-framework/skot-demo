@@ -1,5 +1,6 @@
 package tech.skot.demo.components
 
+import android.view.LayoutInflater
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.LifecycleOwner
 import tech.skot.components.ComponentViewImpl
@@ -15,7 +16,7 @@ class TabViewProxy(
     override val label: String,
     override val onTap: () -> Unit,
     selectedInitial:Boolean
-): ComponentViewProxy<TabViewImpl>(),TabView{
+): ComponentViewProxy<TabBinding>(),TabView{
 
 
     private val selectedLD: MutableSKLiveData<Boolean> = MutableSKLiveData(selectedInitial)
@@ -26,11 +27,18 @@ class TabViewProxy(
             selectedLD.postValue(newVal)
         }
 
-    override fun linkTo(impl: TabViewImpl, lifeCycleOwner: LifecycleOwner) {
-        impl.onLabel(label)
-        impl.onOnTap(onTap)
-        selectedLD.observe(lifeCycleOwner) {
-            impl.onSelected(it)
+    override fun bindTo(
+        activity: SKActivity,
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: TabBinding
+    ) {
+        TabViewImpl(activity, fragment, binding).apply {
+            onLabel(label)
+            onOnTap(onTap)
+            selectedLD.observe() {
+                onSelected(it)
+            }
         }
     }
 

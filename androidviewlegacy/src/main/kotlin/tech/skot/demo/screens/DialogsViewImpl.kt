@@ -14,23 +14,26 @@ class DialogsViewProxy(
     override val snackBar: SnackBarViewProxy,
     override val onTapAlert: () -> Unit,
     override val onTapSnack: () -> Unit
-):ScreenViewProxy<DialogsViewImpl>(), DialogsView {
+):ScreenViewProxy<DialogsBinding>(), DialogsView {
 
-    override fun inflateAndLinkChildren(
-        layoutInflater: LayoutInflater,
+    override fun inflate(layoutInflater: LayoutInflater) = DialogsBinding.inflate(layoutInflater)
+
+    override fun bindTo(
         activity: SKActivity,
-        fragment: SKFragment?
-    ): DialogsViewImpl {
-        val impl = DialogsViewImpl(activity, fragment, DialogsBinding.inflate(layoutInflater))
-        alert.linkTo(AlertViewImpl(activity, fragment), fragment?.viewLifecycleOwner ?: activity)
-        snackBar.linkTo(SnackBarViewImpl(activity, fragment, activity.findViewById(android.R.id.content)), fragment?.viewLifecycleOwner ?: activity)
-        return impl
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: DialogsBinding
+    ) {
+        DialogsViewImpl(activity, fragment, binding).apply {
+            onOnTapAlert(onTapAlert)
+            onOnTapSnack(onTapSnack)
+        }
+
+        alert.bindTo(activity, fragment, layoutInflater, Unit)
+        snackBar.bindTo(activity, fragment, layoutInflater, binding.root)
     }
 
-    override fun linkTo(impl: DialogsViewImpl, lifeCycleOwner: LifecycleOwner) {
-        impl.onOnTapAlert(onTapAlert)
-        impl.onOnTapSnack(onTapSnack)
-    }
+
 
 }
 

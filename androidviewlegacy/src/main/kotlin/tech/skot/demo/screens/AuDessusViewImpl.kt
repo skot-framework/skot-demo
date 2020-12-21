@@ -15,19 +15,22 @@ class AuDessusViewProxy(
     override val onTapOpenAnother:()->Unit,
     override val onTapClose:()->Unit,
     override val lines: List<AuDessusView.Line>,
-):ScreenViewProxy<AuDessusViewImpl>(),AuDessusView {
+):ScreenViewProxy<AuDessusBinding>(),AuDessusView {
 
-    override fun inflateAndLinkChildren(
-        layoutInflater: LayoutInflater,
+    override fun inflate(layoutInflater: LayoutInflater) = AuDessusBinding.inflate(layoutInflater)
+
+    override fun bindTo(
         activity: SKActivity,
-        fragment: SKFragment?
-    ) = AuDessusViewImpl(activity, fragment, AuDessusBinding.inflate(layoutInflater))
-
-    override fun linkTo(impl: AuDessusViewImpl, lifeCycleOwner: LifecycleOwner) {
-        impl.onTitle(title)
-        impl.onOnTapAnother(onTapOpenAnother)
-        impl.onOnTapClose(onTapClose)
-        impl.onLines(lines)
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: AuDessusBinding
+    ) {
+        AuDessusViewImpl(activity, fragment, binding).apply {
+            onTitle(title)
+            onOnTapAnother(onTapOpenAnother)
+            onOnTapClose(onTapClose)
+            onLines(lines)
+        }
     }
 
 }

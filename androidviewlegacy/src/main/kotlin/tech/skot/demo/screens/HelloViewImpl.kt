@@ -18,32 +18,34 @@ import tech.skot.view.live.MutableSKLiveData
 class HelloViewProxy(
     override val onTapBack:()->Unit,
     override val onOpenAnotherHello: () -> Unit
-): ScreenViewProxy<HelloViewImpl>(), HelloView {
+): ScreenViewProxy<HelloBinding>(), HelloView {
 
 
-    val onBackPressedLD = MutableSKLiveData<()->Unit>(onTapBack)
+//    val onBackPressedLD = MutableSKLiveData<()->Unit>(onTapBack)
 
-    override fun inflateAndLinkChildren(
-        layoutInflater: LayoutInflater,
+    override fun inflate(layoutInflater: LayoutInflater) = HelloBinding.inflate(layoutInflater)
+
+    override fun bindTo(
         activity: SKActivity,
-        fragment: SKFragment?
-    ) = HelloViewImpl(activity, fragment, HelloBinding.inflate(layoutInflater))
+        fragment: SKFragment?,
+        layoutInflater: LayoutInflater,
+        binding: HelloBinding
+    ) {
+        HelloViewImpl(activity, fragment, binding).apply {
+            onOnTapBack(onTapBack)
+            onOnOpenAnotherHello(onOpenAnotherHello)
+//
+//            lifecycle.addObserver(object : LifecycleObserver {
+//                @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+//                fun onResume() {
+//                    setBack(onTapBack)
+//                }
+//            })
 
 
-    override fun linkTo(impl: HelloViewImpl, lifeCycleOwner: LifecycleOwner) {
-        impl.onOnTapBack(onTapBack)
-        impl.onOnOpenAnotherHello(onOpenAnotherHello)
-
-        lifeCycleOwner.lifecycle.addObserver(object : LifecycleObserver {
-            @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-            fun onResume() {
-                impl.setBack(onTapBack)
-            }
-        })
-        onBackPressedLD.observe(lifeCycleOwner) {
-            SKLog.d("------ $key onBackPressedLD !!!")
         }
     }
+
 
 
 
@@ -60,7 +62,7 @@ class HelloViewImpl(activity: SKActivity, fragment: SKFragment?, binding:HelloBi
         binding.btnOpenAnother.setOnClick(onOpenAnotherHello)
     }
 
-    fun setBack(onBack:(()->Unit)?) {
-        activity.onBackPressedAction = onBack
-    }
+//    fun setBack(onBack:(()->Unit)?) {
+//        activity.onBackPressedAction = onBack
+//    }
 }
