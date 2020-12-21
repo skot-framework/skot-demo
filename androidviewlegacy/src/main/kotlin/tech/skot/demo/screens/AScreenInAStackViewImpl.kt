@@ -11,10 +11,11 @@ import tech.skot.core.components.SKFragment
 import tech.skot.demo.androidviewlegacy.databinding.AScreenInAStackBinding
 import tech.skot.view.legacy.ScreenViewImpl
 import tech.skot.view.legacy.ScreenViewProxy
+import tech.skot.view.live.MutableSKLiveData
 
 class AScreenInAStackProxy(
     override val title: String,
-    override val lines: List<AScreenInAStackView.Line>
+    linesInitail: List<AScreenInAStackView.Line>
 ):ScreenViewProxy<AScreenInAStackViewImpl>(),AScreenInAStackView {
 
 
@@ -24,12 +25,22 @@ class AScreenInAStackProxy(
         fragment: SKFragment?
     ) = AScreenInAStackViewImpl(activity, fragment, AScreenInAStackBinding.inflate(layoutInflater))
 
+    private val linesLD = MutableSKLiveData(linesInitail)
+    override var lines: List<AScreenInAStackView.Line>
+        get() = linesLD.value
+        set(newVal) {
+            linesLD.postValue(newVal)
+        }
 
     var state:MutableMap<String,Any> = mutableMapOf()
 
     override fun linkTo(impl: AScreenInAStackViewImpl, lifeCycleOwner: LifecycleOwner) {
         impl.onTitle(title)
-        impl.onLines(lines)
+
+        linesLD.observe(lifeCycleOwner) {
+            impl.onLines(it)
+        }
+
         impl.restoreState(state)
         lifeCycleOwner.lifecycle.addObserver(object : LifecycleObserver {
 

@@ -14,13 +14,9 @@ class SplashViewProxy(
     messageInitial:String
 ): ScreenViewProxy<SplashViewImpl>(), SplashView {
 
-    private val messageLD: MutableSKLiveData<String> = MutableSKLiveData(messageInitial)
+    private val messageLD = MutableSKLiveData(messageInitial)
+    override var message:String by messageLD
 
-    override var message: String
-        get() = messageLD.value
-        set(newVal) {
-            messageLD.postValue(newVal)
-        }
 
     override fun inflateAndLinkChildren(
         layoutInflater: LayoutInflater,

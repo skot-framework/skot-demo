@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import androidx.lifecycle.LifecycleOwner
+import androidx.viewbinding.ViewBinding
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKFragment
 import tech.skot.demo.androidviewlegacy.databinding.MainBinding
@@ -32,7 +33,6 @@ class MainViewProxy(
     override fun linkTo(impl: MainViewImpl, lifeCycleOwner: LifecycleOwner) {
 
     }
-
 
 
 }

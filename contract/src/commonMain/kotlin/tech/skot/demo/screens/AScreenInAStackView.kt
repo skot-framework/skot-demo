@@ -5,7 +5,7 @@ import tech.skot.core.components.ScreenView
 
 interface AScreenInAStackView : ScreenView {
     val title:String
-    val lines: List<Line>
+    var lines: List<Line>
 
     data class Line(val id:Long)
 }

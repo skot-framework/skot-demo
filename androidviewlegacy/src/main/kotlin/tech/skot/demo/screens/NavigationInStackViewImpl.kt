@@ -2,6 +2,8 @@ package tech.skot.demo.screens
 
 import android.view.LayoutInflater
 import androidx.lifecycle.LifecycleOwner
+import androidx.viewbinding.ViewBinding
+import tech.skot.core.SKLog
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKFragment
 import tech.skot.demo.androidviewlegacy.databinding.NavigationInStackBinding
