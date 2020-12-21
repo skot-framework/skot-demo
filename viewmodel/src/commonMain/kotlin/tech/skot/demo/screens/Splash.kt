@@ -25,4 +25,6 @@ class Splash : Screen<SplashView>() {
 
     }
 
+
+
 }

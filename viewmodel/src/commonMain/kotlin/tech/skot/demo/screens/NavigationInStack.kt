@@ -18,13 +18,17 @@ class NavigationInStack : Screen<NavigationInStackView>() {
         })
 
 
+    init {
+        view.onBackPressed = {
+            popScreen()
+        }
+    }
+
+
     var numOfNextScreen = 0
 
     private fun pushScreen() {
-        SKLog.d("push Screen !!!")
-
         content.push(AScreenInAStack(++numOfNextScreen))
-
     }
 
     private fun popScreen() {

@@ -26,10 +26,10 @@ class NavigationInStackProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: NavigationInStackBinding
-    ) {
+    ) : NavigationInStackViewImpl{
         stack.bindTo(activity, fragment, layoutInflater, binding.stack.id)
 
-        NavigationInStackViewImpl(activity, fragment, binding).apply {
+        return NavigationInStackViewImpl(activity, fragment, binding).apply {
             onOnTapPushScreen(onTapPushScreen)
             onOnTapBack(onTapBack)
 
@@ -51,7 +51,6 @@ class NavigationInStackViewImpl(
 
     fun onOnTapBack(onTapBack: () -> Unit) {
         binding.btnBack.setOnClick(onTapBack)
-        activity.onBackPressedAction = onTapBack
     }
 
 }

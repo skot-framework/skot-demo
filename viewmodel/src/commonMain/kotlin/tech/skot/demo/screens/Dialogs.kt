@@ -20,4 +20,9 @@ class Dialogs : Screen<DialogsView>() {
             alert.show("Test d'alerte", "elle est cancellable")
         })
 
+    init {
+        view.onBackPressed = {
+            logD("Back from : \"Dialogs\"")
+        }
+    }
 }

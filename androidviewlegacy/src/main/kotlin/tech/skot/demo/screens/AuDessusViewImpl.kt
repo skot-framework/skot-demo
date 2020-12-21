@@ -24,14 +24,14 @@ class AuDessusViewProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: AuDessusBinding
-    ) {
+    ) =
         AuDessusViewImpl(activity, fragment, binding).apply {
             onTitle(title)
             onOnTapAnother(onTapOpenAnother)
             onOnTapClose(onTapClose)
             onLines(lines)
         }
-    }
+
 
 }
 

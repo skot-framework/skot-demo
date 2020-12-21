@@ -33,7 +33,7 @@ class AScreenInAStackProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: AScreenInAStackBinding
-    ) {
+    ) =
         AScreenInAStackViewImpl(activity, fragment, binding).apply {
             onTitle(title)
             linesLD.observe() {
@@ -43,7 +43,7 @@ class AScreenInAStackProxy(
             scrollState.bindTo(this)
 
         }
-    }
+
 
 }
 

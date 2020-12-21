@@ -23,14 +23,16 @@ class DialogsViewProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: DialogsBinding
-    ) {
-        DialogsViewImpl(activity, fragment, binding).apply {
+    ) :DialogsViewImpl {
+        alert.bindTo(activity, fragment, layoutInflater, Unit)
+        snackBar.bindTo(activity, fragment, layoutInflater, binding.root)
+
+        return DialogsViewImpl(activity, fragment, binding).apply {
             onOnTapAlert(onTapAlert)
             onOnTapSnack(onTapSnack)
         }
 
-        alert.bindTo(activity, fragment, layoutInflater, Unit)
-        snackBar.bindTo(activity, fragment, layoutInflater, binding.root)
+
     }
 
 

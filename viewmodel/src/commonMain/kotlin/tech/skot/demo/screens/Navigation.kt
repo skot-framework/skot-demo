@@ -11,7 +11,6 @@ class Navigation : Screen<NavigationView>() {
         openModale()
     })
 
-
     private fun openModale() {
         SKLog.d("open Modale !!!")
         RootStack.push(AuDessus(1))

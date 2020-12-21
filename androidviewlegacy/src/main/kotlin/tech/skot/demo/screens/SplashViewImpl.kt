@@ -24,13 +24,13 @@ class SplashViewProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: SplashBinding
-    ) {
+    ) =
         SplashViewImpl(activity, fragment, binding).apply {
             messageLD.observe {
                 onMessage(it)
             }
         }
-    }
+
 
 
 

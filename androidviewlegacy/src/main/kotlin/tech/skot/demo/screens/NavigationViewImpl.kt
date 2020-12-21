@@ -19,11 +19,11 @@ class NavigationProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: NavigationBinding
-    ) {
+    ) =
         NavigationViewImpl(activity, fragment, binding).apply {
             onOnTapOpenModale(onTapOpenModale)
         }
-    }
+
 
 }
 

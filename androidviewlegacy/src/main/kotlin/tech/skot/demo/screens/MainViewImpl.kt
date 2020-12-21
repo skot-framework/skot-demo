@@ -26,7 +26,7 @@ class MainViewProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: MainBinding
-    ) {
+    ):MainViewImpl {
 
         //Tabs
         tabs.forEach {
@@ -37,6 +37,8 @@ class MainViewProxy(
         }
 
         stack.bindTo(activity, fragment, layoutInflater, binding.stack.id)
+
+        return MainViewImpl(activity, fragment, binding)
     }
 
 
@@ -44,15 +46,4 @@ class MainViewProxy(
 
 
 class MainViewImpl(activity: SKActivity, fragment: SKFragment?, binding: MainBinding):ScreenViewImpl<MainBinding>(activity, fragment, binding) {
-        fun inflateTabs(layoutInflater: LayoutInflater, tabs:List<TabViewProxy>):List<Pair<TabViewProxy, TabBinding>>{
-            binding.tabs.removeAllViews()
-            return tabs.map {
-                val bind = TabBinding.inflate(layoutInflater)
-                bind.root.apply {
-                    layoutParams = LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT,1f)
-                }
-                binding.tabs.addView(bind.root)
-                Pair(it, bind)
-            }
-        }
 }

@@ -39,8 +39,6 @@ class Main : Screen<MainView>() {
 
     override val view = viewInjector.main(tabs = tabs.map { it.view }, stack = stack.view)
 
-
-
     private val navigationScreen by lazy {
         Navigation()
     }
@@ -74,5 +72,7 @@ class Main : Screen<MainView>() {
             it.view.selected = it == tabDialogs
         }
     }
+
+
 
 }

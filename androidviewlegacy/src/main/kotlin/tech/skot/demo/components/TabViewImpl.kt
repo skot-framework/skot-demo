@@ -32,7 +32,7 @@ class TabViewProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: TabBinding
-    ) {
+    ) =
         TabViewImpl(activity, fragment, binding).apply {
             onLabel(label)
             onOnTap(onTap)
@@ -40,7 +40,7 @@ class TabViewProxy(
                 onSelected(it)
             }
         }
-    }
+
 
 }
 

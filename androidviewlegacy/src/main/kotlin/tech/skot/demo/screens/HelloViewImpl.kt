@@ -30,21 +30,12 @@ class HelloViewProxy(
         fragment: SKFragment?,
         layoutInflater: LayoutInflater,
         binding: HelloBinding
-    ) {
+    ) =
         HelloViewImpl(activity, fragment, binding).apply {
             onOnTapBack(onTapBack)
             onOnOpenAnotherHello(onOpenAnotherHello)
-//
-//            lifecycle.addObserver(object : LifecycleObserver {
-//                @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
-//                fun onResume() {
-//                    setBack(onTapBack)
-//                }
-//            })
-
-
         }
-    }
+
 
 
 
