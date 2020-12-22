@@ -7,14 +7,17 @@ import tech.skot.demo.di.viewInjector
 
 class Navigation : Screen<NavigationView>() {
 
-    override val view = viewInjector.navigation(onTapOpenModale = {
-        openModale()
-    })
+
+    override val view = viewInjector.navigation(
+        onTapOpenModale = {
+            openModale()
+        })
 
     private fun openModale() {
         SKLog.d("open Modale !!!")
         RootStack.push(AuDessus(1))
 //        root?.stack?.push(AuDessus(1))
     }
+
 
 }

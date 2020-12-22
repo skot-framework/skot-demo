@@ -90,10 +90,6 @@
 		BCA86B6925753C5300B63ADC /* components */ = {
 			isa = PBXGroup;
 			children = (
-				BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */,
-				BCA86B6A25753CAD00B63ADC /* StackViewImpl.swift */,
-				BCA86B7625754AD500B63ADC /* AlertViewImpl.swift */,
-				BCA86B782575505700B63ADC /* SnackBarViewImpl.swift */,
 				BCA86B7A2575515C00B63ADC /* TabViewImpl.swift */,
 			);
 			path = components;
@@ -119,6 +115,7 @@
 		BCDF36A8255322BF00C842C5 /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				BCE07E742591F3C400924DC5 /* core */,
 				BCA86B6925753C5300B63ADC /* components */,
 				BCFCCC44255828DB00E29E5C /* screens */,
 				BCDF36A9255322BF00C842C5 /* iosAppApp.swift */,
@@ -138,6 +135,17 @@
 				BCDF36B0255322C000C842C5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCE07E742591F3C400924DC5 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */,
+				BCA86B6A25753CAD00B63ADC /* StackViewImpl.swift */,
+				BCA86B7625754AD500B63ADC /* AlertViewImpl.swift */,
+				BCA86B782575505700B63ADC /* SnackBarViewImpl.swift */,
+			);
+			path = core;
 			sourceTree = "<group>";
 		};
 		BCFCCC44255828DB00E29E5C /* screens */ = {

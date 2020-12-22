@@ -1,6 +1,9 @@
 package tech.skot.demo.di
 
 import tech.skot.core.components.*
+import tech.skot.core.components.presented.AlertView
+import tech.skot.core.components.presented.BottomSheetView
+import tech.skot.core.components.presented.SnackBarView
 
 import tech.skot.demo.components.TabView
 import tech.skot.demo.components.TabViewProxy
@@ -30,11 +33,14 @@ class ViewInjectorImpl : ViewInjector {
     override fun dialogs(
         alert: AlertView,
         snackBar: SnackBarView,
+        bottomSheet: BottomSheetView,
         onTapSnack: () -> Unit,
-        onTapAlert: () -> Unit
+        onTapAlert: () -> Unit,
+        onTapShowBottomSheet: () -> Unit,
     ): DialogsView {
-        return DialogsViewProxy(alert = alert as AlertViewProxy, snackBar = snackBar as SnackBarViewProxy, onTapSnack = onTapSnack, onTapAlert = onTapAlert)
+        return DialogsViewProxy(alert = alert as AlertViewProxy, snackBar = snackBar as SnackBarViewProxy, bottomSheet = bottomSheet as BottomSheetViewProxy, onTapSnack = onTapSnack, onTapAlert = onTapAlert, onTapShowBottomSheet = onTapShowBottomSheet)
     }
+
 
     override fun navigation(onTapOpenModale: () -> Unit): NavigationView {
         return NavigationProxy(onTapOpenModale)
@@ -65,5 +71,7 @@ class ViewInjectorImpl : ViewInjector {
     ): AScreenInAStackView {
         return AScreenInAStackProxy(title, lines)
     }
+
+    override fun bottomSheetExample(onTapDismiss: () -> Unit) = BottomSheetExampleViewProxy(onTapDismiss)
 
 }

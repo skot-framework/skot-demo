@@ -2,7 +2,8 @@ package tech.skot.demo.screens
 
 import tech.skot.core.components.ScreenView
 
+interface BottomSheetExampleView:ScreenView {
 
-interface NavigationView : ScreenView {
-     val onTapOpenModale: () -> Unit
+    val onTapDismiss:()->Unit
+
 }
