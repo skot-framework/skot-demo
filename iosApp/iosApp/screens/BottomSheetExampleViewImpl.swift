@@ -30,7 +30,8 @@ struct BottomSheetExampleUI: View {
         VStack {
             Text("Bottom Sheet")
             Button(action: state.onTapDismiss, label: { Text("Dismiss") } )
-        }
+        }.frame(maxWidth: .infinity)
+        .background(Color.white)
         
     }
 }

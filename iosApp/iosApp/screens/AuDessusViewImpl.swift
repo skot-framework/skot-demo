@@ -63,72 +63,43 @@ struct AuDessusUI : View {
     var body: some View {
         
         VStack {
-          
-        
-            VStack {
-                HStack {
-                    Text(state.title)
-                    Button(action: state.onTapOpenAnother, label: { Text("Open") })
-                    Button(action: state.onTapClose, label: { Text("close") })
-                }
-                
-                ScrollViewReader { scrollView in
-                ScrollView(.vertical) {
-                    
-                    
-                               
-                    
-                                LazyVStack {
-                                    GeometryReader { geometry in
-                                        ForEach(state.lines, id:\.id) { line in
-                                        HStack {
-                                            Text("Ligne " + line.id.description)
-                                        }
-                                    }
-                                   
-                                        let offset = geometry.frame(in: .named("scroll")).minY
-                                                                Color.clear.preference(key: ScrollOffsetPreferenceKey.self, value: offset)
-                                        let height = geometry.frame(in: .named("scroll")).height
-                                                                Color.clear.preference(key: TotalHeightPreferenceKey.self, value: height)
-                                }
-                                /*.id("liste")
-                                .onAppear {
-                                    //scrollView.scrollTo(state.lines[state.lines.endIndex-1].id)
-                                    scrollView.scrollTo("liste",anchor:UnitPoint(x: 0, y: state.scroll))
-                                }
-                                .onDisappear {
-                                    print("offset: " + geometry.frame(in: .local).minY.description)
-                                }*/
-                                
-                    }.background(Color.yellow)
-                        }
-                .coordinateSpace(name: "scroll")
-                            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
-                                print("offset  " + value.description)
-                            }
-                .onPreferenceChange(TotalHeightPreferenceKey.self) { value in
-                    print("height" + value.description)
-                }
-                }
-                
-              /*  List(state.lines, id:\.id) { line in
-                    HStack {
-                        Text("Ligne " + line.id.description).onAppear {
-                            print("compute ligne "+line.id.description)
+            Text(state.title)
+            HStack {
+                Button(action: state.onTapOpenAnother, label: { Text("Open") })
+                Button(action: state.onTapClose, label: { Text("close") })
+            }.frame(maxWidth:.infinity)
+            ScrollView {
+                LazyVStack(alignment: HorizontalAlignment.leading) {
+                    ForEach(state.lines, id:\.id) { line in
+                        HStack() {
+                            Text("Ligne " + line.id.description)
                         }
                     }
-                    
                 }
-                */
-                
-                
             }
+            .frame(maxWidth: .infinity, maxHeight:.infinity)
+
             
+        }.frame(maxWidth: .infinity, maxHeight:.infinity).background(Color.white)
       
-        }
+        
         
     
     }
     
     
+}
+
+
+struct AudessusUI_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            AuDessusUI(state: AuDessusViewImpl(title: "Au dessus n° ???", onTapOpenAnother: {
+                
+            }, onTapClose: {
+                
+            }, lines: [AuDessusViewLine(id: 1), AuDessusViewLine(id: 2), AuDessusViewLine(id: 3)]))
+            
+        }
+    }
 }

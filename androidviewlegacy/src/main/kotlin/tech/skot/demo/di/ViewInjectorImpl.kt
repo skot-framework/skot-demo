@@ -1,9 +1,7 @@
 package tech.skot.demo.di
 
 import tech.skot.core.components.*
-import tech.skot.core.components.presented.AlertView
-import tech.skot.core.components.presented.BottomSheetView
-import tech.skot.core.components.presented.SnackBarView
+import tech.skot.core.components.presented.*
 
 import tech.skot.demo.components.TabView
 import tech.skot.demo.components.TabViewProxy
@@ -15,8 +13,6 @@ class ViewInjectorImpl : ViewInjector {
     override fun tabView(label: String, onTap: () -> Unit, selectedInitial: Boolean): TabView {
         return TabViewProxy(label, onTap, selectedInitial)
     }
-
-
 
 
     override fun splash(message: String): SplashView {
@@ -33,10 +29,22 @@ class ViewInjectorImpl : ViewInjector {
         bottomSheet: BottomSheetView,
         onTapSnack: () -> Unit,
         onTapAlert: () -> Unit,
-        onTapShowBottomSheet: () -> Unit,
+        onTapAlertCustomButton: () -> Unit,
+        onTapAlertTwoButtons: () -> Unit,
+        onTapShowBottomSheet: () -> Unit
     ): DialogsView {
-        return DialogsViewProxy(alert = alert as AlertViewProxy, snackBar = snackBar as SnackBarViewProxy, bottomSheet = bottomSheet as BottomSheetViewProxy, onTapSnack = onTapSnack, onTapAlert = onTapAlert, onTapShowBottomSheet = onTapShowBottomSheet)
+        return DialogsViewProxy(
+            alert = alert as AlertViewProxy,
+            snackBar = snackBar as SnackBarViewProxy,
+            bottomSheet = bottomSheet as BottomSheetViewProxy,
+            onTapSnack = onTapSnack,
+            onTapAlert = onTapAlert,
+            onTapAlertCustomButton = onTapAlertCustomButton,
+            onTapAlertTwoButtons = onTapAlertTwoButtons,
+            onTapShowBottomSheet = onTapShowBottomSheet
+        )
     }
+
 
 
     override fun navigation(onTapOpenModale: () -> Unit): NavigationView {
@@ -46,7 +54,7 @@ class ViewInjectorImpl : ViewInjector {
     override fun navigationInStack(
         stack: StackView,
         onTapPushScreen: () -> Unit,
-        onTapBack:()->Unit
+        onTapBack: () -> Unit
     ): NavigationInStackView {
         return NavigationInStackProxy(stack as StackViewProxy, onTapPushScreen, onTapBack)
     }
@@ -69,6 +77,7 @@ class ViewInjectorImpl : ViewInjector {
         return AScreenInAStackProxy(title, lines)
     }
 
-    override fun bottomSheetExample(onTapDismiss: () -> Unit) = BottomSheetExampleViewProxy(onTapDismiss)
+    override fun bottomSheetExample(onTapDismiss: () -> Unit) =
+        BottomSheetExampleViewProxy(onTapDismiss)
 
 }

@@ -45,6 +45,8 @@ class NavigationInStackViewImpl(
     binding: NavigationInStackBinding
 ) : ScreenViewImpl<NavigationInStackBinding>(activity, fragment, binding) {
 
+    override fun windowInsetPaddingTop() = true
+
     fun onOnTapPushScreen(onTapPushScreen: () -> Unit) {
         binding.btnPushScreen.setOnClick(onTapPushScreen)
     }

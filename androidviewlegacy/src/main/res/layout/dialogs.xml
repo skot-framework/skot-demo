@@ -9,7 +9,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Alert"/>
-
+    <Button
+        android:id="@+id/btnAlertCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alert Custom Button"/>
+    <Button
+        android:id="@+id/btnAlertTwoButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Alert Two Buttons"/>
     <Button
         android:id="@+id/btnSnack"
         android:layout_width="match_parent"

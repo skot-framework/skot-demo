@@ -7,8 +7,5 @@ class BottomSheetExample : Screen<BottomSheetExampleView>() {
 
     override val view = viewInjector.bottomSheetExample { dismiss() }
 
-    private fun dismiss() {
-        logD("DISMISS !!!!!!")
-    }
 
 }

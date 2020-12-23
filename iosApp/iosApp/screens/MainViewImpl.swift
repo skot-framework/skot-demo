@@ -40,13 +40,33 @@ struct MainUI: View {
         return VStack {
             state.stackImpl.ui()
                 .frame(maxHeight:.infinity)
-            
+            Spacer()
             HStack {
                 
                 ForEach(state.tabsImpl) { tab in
                     tab.ui().frame(maxWidth:.infinity)
                 }
             }
+        }
+    }
+}
+
+struct MainUI_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            MainUI(state: MainViewImpl(stack: StackViewImpl(),
+                                       tabs: [
+                                        TabViewImpl(label:"Navi",onTap: {
+                                            print("Tap on Navi")
+                                        }, selected: false),
+                                        TabViewImpl(label:"NavInStack",onTap: {
+                                            print("Tap on NavInStack")
+                                        }, selected: true),
+                                        TabViewImpl(label:"Dial",onTap: {
+                                            print("Tap on Dial")
+                                        }, selected: false),
+                                   ]))
+            
         }
     }
 }

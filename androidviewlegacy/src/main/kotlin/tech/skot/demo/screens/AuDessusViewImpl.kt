@@ -38,6 +38,8 @@ class AuDessusViewProxy(
 
 class AuDessusViewImpl(activity: SKActivity, fragment: SKFragment?, binding:AuDessusBinding) : ScreenViewImpl<AuDessusBinding>(activity, fragment, binding){
 
+    override fun windowInsetPaddingTop() = true
+
     fun onTitle(title:String) {
         binding.tvTitle.text = title
     }

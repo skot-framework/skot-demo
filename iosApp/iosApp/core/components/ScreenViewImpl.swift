@@ -6,3 +6,10 @@
 //
 
 import Foundation
+import shared
+import SwiftUI
+
+class ScreenViewImpl : ComponentViewImpl,CoreScreenView  {
+    var onBackPressed: (() -> Void)?
+    
+}

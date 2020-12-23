@@ -8,9 +8,13 @@
 import shared
 import SwiftUI
 
-class SnackBarViewImpl: ComponentViewImpl, SnackBarView, ObservableObject {
+class SnackBarViewImpl: ComponentViewImpl, CoreSnackBarView, ObservableObject {
     
-    @Published var state:SnackBarViewShown?
+    func onDismiss() {
+        state = nil
+    }
+    
+    @Published var state:CoreSnackBarViewShown?
     
     override func ui() -> AnyView {
         AnyView(SnackBarUI(state:self))
@@ -27,9 +31,16 @@ struct SnackBarUI:View {
         if let sta = state.state {
             HStack {
                 Text(sta.message)
+                    .frame(maxWidth:.infinity)
+                if let action = sta.action {
+                    Button(action: {action.action()
+                        state.onDismiss()
+                    }, label: {
+                        Text(action.label)
+                    })
+                }
             }.background(Color.blue).foregroundColor(Color.white)
-            .padding(12)
-            .frame(alignment:.top)
+            .frame(maxWidth:.infinity, alignment:.top)
         }
         
     }

@@ -11,7 +11,8 @@ import SwiftUI
 
 
 
-class StackViewImpl: ComponentViewImpl, StackView, ObservableObject {
+class StackViewImpl: ComponentViewImpl, CoreStackView, ObservableObject {
+
     
     @Published var screens:Array<CoreScreenView>
     

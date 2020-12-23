@@ -23,3 +23,8 @@ class ComponentViewImpl: CoreComponentView {
         AnyView(Text("Vide"))
     }
 }
+
+class UIStateImpl:CoreUiState {
+    var value: Any?
+    
+}

@@ -5,7 +5,6 @@ import tech.skot.core.SKLog
 import tech.skot.core.di.BaseInjector
 import tech.skot.core.di.injector
 import tech.skot.demo.di.androidviewModule
-import tech.skot.demo.di.rootModule
 import tech.skot.demo.di.viewmodelAndroidModule
 import tech.skot.demo.start
 import tech.skot.di.coreViewModule
@@ -25,7 +24,6 @@ class DemoApplication : Application() {
                 coreViewModule,
                 viewmodelAndroidModule,
                 androidviewModule,
-                rootModule
             )
         )
 

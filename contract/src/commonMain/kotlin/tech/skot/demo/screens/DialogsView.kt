@@ -11,6 +11,8 @@ interface DialogsView : ScreenView {
     val bottomSheet: BottomSheetView
 
     val onTapAlert: () -> Unit
+    val onTapAlertCustomButton:() -> Unit
+    val onTapAlertTwoButtons:()->Unit
     val onTapSnack: () -> Unit
     val onTapShowBottomSheet: () -> Unit
 }

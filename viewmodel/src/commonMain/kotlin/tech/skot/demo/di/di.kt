@@ -8,7 +8,3 @@ import tech.skot.core.di.module
 val viewInjector: ViewInjector by lazy {
     get<ViewInjector>()
 }
-
-val rootModule = module<BaseInjector> {
-    single { tech.skot.core.components.RootStack() }
-}

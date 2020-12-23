@@ -20,6 +20,8 @@ interface ViewInjector {
         bottomSheet: BottomSheetView,
         onTapSnack: () -> Unit,
         onTapAlert: () -> Unit,
+        onTapAlertCustomButton: () -> Unit,
+        onTapAlertTwoButtons: () -> Unit,
         onTapShowBottomSheet: () -> Unit,
     ): DialogsView
 

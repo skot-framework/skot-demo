@@ -11,7 +11,7 @@ import SwiftUI
 class AScreenInAStackViewImpl: ScreenViewImpl, AScreenInAStackView, ObservableObject {
     var scrollState: CoreUiState
     
-    var lines: [AScreenInAStackViewLine]
+    @Published var lines: [AScreenInAStackViewLine]
     
     let title: String
     
@@ -24,7 +24,7 @@ class AScreenInAStackViewImpl: ScreenViewImpl, AScreenInAStackView, ObservableOb
         self.lines = lines
         self.scrollState = UIStateImpl()
         super.init()
-        
+        //self.scrollState.value = AScreenInAStackViewState(scroll: 0)
     }
     
     override func ui() -> AnyView {
@@ -61,59 +61,22 @@ struct AScreenInAStackUI : View {
     var body: some View {
         
         VStack {
-          
-        
-            VStack {
-                HStack {
-                    Text(state.title)
-                }
-                
-                ScrollViewReader { scrollView in
-                ScrollView(.vertical) {
-                    
-                    
-                               
-                    
-                                LazyVStack {
-                                    GeometryReader { geometry in
-                                        ForEach(state.lines, id:\.id) { line in
-                                        HStack {
-                                            Text("Ligne " + line.id.description)
-                                        }
-                                    }
-                                   
-                                        let offset = geometry.frame(in: .named("scroll")).minY
-                                                                Color.clear.preference(key: ScrollOffsetPreferenceKey.self, value: offset)
-                                        let height = geometry.frame(in: .named("scroll")).height
-                                                                Color.clear.preference(key: TotalHeightPreferenceKey.self, value: height)
-                                }
-                                /*.id("liste")
-                                .onAppear {
-                                    //scrollView.scrollTo(state.lines[state.lines.endIndex-1].id)
-                                    scrollView.scrollTo("liste",anchor:UnitPoint(x: 0, y: state.scroll))
-                                }
-                                .onDisappear {
-                                    print("offset: " + geometry.frame(in: .local).minY.description)
-                                }*/
-                                
-                    }.background(Color.yellow)
-                        }
-                .coordinateSpace(name: "scroll")
-                            .onPreferenceChange(ScrollOffsetPreferenceKey.self) { value in
-                                print("offset  " + value.description)
+            Text(state.title)
+                    ScrollView {
+                        
+                    LazyVStack(alignment: HorizontalAlignment.leading) {
+                        ForEach(state.lines, id:\.id) { line in
+                            HStack() {
+                                Text("Ligne " + line.id.description)
                             }
-                .onPreferenceChange(TotalHeightPreferenceKey.self) { value in
-                    print("height" + value.description)
-                }
-                }
-            }
+                        }
+                    }.frame(maxWidth: .infinity, maxHeight:.infinity)
             
+        }.frame(maxWidth: .infinity, maxHeight:.infinity).background(Color.white)
       
-        }
-        
-    
     }
-    
+    }
+        
     
 }
 

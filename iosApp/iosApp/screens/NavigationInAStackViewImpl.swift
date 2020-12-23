@@ -41,6 +41,7 @@ struct NavigationInAStackUI: View {
                 Button(action: state.onTapPushScreen, label: { Text("Push Screen") } )
                 Button(action: state.onTapBack, label: { Text("Back") } )
             }
+            Spacer()
             state.stackImpl.ui()
                 .frame(maxHeight:.infinity)
         }

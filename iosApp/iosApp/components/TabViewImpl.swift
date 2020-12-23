@@ -13,7 +13,7 @@ class TabViewImpl: ComponentViewImpl, shared.TabView, Identifiable, ObservableOb
     
     let label: String
     let onTap: () -> Void
-    var selected: Bool
+    @Published var selected: Bool
     
     init(
         label:String,
@@ -36,14 +36,16 @@ struct TabUI: View {
     @ObservedObject var state:TabViewImpl
     
     var body: some View {
-        var textStyle:Font.Weight
+        
+        var textColor:Color
         if (state.selected) {
-            textStyle = Font.Weight.bold
+            textColor = Color.black
         }
         else {
-            textStyle = Font.Weight.light
+            textColor = Color.gray
         }
         return Button(
-            action: state.onTap, label: { Text(state.label).fontWeight( textStyle) })
+            action: state.onTap, label: { Text(state.label).foregroundColor(textColor) })
+            .padding(4)
     }
 }
