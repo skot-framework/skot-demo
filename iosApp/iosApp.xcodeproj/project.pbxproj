@@ -10,12 +10,8 @@
 		BC2A4B51255C271A00DCA879 /* ComponentViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */; };
 		BC85251F25768F2C008D5A6A /* TestUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC85251E25768F2C008D5A6A /* TestUI.swift */; };
 		BC907EB42553EBE100BA3B18 /* ViewInjectorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC907EB32553EBE100BA3B18 /* ViewInjectorImpl.swift */; };
-		BC9CD38D257FE9DF006E0E3A /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9CD38C257FE9DF006E0E3A /* shared.xcframework */; };
-		BC9CD38E257FE9DF006E0E3A /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC9CD38C257FE9DF006E0E3A /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BCA86B6B25753CAD00B63ADC /* StackViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B6A25753CAD00B63ADC /* StackViewImpl.swift */; };
 		BCA86B6D257543A000B63ADC /* SplashViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B6C257543A000B63ADC /* SplashViewImpl.swift */; };
-		BCA86B6F257544D700B63ADC /* RootViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B6E257544D700B63ADC /* RootViewImpl.swift */; };
-		BCA86B71257548C200B63ADC /* HelloViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B70257548C200B63ADC /* HelloViewImpl.swift */; };
 		BCA86B732575491B00B63ADC /* AuDessusViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B722575491B00B63ADC /* AuDessusViewImpl.swift */; };
 		BCA86B7525754A3800B63ADC /* DialogsViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B7425754A3800B63ADC /* DialogsViewImpl.swift */; };
 		BCA86B7725754AD500B63ADC /* AlertViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B7625754AD500B63ADC /* AlertViewImpl.swift */; };
@@ -27,6 +23,15 @@
 		BCDF36AC255322BF00C842C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDF36AB255322BF00C842C5 /* ContentView.swift */; };
 		BCDF36AE255322C000C842C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDF36AD255322C000C842C5 /* Assets.xcassets */; };
 		BCDF36B1255322C000C842C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDF36B0255322C000C842C5 /* Preview Assets.xcassets */; };
+		BCE07E782592296000924DC5 /* RootStackViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE07E772592296000924DC5 /* RootStackViewImpl.swift */; };
+		BCE07E7C25922CB200924DC5 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE07E7B25922CB200924DC5 /* shared.xcframework */; };
+		BCE07E7D25922CB200924DC5 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCE07E7B25922CB200924DC5 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BCE07E7F2592397B00924DC5 /* BottomSheetViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE07E7E2592397B00924DC5 /* BottomSheetViewImpl.swift */; };
+		BCE07E8125923D3D00924DC5 /* BottomSheetExampleViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE07E8025923D3D00924DC5 /* BottomSheetExampleViewImpl.swift */; };
+		BCE07E8325923D9700924DC5 /* ScreenViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE07E8225923D9700924DC5 /* ScreenViewImpl.swift */; };
+		BCE07E8525923F8500924DC5 /* NavigationInAStackViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE07E8425923F8500924DC5 /* NavigationInAStackViewImpl.swift */; };
+		BCE07E87259241AC00924DC5 /* AScreenInAStackViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE07E86259241AC00924DC5 /* AScreenInAStackViewImpl.swift */; };
+		BCE07E892592575800924DC5 /* Injector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCE07E882592575800924DC5 /* Injector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -36,7 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BC9CD38E257FE9DF006E0E3A /* shared.xcframework in Embed Frameworks */,
+				BCE07E7D25922CB200924DC5 /* shared.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,11 +52,8 @@
 		BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentViewImpl.swift; sourceTree = "<group>"; };
 		BC85251E25768F2C008D5A6A /* TestUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUI.swift; sourceTree = "<group>"; };
 		BC907EB32553EBE100BA3B18 /* ViewInjectorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInjectorImpl.swift; sourceTree = "<group>"; };
-		BC9CD38C257FE9DF006E0E3A /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../shared/build/framework/shared.xcframework; sourceTree = "<group>"; };
 		BCA86B6A25753CAD00B63ADC /* StackViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackViewImpl.swift; sourceTree = "<group>"; };
 		BCA86B6C257543A000B63ADC /* SplashViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewImpl.swift; sourceTree = "<group>"; };
-		BCA86B6E257544D700B63ADC /* RootViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewImpl.swift; sourceTree = "<group>"; };
-		BCA86B70257548C200B63ADC /* HelloViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloViewImpl.swift; sourceTree = "<group>"; };
 		BCA86B722575491B00B63ADC /* AuDessusViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuDessusViewImpl.swift; sourceTree = "<group>"; };
 		BCA86B7425754A3800B63ADC /* DialogsViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogsViewImpl.swift; sourceTree = "<group>"; };
 		BCA86B7625754AD500B63ADC /* AlertViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewImpl.swift; sourceTree = "<group>"; };
@@ -65,6 +67,14 @@
 		BCDF36AD255322C000C842C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCDF36B0255322C000C842C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BCDF36B2255322C000C842C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCE07E772592296000924DC5 /* RootStackViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootStackViewImpl.swift; sourceTree = "<group>"; };
+		BCE07E7B25922CB200924DC5 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../shared/build/framework/debug/shared.xcframework; sourceTree = "<group>"; };
+		BCE07E7E2592397B00924DC5 /* BottomSheetViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetViewImpl.swift; sourceTree = "<group>"; };
+		BCE07E8025923D3D00924DC5 /* BottomSheetExampleViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetExampleViewImpl.swift; sourceTree = "<group>"; };
+		BCE07E8225923D9700924DC5 /* ScreenViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewImpl.swift; sourceTree = "<group>"; };
+		BCE07E8425923F8500924DC5 /* NavigationInAStackViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationInAStackViewImpl.swift; sourceTree = "<group>"; };
+		BCE07E86259241AC00924DC5 /* AScreenInAStackViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AScreenInAStackViewImpl.swift; sourceTree = "<group>"; };
+		BCE07E882592575800924DC5 /* Injector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC9CD38D257FE9DF006E0E3A /* shared.xcframework in Frameworks */,
+				BCE07E7C25922CB200924DC5 /* shared.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +92,7 @@
 		BC907EAA2553E48D00BA3B18 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC9CD38C257FE9DF006E0E3A /* shared.xcframework */,
+				BCE07E7B25922CB200924DC5 /* shared.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -140,24 +150,45 @@
 		BCE07E742591F3C400924DC5 /* core */ = {
 			isa = PBXGroup;
 			children = (
-				BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */,
-				BCA86B6A25753CAD00B63ADC /* StackViewImpl.swift */,
-				BCA86B7625754AD500B63ADC /* AlertViewImpl.swift */,
-				BCA86B782575505700B63ADC /* SnackBarViewImpl.swift */,
+				BCE07E752592292200924DC5 /* components */,
+				BCE07E882592575800924DC5 /* Injector.swift */,
 			);
 			path = core;
+			sourceTree = "<group>";
+		};
+		BCE07E752592292200924DC5 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				BCA86B6A25753CAD00B63ADC /* StackViewImpl.swift */,
+				BC2A4B50255C271A00DCA879 /* ComponentViewImpl.swift */,
+				BCE07E762592293100924DC5 /* presented */,
+				BCE07E772592296000924DC5 /* RootStackViewImpl.swift */,
+				BCE07E8225923D9700924DC5 /* ScreenViewImpl.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		BCE07E762592293100924DC5 /* presented */ = {
+			isa = PBXGroup;
+			children = (
+				BCA86B7625754AD500B63ADC /* AlertViewImpl.swift */,
+				BCA86B782575505700B63ADC /* SnackBarViewImpl.swift */,
+				BCE07E7E2592397B00924DC5 /* BottomSheetViewImpl.swift */,
+			);
+			path = presented;
 			sourceTree = "<group>";
 		};
 		BCFCCC44255828DB00E29E5C /* screens */ = {
 			isa = PBXGroup;
 			children = (
 				BCA86B6C257543A000B63ADC /* SplashViewImpl.swift */,
-				BCA86B6E257544D700B63ADC /* RootViewImpl.swift */,
-				BCA86B70257548C200B63ADC /* HelloViewImpl.swift */,
 				BCA86B722575491B00B63ADC /* AuDessusViewImpl.swift */,
 				BCA86B7425754A3800B63ADC /* DialogsViewImpl.swift */,
 				BCA86B80257553D500B63ADC /* NavigationViewImpl.swift */,
 				BCA86B822575565800B63ADC /* MainViewImpl.swift */,
+				BCE07E8025923D3D00924DC5 /* BottomSheetExampleViewImpl.swift */,
+				BCE07E8425923F8500924DC5 /* NavigationInAStackViewImpl.swift */,
+				BCE07E86259241AC00924DC5 /* AScreenInAStackViewImpl.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -233,20 +264,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA86B7525754A3800B63ADC /* DialogsViewImpl.swift in Sources */,
+				BCE07E8325923D9700924DC5 /* ScreenViewImpl.swift in Sources */,
 				BCA86B732575491B00B63ADC /* AuDessusViewImpl.swift in Sources */,
 				BCA86B7725754AD500B63ADC /* AlertViewImpl.swift in Sources */,
 				BCA86B6D257543A000B63ADC /* SplashViewImpl.swift in Sources */,
 				BCA86B832575565800B63ADC /* MainViewImpl.swift in Sources */,
+				BCE07E8525923F8500924DC5 /* NavigationInAStackViewImpl.swift in Sources */,
+				BCE07E7F2592397B00924DC5 /* BottomSheetViewImpl.swift in Sources */,
 				BC85251F25768F2C008D5A6A /* TestUI.swift in Sources */,
-				BCA86B6F257544D700B63ADC /* RootViewImpl.swift in Sources */,
 				BCA86B792575505700B63ADC /* SnackBarViewImpl.swift in Sources */,
 				BCA86B81257553D500B63ADC /* NavigationViewImpl.swift in Sources */,
+				BCE07E8125923D3D00924DC5 /* BottomSheetExampleViewImpl.swift in Sources */,
 				BC907EB42553EBE100BA3B18 /* ViewInjectorImpl.swift in Sources */,
 				BCA86B6B25753CAD00B63ADC /* StackViewImpl.swift in Sources */,
+				BCE07E782592296000924DC5 /* RootStackViewImpl.swift in Sources */,
 				BC2A4B51255C271A00DCA879 /* ComponentViewImpl.swift in Sources */,
-				BCA86B71257548C200B63ADC /* HelloViewImpl.swift in Sources */,
+				BCE07E87259241AC00924DC5 /* AScreenInAStackViewImpl.swift in Sources */,
 				BCDF36AC255322BF00C842C5 /* ContentView.swift in Sources */,
 				BCDF36AA255322BF00C842C5 /* iosAppApp.swift in Sources */,
+				BCE07E892592575800924DC5 /* Injector.swift in Sources */,
 				BCA86B7B2575515C00B63ADC /* TabViewImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

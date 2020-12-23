@@ -12,7 +12,6 @@ interface ViewInjector {
     fun tabView(label: String, onTap: () -> Unit, selectedInitial: Boolean): TabView
 
 
-    fun hello(onTapBack: () -> Unit, onOpenAnotherHello: () -> Unit): HelloView
     fun splash(message: String): SplashView
     fun main(tabs: List<TabView>, stack: StackView): MainView
     fun dialogs(
@@ -26,7 +25,7 @@ interface ViewInjector {
 
     fun navigation(onTapOpenModale: () -> Unit): NavigationView
     fun navigationInStack(
-        content: StackView,
+        stack: StackView,
         onTapPushScreen: () -> Unit,
         onTapBack: () -> Unit
     ): NavigationInStackView

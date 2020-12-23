@@ -6,6 +6,7 @@ import tech.skot.demo.di.ViewInjector
 
 var viewInjectorImpl:ViewInjector? = null
 
+
 val fromIosModule = module<BaseInjector> {
     single {
         viewInjectorImpl!!

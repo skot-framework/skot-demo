@@ -3,6 +3,7 @@ package tech.skot.demo.screens
 import kotlinx.coroutines.delay
 import tech.skot.core.components.RootStack
 import tech.skot.core.components.Screen
+import tech.skot.core.di.get
 import tech.skot.demo.di.viewInjector
 
 const val NB_SECONDS_TIMER = 4
@@ -18,9 +19,9 @@ class Splash : Screen<SplashView>() {
                 delay(1000)
                 view.message = "${(NB_SECONDS_TIMER - it)} secondes"
             }
-//            RootStack.content = Hello()
 
-            RootStack.content = Main()
+            get<RootStack>().content = Main()
+//            RootStack.content = Main()
         }
 
     }

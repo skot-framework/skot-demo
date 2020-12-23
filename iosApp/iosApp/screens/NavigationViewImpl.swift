@@ -8,7 +8,7 @@
 import shared
 import SwiftUI
 
-class NavigationViewImpl: ComponentViewImpl, shared.NavigationView, ObservableObject{
+class NavigationViewImpl: ScreenViewImpl, shared.NavigationView, ObservableObject{
     let onTapOpenModale: () -> Void
     
     init(onTapOpenModale:@escaping () -> Void) {

@@ -7,10 +7,10 @@ import tech.skot.demo.di.viewInjector
 
 class NavigationInStack : Screen<NavigationInStackView>() {
 
-    val content = Stack()
+    val stack = Stack()
 
     override val view = viewInjector.navigationInStack(
-        content = content.view,
+        stack = stack.view,
         onTapPushScreen = {
         pushScreen()
     }, onTapBack = {
@@ -28,11 +28,11 @@ class NavigationInStack : Screen<NavigationInStackView>() {
     var numOfNextScreen = 0
 
     private fun pushScreen() {
-        content.push(AScreenInAStack(++numOfNextScreen))
+        stack.push(AScreenInAStack(++numOfNextScreen))
     }
 
     private fun popScreen() {
-        content.pop()
+        stack.pop()
     }
 
 }

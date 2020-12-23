@@ -11,7 +11,8 @@ import shared
 import Combine
 
 
-class SplashViewImpl: ComponentViewImpl, SplashView, ObservableObject {
+class SplashViewImpl: ScreenViewImpl, SplashView, ObservableObject {
+    
     
     @Published
     var message: String

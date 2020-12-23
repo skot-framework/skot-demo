@@ -22,6 +22,8 @@ kotlin {
                 baseName = "shared"
                 export(project(":contract"))
                 export(project(":viewmodel"))
+                export("tech.skot:core:${Versions.skot}")
+
             }
         }
     }
@@ -35,7 +37,11 @@ kotlin {
 
         val androidMain by getting
 
-        val iosMain by getting
+        val iosMain by getting {
+            dependencies {
+                api("tech.skot:core:${Versions.skot}")
+            }
+        }
 
     }
 }
@@ -65,6 +71,7 @@ val packForXcode by tasks.creating(Sync::class) {
 
     buildFramework("DEBUG")
     buildFramework("RELEASE")
+
 
 }
 tasks.getByName("build").dependsOn(packForXcode)
@@ -98,10 +105,13 @@ val buildUniversalFrameworkRelease = tasks.create<Exec>("buildUniversalFramework
         "build/framework/release/shared.xcframework"
     )
 }
-
+val cleanFrameworkDir = tasks.create<Delete>("cleanFrameworkDir") {
+    delete("build/framework")
+}
 val buildFrameworks = tasks.create("buildUniversalFrameworks") {
     group = "build"
     dependsOn(packForXcode)
+    dependsOn(cleanFrameworkDir)
     dependsOn(buildUniversalFrameworkDebug)
     dependsOn(buildUniversalFrameworkRelease)
 }

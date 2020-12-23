@@ -10,16 +10,16 @@ import SwiftUI
 
 
 
-class MainViewImpl:ComponentViewImpl, MainView, ObservableObject {
+class MainViewImpl:ScreenViewImpl, MainView, ObservableObject {
     var tabs: [shared.TabView]
-    let content: StackView
-    
-    let contentImpl:StackViewImpl
     let tabsImpl:Array<TabViewImpl>
     
-    init(content:StackViewImpl, tabs:Array<TabViewImpl>) {
-        self.content = content
-        self.contentImpl = content
+    let stack: CoreStackView
+    let stackImpl:StackViewImpl
+    
+    init(stack:StackViewImpl, tabs:Array<TabViewImpl>) {
+        self.stack = stack
+        self.stackImpl = stack
         self.tabs = tabs
         self.tabsImpl = tabs
         super.init()
@@ -38,7 +38,7 @@ struct MainUI: View {
     
     var body: some View {
         return VStack {
-            state.contentImpl.ui()
+            state.stackImpl.ui()
                 .frame(maxHeight:.infinity)
             
             HStack {

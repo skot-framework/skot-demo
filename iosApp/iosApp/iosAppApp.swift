@@ -13,14 +13,20 @@ import shared
 @main
 struct iosAppApp: App {
     
+    var rootStack:CoreRootStack
+    
     init() {
-        StarterKt.start(viewInjector: ViewInjectorImpl())
+        print("------!!!!------ init")
+        rootStack = StarterKt.start(viewInjector: ViewInjectorImpl(), coreViewInjector: CoreViewInjectorImpl())
+        print("------!!!!------ init done")
     }
     
     
     var body: some Scene {
         WindowGroup {
-            (StartKt.root?.view as! RootViewImpl).ui()
+            
+            (rootStack.view as! RootStackViewImpl).ui()
+            //(StartKt.root?.view as! RootViewImpl).ui()
             //SplashUI(state: Splash().view as! SplashViewImpl)
            // (Splash().view as! SplashViewImpl).ui()
             

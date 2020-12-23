@@ -8,27 +8,36 @@
 import shared
 import SwiftUI
 
-class DialogsViewImpl:ComponentViewImpl, DialogsView, ObservableObject {
+class DialogsViewImpl:ScreenViewImpl, DialogsView, ObservableObject {
     
-    let alert: AlertView
+    let alert: CoreAlertView
     let alertImpl: AlertViewImpl
+    let snackBar: CoreSnackBarView
     let snackBarImpl: SnackBarViewImpl
-    let snackBar: SnackBarView
+    let bottomSheet: CoreBottomSheetView
+    let bottomSheetImpl: BottomSheetViewImpl
+    
     let onTapAlert: () -> Void
     let onTapSnack: () -> Void
+    let onTapShowBottomSheet: () -> Void
     
     init(
         alert:AlertViewImpl,
         snackBar: SnackBarViewImpl,
+        bottomSheet: BottomSheetViewImpl,
         onTapAlert: @escaping () -> Void,
-        onTapSnack: @escaping () -> Void
+        onTapSnack: @escaping () -> Void,
+        onTapShowBottomSheet: @escaping () -> Void
     ) {
         self.alert = alert
         self.alertImpl = alert
         self.snackBarImpl = snackBar
         self.snackBar = snackBar
+        self.bottomSheet = bottomSheet
+        self.bottomSheetImpl = bottomSheet
         self.onTapAlert = onTapAlert
         self.onTapSnack = onTapSnack
+        self.onTapShowBottomSheet = onTapShowBottomSheet
         super.init()
     }
     
@@ -52,9 +61,13 @@ struct DialogUI: View {
                 Button(action: state.onTapAlert, label: {
                     Text("Alerte")
                 })
+                Button(action: state.onTapShowBottomSheet, label: {
+                    Text("Show Bottom Sheet")
+                })
             }
             state.alertImpl.ui()
             state.snackBarImpl.ui().frame(alignment: Alignment.topLeading)
+            state.bottomSheetImpl.ui()
         }
         
     }

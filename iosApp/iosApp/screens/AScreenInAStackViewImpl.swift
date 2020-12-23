@@ -1,38 +1,36 @@
 //
-//  AuDessusViewImpl.swift
+//  AScreenInAStackViewImpl.swift
 //  iosApp
 //
-//  Created by Mathieu Scotet on 30/11/2020.
+//  Created by Mathieu Scotet on 22/12/2020.
 //
 
 import shared
 import SwiftUI
 
-class AuDessusViewImpl: ScreenViewImpl, AuDessusView, ObservableObject {
+class AScreenInAStackViewImpl: ScreenViewImpl, AScreenInAStackView, ObservableObject {
+    var scrollState: CoreUiState
+    
+    var lines: [AScreenInAStackViewLine]
+    
     let title: String
-    let onTapOpenAnother: () -> Void
-    let onTapClose: () -> Void
-    let lines: [AuDessusViewLine]
+    
     
     init(
         title:String,
-        onTapOpenAnother: @escaping () -> Void,
-        onTapClose: @escaping () -> Void,
-        lines: [AuDessusViewLine]
+        lines: [AScreenInAStackViewLine]
     ) {
         self.title = title
-        self.onTapOpenAnother = onTapOpenAnother
-        self.onTapClose = onTapClose
         self.lines = lines
+        self.scrollState = UIStateImpl()
         super.init()
         
     }
     
     override func ui() -> AnyView {
-        AnyView(AuDessusUI(state: self))
+        AnyView(AScreenInAStackUI(state: self))
     }
     
-    var scroll:CGFloat = 0
     
 }
 
@@ -53,10 +51,10 @@ private struct TotalHeightPreferenceKey: PreferenceKey {
     }
 }
 
-struct AuDessusUI : View {
+struct AScreenInAStackUI : View {
     
     @ObservedObject
-    var state:AuDessusViewImpl
+    var state:AScreenInAStackViewImpl
     
   
     
@@ -68,8 +66,6 @@ struct AuDessusUI : View {
             VStack {
                 HStack {
                     Text(state.title)
-                    Button(action: state.onTapOpenAnother, label: { Text("Open") })
-                    Button(action: state.onTapClose, label: { Text("close") })
                 }
                 
                 ScrollViewReader { scrollView in
@@ -110,18 +106,6 @@ struct AuDessusUI : View {
                     print("height" + value.description)
                 }
                 }
-                
-              /*  List(state.lines, id:\.id) { line in
-                    HStack {
-                        Text("Ligne " + line.id.description).onAppear {
-                            print("compute ligne "+line.id.description)
-                        }
-                    }
-                    
-                }
-                */
-                
-                
             }
             
       
@@ -132,3 +116,4 @@ struct AuDessusUI : View {
     
     
 }
+

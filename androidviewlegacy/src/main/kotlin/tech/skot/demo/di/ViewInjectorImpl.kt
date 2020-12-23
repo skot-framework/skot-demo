@@ -18,9 +18,6 @@ class ViewInjectorImpl : ViewInjector {
 
 
 
-    override fun hello(onTapBack: () -> Unit, onOpenAnotherHello: () -> Unit): HelloView {
-        return HelloViewProxy(onTapBack, onOpenAnotherHello)
-    }
 
     override fun splash(message: String): SplashView {
         return SplashViewProxy(messageInitial = message)
@@ -47,11 +44,11 @@ class ViewInjectorImpl : ViewInjector {
     }
 
     override fun navigationInStack(
-        content: StackView,
+        stack: StackView,
         onTapPushScreen: () -> Unit,
         onTapBack:()->Unit
     ): NavigationInStackView {
-        return NavigationInStackProxy(content as StackViewProxy, onTapPushScreen, onTapBack)
+        return NavigationInStackProxy(stack as StackViewProxy, onTapPushScreen, onTapBack)
     }
 
     override fun auDessus(
