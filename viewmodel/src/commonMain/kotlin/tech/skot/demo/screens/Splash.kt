@@ -13,6 +13,7 @@ class Splash : Screen<SplashView>() {
 
 
     init {
+        logD("---- Splash init")
         launch {
             repeat(NB_SECONDS_TIMER + 1) {
                 delay(200)

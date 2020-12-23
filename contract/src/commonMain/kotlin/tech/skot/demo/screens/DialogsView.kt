@@ -15,4 +15,5 @@ interface DialogsView : ScreenView {
     val onTapAlertTwoButtons:()->Unit
     val onTapSnack: () -> Unit
     val onTapShowBottomSheet: () -> Unit
+    val onTapShowGlobalBottomSheet: () -> Unit
 }

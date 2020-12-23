@@ -2,6 +2,7 @@ package tech.skot.demo.screens
 
 import android.view.LayoutInflater
 import androidx.lifecycle.LifecycleOwner
+import tech.skot.core.SKLog
 import tech.skot.core.components.SKActivity
 import tech.skot.core.components.SKFragment
 import tech.skot.demo.androidviewlegacy.databinding.SplashBinding
@@ -37,6 +38,8 @@ class SplashViewProxy(
 }
 
 class SplashViewImpl(activity: SKActivity, fragment: SKFragment?, binding:SplashBinding) : ScreenViewImpl<SplashBinding>(activity, fragment, binding) {
+
+    override fun windowInsetPaddingTop() = true
 
     fun onMessage(message:String) {
         binding.tvMessage.text = message

@@ -39,8 +39,8 @@ class ViewInjectorImpl: ViewInjector {
     
 
     
-    func dialogs(alert: CoreAlertView, snackBar: CoreSnackBarView, bottomSheet: CoreBottomSheetView, onTapSnack: @escaping () -> Void, onTapAlert: @escaping () -> Void, onTapAlertCustomButton: @escaping () -> Void, onTapAlertTwoButtons: @escaping () -> Void, onTapShowBottomSheet: @escaping () -> Void) -> DialogsView {
-        return DialogsViewImpl(alert: alert as! AlertViewImpl, snackBar: snackBar as! SnackBarViewImpl, bottomSheet: bottomSheet as! BottomSheetViewImpl, onTapAlert: onTapAlert, onTapAlertCustomButton: onTapAlertCustomButton, onTapAlertTwoButtons: onTapAlertTwoButtons, onTapSnack: onTapSnack, onTapShowBottomSheet: onTapShowBottomSheet)
+    func dialogs(alert: CoreAlertView, snackBar: CoreSnackBarView, bottomSheet: CoreBottomSheetView, onTapSnack: @escaping () -> Void, onTapAlert: @escaping () -> Void, onTapAlertCustomButton: @escaping () -> Void, onTapAlertTwoButtons: @escaping () -> Void, onTapShowBottomSheet: @escaping () -> Void, onTapShowGlobalBottomSheet: @escaping () -> Void) -> DialogsView {
+        return DialogsViewImpl(alert: alert as! AlertViewImpl, snackBar: snackBar as! SnackBarViewImpl, bottomSheet: bottomSheet as! BottomSheetViewImpl, onTapAlert: onTapAlert, onTapAlertCustomButton: onTapAlertCustomButton, onTapAlertTwoButtons: onTapAlertTwoButtons, onTapSnack: onTapSnack, onTapShowBottomSheet: onTapShowBottomSheet, onTapShowGlobalBottomSheet: onTapShowGlobalBottomSheet)
     }
     
     func navigation(onTapOpenModale: @escaping () -> Void) -> NavigationView {

@@ -3,11 +3,11 @@ package tech.skot.demoleg.android
 import android.app.Application
 import tech.skot.core.SKLog
 import tech.skot.core.di.BaseInjector
+import tech.skot.core.di.coreViewModule
 import tech.skot.core.di.injector
 import tech.skot.demo.di.androidviewModule
 import tech.skot.demo.di.viewmodelAndroidModule
 import tech.skot.demo.start
-import tech.skot.di.coreViewModule
 import timber.log.Timber
 
 //var startScreen:ScreenViewProxy<*>? = null

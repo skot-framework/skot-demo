@@ -5,6 +5,7 @@ import tech.skot.core.components.presented.Alert
 import tech.skot.core.components.presented.AlertView
 import tech.skot.core.components.presented.BottomSheet
 import tech.skot.core.components.presented.SnackBar
+import tech.skot.core.di.rootStack
 import tech.skot.demo.di.viewInjector
 
 class Dialogs : Screen<DialogsView>() {
@@ -49,7 +50,11 @@ class Dialogs : Screen<DialogsView>() {
 
         onTapShowBottomSheet = {
             bottomSheet.show(BottomSheetExample())
-        })
+        },
+        onTapShowGlobalBottomSheet = {
+            rootStack.bottomSheet.show(BottomSheetExample())
+        }
+        )
 
 
     init {

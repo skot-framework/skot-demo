@@ -31,7 +31,8 @@ class ViewInjectorImpl : ViewInjector {
         onTapAlert: () -> Unit,
         onTapAlertCustomButton: () -> Unit,
         onTapAlertTwoButtons: () -> Unit,
-        onTapShowBottomSheet: () -> Unit
+        onTapShowBottomSheet: () -> Unit,
+        onTapShowGlobalBottomSheet: () -> Unit
     ): DialogsView {
         return DialogsViewProxy(
             alert = alert as AlertViewProxy,
@@ -41,7 +42,8 @@ class ViewInjectorImpl : ViewInjector {
             onTapAlert = onTapAlert,
             onTapAlertCustomButton = onTapAlertCustomButton,
             onTapAlertTwoButtons = onTapAlertTwoButtons,
-            onTapShowBottomSheet = onTapShowBottomSheet
+            onTapShowBottomSheet = onTapShowBottomSheet,
+            onTapShowGlobalBottomSheet = onTapShowGlobalBottomSheet
         )
     }
 

@@ -50,7 +50,6 @@ struct BottomSheetUI:View {
                     
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            
             .animation(.easeIn)
                 //.background(Color.init(Color.RGBColorSpace.sRGB, red: 66, green: 66, blue: 66, opacity: 0.8))
             

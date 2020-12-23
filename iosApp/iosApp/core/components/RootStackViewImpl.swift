@@ -12,8 +12,13 @@ import shared
 class RootStackViewImpl: ComponentViewImpl, CoreRootStackView, ObservableObject {
     @Published var screens:Array<CoreScreenView>
     
-    override init() {
+    let bottomSheet: CoreBottomSheetView
+    let bottomSheetImpl: BottomSheetViewImpl
+    
+    init(bottomSheet:BottomSheetViewImpl) {
         screens = Array()
+        self.bottomSheet = bottomSheet
+        self.bottomSheetImpl = bottomSheet
         super.init()
     }
     
@@ -28,18 +33,27 @@ struct RootStackUI: View {
     
     var body: some View {
         
-    
-    if (state.screens.count % 2 != 0) {
-            ZStack {
+        ZStack {
+            if (state.screens.count % 2 != 0) {
+                ZStack {
+                    (state.screens.last as? ComponentViewImpl)?.ui()
+                }.transition(.move(edge: .bottom))
+                .animation(.default)
+                
+            }
+            else {
                 (state.screens.last as? ComponentViewImpl)?.ui()
-            }.transition(.move(edge: .bottom))
-            .animation(.default)
-        }
-        else {
-            (state.screens.last as? ComponentViewImpl)?.ui()
-                .transition(.move(edge: .top)).animation(.default)
+                    .transition(.move(edge: .top)).animation(.default)
+                
+            }
+            
+            Spacer()
+            
+            state.bottomSheetImpl.ui()
         }
         
     }
+    
+    
 }
 

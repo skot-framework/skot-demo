@@ -21,6 +21,7 @@ class DialogsViewProxy(
     override val onTapAlertTwoButtons: () -> Unit,
     override val onTapSnack: () -> Unit,
     override val onTapShowBottomSheet: () -> Unit,
+    override val onTapShowGlobalBottomSheet: () -> Unit,
 ) : ScreenViewProxy<DialogsBinding>(), DialogsView {
 
     override fun inflate(layoutInflater: LayoutInflater) = DialogsBinding.inflate(layoutInflater)
@@ -41,6 +42,7 @@ class DialogsViewProxy(
             onOnTapAlertTwoButtons(onTapAlertTwoButtons)
             onOnTapSnack(onTapSnack)
             onOnTapShowBottomSheet(onTapShowBottomSheet)
+            onOnTapShowGlobalBottomSheet(onTapShowGlobalBottomSheet)
         }
 
 
@@ -69,6 +71,10 @@ class DialogsViewImpl(activity: SKActivity, fragment: SKFragment?, binding: Dial
 
     fun onOnTapShowBottomSheet(onTapShowBottomSheet: () -> Unit) {
         binding.btnShowBottomSheet.setOnClick(onTapShowBottomSheet)
+    }
+
+    fun onOnTapShowGlobalBottomSheet(onTapShowGlobalBottomSheet: () -> Unit) {
+        binding.btnShowGlobalBottomSheet.setOnClick(onTapShowGlobalBottomSheet)
     }
 
 }

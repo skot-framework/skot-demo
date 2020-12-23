@@ -23,6 +23,7 @@ class DialogsViewImpl:ScreenViewImpl, DialogsView, ObservableObject {
     
     let onTapSnack: () -> Void
     let onTapShowBottomSheet: () -> Void
+    let onTapShowGlobalBottomSheet: () -> Void
     
     init(
         alert:AlertViewImpl,
@@ -32,7 +33,8 @@ class DialogsViewImpl:ScreenViewImpl, DialogsView, ObservableObject {
         onTapAlertCustomButton: @escaping () -> Void,
         onTapAlertTwoButtons: @escaping () -> Void,
         onTapSnack: @escaping () -> Void,
-        onTapShowBottomSheet: @escaping () -> Void
+        onTapShowBottomSheet: @escaping () -> Void,
+        onTapShowGlobalBottomSheet: @escaping () -> Void
     ) {
         self.alert = alert
         self.alertImpl = alert
@@ -45,6 +47,7 @@ class DialogsViewImpl:ScreenViewImpl, DialogsView, ObservableObject {
         self.onTapAlertTwoButtons = onTapAlertTwoButtons
         self.onTapSnack = onTapSnack
         self.onTapShowBottomSheet = onTapShowBottomSheet
+        self.onTapShowGlobalBottomSheet = onTapShowGlobalBottomSheet
         super.init()
     }
     
@@ -77,6 +80,9 @@ struct DialogsUI: View {
                 Button(action: state.onTapShowBottomSheet, label: {
                     Text("Show Bottom Sheet")
                 })
+                Button(action: state.onTapShowGlobalBottomSheet, label: {
+                    Text("Show Bottom Global Sheet")
+                })
                 Spacer()
             }
             state.alertImpl.ui()
@@ -100,6 +106,8 @@ struct DialogsUI_Previews: PreviewProvider {
                         }, onTapSnack: {
                             
                         }, onTapShowBottomSheet: {
+                            
+                        }, onTapShowGlobalBottomSheet: {
                             
                         }))
             

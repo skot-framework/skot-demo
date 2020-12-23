@@ -23,6 +23,7 @@ interface ViewInjector {
         onTapAlertCustomButton: () -> Unit,
         onTapAlertTwoButtons: () -> Unit,
         onTapShowBottomSheet: () -> Unit,
+        onTapShowGlobalBottomSheet: () -> Unit,
     ): DialogsView
 
     fun navigation(onTapOpenModale: () -> Unit): NavigationView

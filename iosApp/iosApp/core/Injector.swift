@@ -17,9 +17,10 @@ class CoreViewInjectorImpl: CoreCoreViewInjector {
         return BottomSheetViewImpl()
     }
     
-    func rootStack() -> CoreRootStackView {
-        return RootStackViewImpl()
+    func rootStack(bottomSheetView: CoreBottomSheetView) -> CoreRootStackView {
+        return RootStackViewImpl(bottomSheet: bottomSheetView as! BottomSheetViewImpl)
     }
+    
     
     func snackBar() -> CoreSnackBarView {
         return SnackBarViewImpl()
