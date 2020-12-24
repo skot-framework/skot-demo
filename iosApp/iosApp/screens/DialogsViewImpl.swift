@@ -114,3 +114,32 @@ struct DialogsUI_Previews: PreviewProvider {
         }
     }
 }
+
+protocol Prot {
+    var test:String { get }
+}
+
+class ProtImpl:Prot {
+    let test:String
+    
+    init(test:String) {
+        self.test = test
+    }
+}
+
+
+protocol MetaProt {
+    var testProt:Prot { get }
+}
+
+class A:MetaProt {
+    let testProtImpl:ProtImpl
+    
+    var testProt: Prot {
+        get { testProtImpl }
+    }
+ 
+    init(testProt:ProtImpl) {
+        self.testProtImpl = testProt
+    }
+}

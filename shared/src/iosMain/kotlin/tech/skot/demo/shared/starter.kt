@@ -7,6 +7,7 @@ import tech.skot.demo.di.fromIosModule
 import tech.skot.demo.di.viewInjectorImpl
 
 
+
 fun start(viewInjector: ViewInjector, coreViewInjector: CoreViewInjector): RootStack {
     viewInjectorImpl = viewInjector
     injector = BaseInjector(listOf(fromIosModule, module<BaseInjector> {

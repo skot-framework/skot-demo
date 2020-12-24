@@ -8,7 +8,7 @@
 import shared
 import SwiftUI
 
-class AlertViewImpl: ComponentViewImpl, CoreAlertView , ObservableObject{
+final class AlertViewImpl: ComponentViewImpl, CoreAlertView , ObservableObject{
     
     func onDismiss() {
         state = nil

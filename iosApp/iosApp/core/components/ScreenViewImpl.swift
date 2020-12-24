@@ -11,5 +11,5 @@ import SwiftUI
 
 class ScreenViewImpl : ComponentViewImpl,CoreScreenView  {
     var onBackPressed: (() -> Void)?
-    
+    var id = UUID()
 }

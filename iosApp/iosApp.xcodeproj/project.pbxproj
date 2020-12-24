@@ -19,6 +19,8 @@
 		BCA86B7B2575515C00B63ADC /* TabViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B7A2575515C00B63ADC /* TabViewImpl.swift */; };
 		BCA86B81257553D500B63ADC /* NavigationViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B80257553D500B63ADC /* NavigationViewImpl.swift */; };
 		BCA86B832575565800B63ADC /* MainViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA86B822575565800B63ADC /* MainViewImpl.swift */; };
+		BCB2003B2594E3DF00DDDA13 /* PagerViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2003A2594E3DF00DDDA13 /* PagerViewImpl.swift */; };
+		BCB2003D2594E7F000DDDA13 /* PagerExampleViewImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB2003C2594E7F000DDDA13 /* PagerExampleViewImpl.swift */; };
 		BCDF36AA255322BF00C842C5 /* iosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDF36A9255322BF00C842C5 /* iosAppApp.swift */; };
 		BCDF36AC255322BF00C842C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCDF36AB255322BF00C842C5 /* ContentView.swift */; };
 		BCDF36AE255322C000C842C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCDF36AD255322C000C842C5 /* Assets.xcassets */; };
@@ -61,6 +63,8 @@
 		BCA86B7A2575515C00B63ADC /* TabViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewImpl.swift; sourceTree = "<group>"; };
 		BCA86B80257553D500B63ADC /* NavigationViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationViewImpl.swift; sourceTree = "<group>"; };
 		BCA86B822575565800B63ADC /* MainViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewImpl.swift; sourceTree = "<group>"; };
+		BCB2003A2594E3DF00DDDA13 /* PagerViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerViewImpl.swift; sourceTree = "<group>"; };
+		BCB2003C2594E7F000DDDA13 /* PagerExampleViewImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerExampleViewImpl.swift; sourceTree = "<group>"; };
 		BCDF36A6255322BF00C842C5 /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCDF36A9255322BF00C842C5 /* iosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosAppApp.swift; sourceTree = "<group>"; };
 		BCDF36AB255322BF00C842C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 				BCE07E762592293100924DC5 /* presented */,
 				BCE07E772592296000924DC5 /* RootStackViewImpl.swift */,
 				BCE07E8225923D9700924DC5 /* ScreenViewImpl.swift */,
+				BCB2003A2594E3DF00DDDA13 /* PagerViewImpl.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 				BCE07E8025923D3D00924DC5 /* BottomSheetExampleViewImpl.swift */,
 				BCE07E8425923F8500924DC5 /* NavigationInAStackViewImpl.swift */,
 				BCE07E86259241AC00924DC5 /* AScreenInAStackViewImpl.swift */,
+				BCB2003C2594E7F000DDDA13 /* PagerExampleViewImpl.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -277,7 +283,9 @@
 				BCE07E8125923D3D00924DC5 /* BottomSheetExampleViewImpl.swift in Sources */,
 				BC907EB42553EBE100BA3B18 /* ViewInjectorImpl.swift in Sources */,
 				BCA86B6B25753CAD00B63ADC /* StackViewImpl.swift in Sources */,
+				BCB2003B2594E3DF00DDDA13 /* PagerViewImpl.swift in Sources */,
 				BCE07E782592296000924DC5 /* RootStackViewImpl.swift in Sources */,
+				BCB2003D2594E7F000DDDA13 /* PagerExampleViewImpl.swift in Sources */,
 				BC2A4B51255C271A00DCA879 /* ComponentViewImpl.swift in Sources */,
 				BCE07E87259241AC00924DC5 /* AScreenInAStackViewImpl.swift in Sources */,
 				BCDF36AC255322BF00C842C5 /* ContentView.swift in Sources */,

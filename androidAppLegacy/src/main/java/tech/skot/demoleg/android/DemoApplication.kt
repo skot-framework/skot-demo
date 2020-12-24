@@ -10,8 +10,6 @@ import tech.skot.demo.di.viewmodelAndroidModule
 import tech.skot.demo.start
 import timber.log.Timber
 
-//var startScreen:ScreenViewProxy<*>? = null
-
 class DemoApplication : Application() {
 
     override fun onCreate() {

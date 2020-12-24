@@ -11,6 +11,7 @@ import tech.skot.view.legacy.ScreenViewProxy
 
 class NavigationProxy(
     override val onTapOpenModale: () -> Unit,
+    override val onTapToPager: () -> Unit
 ) : ScreenViewProxy<NavigationBinding>(), NavigationView {
 
     override fun inflate(layoutInflater: LayoutInflater) = NavigationBinding.inflate(layoutInflater)
@@ -23,6 +24,7 @@ class NavigationProxy(
     ): NavigationViewImpl {
         return NavigationViewImpl(activity, fragment, binding).apply {
             onOnTapOpenModale(onTapOpenModale)
+            onOnTapToPager(onTapToPager)
         }
     }
 
@@ -34,6 +36,10 @@ class NavigationViewImpl(activity: SKActivity, fragment: SKFragment?, binding: N
 
     fun onOnTapOpenModale(onTapOpenModale: () -> Unit) {
         binding.btnOpenModale.setOnClick(onTapOpenModale)
+    }
+
+    fun onOnTapToPager(onTapToPager: () -> Unit) {
+        binding.btnOpenPagerExample.setOnClick(onTapToPager)
     }
 
 }

@@ -30,5 +30,8 @@ class CoreViewInjectorImpl: CoreCoreViewInjector {
         return StackViewImpl()
     }
     
+    func pager(screens: [CoreScreenView], onSwipeToPage: ((KotlinInt) -> Void)?, initialSelectedPageIndex: Int32) -> CorePagerView {
+        return PagerViewImpl(screens: screens as! [ScreenViewImpl], initialSelectedPageIndex: 0, onSwipeToPage: onSwipeToPage)
+    }
     
 }

@@ -10,9 +10,11 @@ import SwiftUI
 
 class NavigationViewImpl: ScreenViewImpl, shared.NavigationView, ObservableObject{
     let onTapOpenModale: () -> Void
+    let onTapToPager: () -> Void
     
-    init(onTapOpenModale:@escaping () -> Void) {
+    init(onTapOpenModale:@escaping () -> Void, onTapToPager:@escaping () -> Void) {
         self.onTapOpenModale = onTapOpenModale
+        self.onTapToPager = onTapToPager
         super.init()
     }
     
@@ -30,6 +32,7 @@ struct NavigationUI: View {
     var body: some View {
         VStack {
             Button(action: state.onTapOpenModale, label: { Text("Ouvre une modale !") } )
+            Button(action: state.onTapToPager, label: { Text("Exemple de Pager") } )
         }
         
     }

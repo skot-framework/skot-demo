@@ -1,5 +1,6 @@
 package tech.skot.demo.di
 
+import tech.skot.core.components.PagerView
 import tech.skot.core.components.StackView
 import tech.skot.core.components.presented.AlertView
 import tech.skot.core.components.presented.BottomSheetView
@@ -26,7 +27,7 @@ interface ViewInjector {
         onTapShowGlobalBottomSheet: () -> Unit,
     ): DialogsView
 
-    fun navigation(onTapOpenModale: () -> Unit): NavigationView
+    fun navigation(onTapOpenModale: () -> Unit, onTapToPager: () -> Unit): NavigationView
     fun navigationInStack(
         stack: StackView,
         onTapPushScreen: () -> Unit,
@@ -46,4 +47,6 @@ interface ViewInjector {
     ): AScreenInAStackView
 
     fun bottomSheetExample(onTapDismiss: () -> Unit): BottomSheetExampleView
+
+    fun pagerExample(pager:PagerView, onTapToIndex2:()->Unit):PagerExampleView
 }

@@ -11,7 +11,11 @@ class Navigation : Screen<NavigationView>() {
     override val view = viewInjector.navigation(
         onTapOpenModale = {
             openModale()
-        })
+        },
+        onTapToPager = {
+            rootStack.push(PagerExample())
+        }
+    )
 
     private fun openModale() {
         SKLog.d("open Modale !!!")

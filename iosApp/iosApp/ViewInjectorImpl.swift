@@ -9,6 +9,7 @@ import Foundation
 import shared
 
 class ViewInjectorImpl: ViewInjector {
+    
     func aScreenInAStackView(title: String, lines: [AScreenInAStackViewLine]) -> AScreenInAStackView {
         return AScreenInAStackViewImpl(title: title, lines: lines)
     }
@@ -43,12 +44,16 @@ class ViewInjectorImpl: ViewInjector {
         return DialogsViewImpl(alert: alert as! AlertViewImpl, snackBar: snackBar as! SnackBarViewImpl, bottomSheet: bottomSheet as! BottomSheetViewImpl, onTapAlert: onTapAlert, onTapAlertCustomButton: onTapAlertCustomButton, onTapAlertTwoButtons: onTapAlertTwoButtons, onTapSnack: onTapSnack, onTapShowBottomSheet: onTapShowBottomSheet, onTapShowGlobalBottomSheet: onTapShowGlobalBottomSheet)
     }
     
-    func navigation(onTapOpenModale: @escaping () -> Void) -> NavigationView {
-        return NavigationViewImpl(onTapOpenModale: onTapOpenModale)
+    func navigation(onTapOpenModale: @escaping () -> Void, onTapToPager: @escaping () -> Void) -> NavigationView {
+        return NavigationViewImpl(onTapOpenModale: onTapOpenModale, onTapToPager: onTapToPager)
     }
     
     func auDessus(title: String, onTapOpenAnother: @escaping () -> Void, onTapClose: @escaping () -> Void, lines:[AuDessusViewLine]) -> AuDessusView {
         return AuDessusViewImpl(title: title, onTapOpenAnother: onTapOpenAnother, onTapClose: onTapClose, lines: lines)
+    }
+    
+    func pagerExample(pager: CorePagerView, onTapToIndex2: @escaping () -> Void) -> PagerExampleView {
+        return PagerExampleViewImpl(onTapToIndex2: onTapToIndex2, pagerImpl: pager as! PagerViewImpl)
     }
     
    

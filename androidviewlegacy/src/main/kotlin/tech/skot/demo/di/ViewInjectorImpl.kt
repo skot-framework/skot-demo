@@ -1,8 +1,9 @@
 package tech.skot.demo.di
 
-import tech.skot.core.components.*
+import tech.skot.core.components.PagerView
+import tech.skot.core.components.PagerViewProxy
+import tech.skot.core.components.StackView
 import tech.skot.core.components.presented.*
-
 import tech.skot.demo.components.TabView
 import tech.skot.demo.components.TabViewProxy
 import tech.skot.demo.screens.*
@@ -48,9 +49,8 @@ class ViewInjectorImpl : ViewInjector {
     }
 
 
-
-    override fun navigation(onTapOpenModale: () -> Unit): NavigationView {
-        return NavigationProxy(onTapOpenModale)
+    override fun navigation(onTapOpenModale: () -> Unit, onTapToPager: () -> Unit): NavigationView {
+        return NavigationProxy(onTapOpenModale, onTapToPager)
     }
 
     override fun navigationInStack(
@@ -81,5 +81,11 @@ class ViewInjectorImpl : ViewInjector {
 
     override fun bottomSheetExample(onTapDismiss: () -> Unit) =
         BottomSheetExampleViewProxy(onTapDismiss)
+
+    override fun pagerExample(pager: PagerView, onTapToIndex2:()->Unit) =
+        PagerExampleViewProxy(
+            pager as PagerViewProxy,
+            onTapToIndex2 = onTapToIndex2
+        )
 
 }
