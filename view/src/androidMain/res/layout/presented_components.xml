@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btnAlert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/presented_components_alert_button" />
+
+    <Button
+        android:id="@+id/btnSimpleSnack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/presented_components_simple_snack_button" />
+
+    <Button
+        android:id="@+id/btnSnackWithAction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/presented_components_snack_with_action_button" />
+
+    <Button
+        android:id="@+id/btnBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/presented_components_bottom_sheet_button" />
+</LinearLayout>

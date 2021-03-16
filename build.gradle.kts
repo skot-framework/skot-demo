@@ -1,4 +1,3 @@
-
 buildscript {
     repositories {
         google()
@@ -7,12 +6,23 @@ buildscript {
         mavenLocal()
     }
 
-}
-plugins {
-    id("skot-starter").version("1.0.0-alpha1")
+    dependencies {
+        classpath("tech.skot:plugin:${Versions.skot}")
+    }
 }
 
-skot {
-    appPackage = "tech.skot.demo"
-    appName = "Demo"
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url = uri("http://raw.github.com/MathieuScotet/skot/repository")
+        }
+        maven {
+            url = uri("https://jitpack.io")
+        }
+    }
+
 }

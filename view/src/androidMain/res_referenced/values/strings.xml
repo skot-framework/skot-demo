@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="splash_message">"%s s"</string>
+    <string name="component_with_scroll_state_label">"La liste ci-contre a un état de scroll à mémoriser dans les stacks"</string>
+    <string name="simple_compteur_initial">Tapez-moi</string>
+
+    <string name="presented_components_simple_snack_message">Un snack simple !</string>
+    <string name="presented_components_snack_with_action_message">Snack avec action</string>
+    <string name="presented_components_snack_with_action_button_label">action</string>
+</resources>

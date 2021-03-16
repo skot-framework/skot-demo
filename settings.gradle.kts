@@ -1,8 +1,7 @@
-pluginManagement {
-    repositories {
-        mavenLocal()
-        //        maven {
-//            url = uri("http://raw.github.com/MathieuScotet/skot/repository")
-//        }
-    }
-}
+include(":viewcontract")
+include(":modelcontract")
+include(":view")
+include(":model")
+include(":viewmodel")
+include(":androidApp")
+include(":skot")

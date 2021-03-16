@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnLoader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_loader_component_button"/>
+        <Button
+            android:id="@+id/btnNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_navigation_components_button"/>
+
+        <Button
+            android:id="@+id/btnPresented"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_presented_components_button"/>
+
+        <Button
+            android:id="@+id/btnTabsLibrary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_tabs_library_button"/>
+    </LinearLayout>
+    <include android:id="@+id/loader" layout="@layout/loading"/>
+</androidx.constraintlayout.widget.ConstraintLayout>    

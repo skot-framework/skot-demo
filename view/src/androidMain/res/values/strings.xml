@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_loader_component_button">"Composant Loader"</string>
+    <string name="main_navigation_components_button">"Composants de navigation"</string>
+    <string name="main_presented_components_button">"Composants de notification"</string>
+    <string name="main_tabs_library_button">"Librairie Tabs"</string>
+
+    <string name="presented_components_alert_button">Alerte</string>
+    <string name="presented_components_simple_snack_button">Snack simple</string>
+    <string name="presented_components_snack_with_action_button">Snack avec action</string>
+    <string name="presented_components_bottom_sheet_button">Bottom Sheet</string>
+
+    <string name="bottom_page_example_label">Le composant BottomSheet présente un Screen</string>
+</resources>
