@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import shared
+
 
 @main
 struct iosAppApp: App {
     
     init() {
         print("Initialisation ....")
+        StarterIosKt.doInitInjector()
+        print(TestKMMKt.coco())
+       // print(Test.coucou())
+        
     }
     
     var body: some Scene {

@@ -1,5 +1,12 @@
+//buildscript {
+//    dependencies {
+//        classpath("com.squareup.sqldelight:gradle-plugin:1.5.0")
+//    }
+//}
+
 plugins {
     kotlin("multiplatform")
+    id("com.squareup.sqldelight")
 //    id("com.squareup.sqldelight")
 }
 //repositories {
@@ -8,8 +15,6 @@ plugins {
 //    mavenCentral()
 //}
 
-println("----------!!!!!! ${tech.skot.Versions.group}")
-
 kotlin {
     ios {
         binaries {
@@ -17,8 +22,6 @@ kotlin {
                 baseName = "shared"
                 export(project(":viewcontract"))
                 export(project(":viewmodel"))
-                export("${tech.skot.Versions.group}:core:${Versions.skot}")
-
             }
         }
     }
@@ -26,9 +29,11 @@ kotlin {
     sourceSets {
         val commonMain by getting {
             dependencies {
-                api(project(":viewmodel"))
                 api(project(":viewcontract"))
+                api(project(":viewmodel"))
+                api(project(":model"))
             }
+
         }
 
         val iosMain by getting {
@@ -57,9 +62,24 @@ val packForXcode by tasks.creating(Sync::class) {
     buildFramework("DEBUG")
     buildFramework("RELEASE")
 
+}
+//tasks.getByName("build").dependsOn(packForXcode)
+
+val quickPackForXcode by tasks.creating(Sync::class) {
+    group = "build"
+    fun buildFramework(mode: String) {
+        val frameworkX64 =
+            kotlin.targets.getByName<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget>("iosX64").binaries.getFramework(mode)
+        inputs.property("mode", mode)
+        dependsOn(frameworkX64.linkTask)
+    }
+
+    buildFramework("DEBUG")
 
 }
-tasks.getByName("build").dependsOn(packForXcode)
+
+//tasks.getByName("build").dependsOn(quickPackForXcode)
+
 
 val buildUniversalFrameworkDebug = tasks.create<Exec>("buildUniversalFrameworkDebug") {
     group = "build"
@@ -72,7 +92,20 @@ val buildUniversalFrameworkDebug = tasks.create<Exec>("buildUniversalFrameworkDe
         "-framework",
         "build/bin/iosX64/debugFramework/shared.framework",
         "-output",
-        "build/framework/debug/shared.xcframework"
+        "frameworks/debug/shared.xcframework"
+    )
+}
+
+val buildQuickFrameworkDebug = tasks.create<Exec>("buildQuickFrameworkDebug") {
+    group = "build"
+    workingDir(".")
+    commandLine(
+        "xcodebuild",
+        "-create-xcframework",
+        "-framework",
+        "build/bin/iosX64/debugFramework/shared.framework",
+        "-output",
+        "frameworks/debug/shared.xcframework"
     )
 }
 
@@ -87,23 +120,33 @@ val buildUniversalFrameworkRelease = tasks.create<Exec>("buildUniversalFramework
         "-framework",
         "build/bin/iosX64/releaseFramework/shared.framework",
         "-output",
-        "build/framework/release/shared.xcframework"
+        "frameworks/release/shared.xcframework"
     )
 }
 val cleanFrameworkDir = tasks.create<Delete>("cleanFrameworkDir") {
-    delete("build/framework")
+    delete("frameworks")
 }
 val buildFrameworks = tasks.create("buildUniversalFrameworks") {
     group = "build"
-    dependsOn(packForXcode)
     dependsOn(cleanFrameworkDir)
+    dependsOn(packForXcode)
     dependsOn(buildUniversalFrameworkDebug)
     dependsOn(buildUniversalFrameworkRelease)
 }
 
+val buildQuickFramework = tasks.create("buildQuickFramework") {
+    group = "build"
+    dependsOn(cleanFrameworkDir)
+    dependsOn(quickPackForXcode)
+    dependsOn(buildQuickFrameworkDebug)
+}
+
 buildUniversalFrameworkDebug.mustRunAfter(packForXcode)
 buildUniversalFrameworkRelease.mustRunAfter(packForXcode)
-//
-//sqldelight {
-//    linkSqlite = true
-//}
+buildQuickFrameworkDebug.mustRunAfter(quickPackForXcode)
+packForXcode.mustRunAfter(cleanFrameworkDir)
+quickPackForXcode.mustRunAfter(cleanFrameworkDir)
+
+sqldelight {
+    linkSqlite = true
+}

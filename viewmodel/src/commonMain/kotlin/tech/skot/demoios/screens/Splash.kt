@@ -1,10 +1,10 @@
 package tech.skot.demoios.screens
 
 import kotlinx.coroutines.delay
-import tech.skot.demoios.di.viewInjector
+//import tech.skot.demoios.di.viewInjector
 
 class Splash : SplashGen() {
-    override val view: SplashVC = viewInjector.splash(this, messageInitial = "??")
+    override val view: SplashVC = throw IllegalStateException("test")//viewInjector.splash(this, messageInitial = "??")
 
     init {
         launchNoCrash {
