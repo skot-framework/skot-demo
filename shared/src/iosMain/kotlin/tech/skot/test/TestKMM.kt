@@ -4,8 +4,9 @@ import kotlinx.coroutines.*
 import tech.skot.core.SKLog
 import tech.skot.model.globalCache
 
+
 fun coco():String {
-    SKLog.d("Log SKLog : Coucou titi")
+    SKLog.d("Log SKLog : Coucou titi 4")
     CoroutineScope(Dispatchers.Main).launch {
         val savedString = globalCache.getString("TEST")
         SKLog.d("savedString TEST = $savedString")
@@ -15,14 +16,6 @@ fun coco():String {
         delay(2000)
         SKLog.d("-- 4s de passées")
     }
-//    GlobalScope.launch {
-//        val savedString = globalCache.getString("TEST")
-//        SKLog.d("savedString TEST = $savedString")
-//        globalCache.putString("TEST", "Yes !!! - $savedString")
-//        delay(2000)
-//        SKLog.d("-- 2s de passées")
-//        delay(2000)
-//        SKLog.d("-- 4s de passées")
-//    }
+
     return "coucou"
 }

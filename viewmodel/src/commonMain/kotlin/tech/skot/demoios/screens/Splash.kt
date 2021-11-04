@@ -1,15 +1,26 @@
 package tech.skot.demoios.screens
 
 import kotlinx.coroutines.delay
-//import tech.skot.demoios.di.viewInjector
+import tech.skot.core.SKLog
+import tech.skot.demoios.di.viewInjector
 
 class Splash : SplashGen() {
-    override val view: SplashVC = throw IllegalStateException("test")//viewInjector.splash(this, messageInitial = "??")
+
+    init {
+        SKLog.d(" ----- init Splash")
+
+    }
+
+    override val view: SplashVC =
+        viewInjector.splash(this, messageInitial = "??", onTapOpenOnTopScreen = {
+            push(OnTop())
+        })
 
     init {
         launchNoCrash {
             (10 downTo 0).forEach {
-                view.message = it.toString()
+                view.message = "message " + it.toString()
+                SKLog.d("---------- message: $it")
                 delay(1000)
             }
         }

@@ -6,9 +6,9 @@
 #import <Foundation/NSString.h>
 #import <Foundation/NSValue.h>
 
-@class SharedViewmodelSKComponentCompanion, SharedKotlinx_coroutines_coreCoroutineStart, SharedKotlinException, SharedKotlinThrowable, SharedCorePoker, SharedViewmodelSKComponent<__covariant V>, SharedViewmodelSKLoader, SharedViewmodelSKScreen<V>, SharedViewmodelSKStack, SharedViewmodelSKBottomSheet, SharedSplashGen, SharedViewcontractSKUri, SharedKotlinUnit, SharedViewcontractSKFeatureInitializer, SharedViewcontractStyle, SharedKotlinCancellationException, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedKotlinArray<T>, SharedModelcontractDatedData<D>, SharedViewmodelSKStackState, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedViewcontractSKComboVCChoice, SharedViewcontractIcon, SharedViewcontractSKInputVCType, SharedViewcontractSKWebViewVCConfig, SharedViewcontractSKWebViewVCOpenUrl, SharedViewcontractSKStackVCState, SharedViewcontractSKBottomSheetVCShown, SharedViewcontractSKAlertVCShown, SharedKotlinTriple<__covariant A, __covariant B, __covariant C>, SharedViewcontractSKSnackBarVCShown, SharedViewcontractSKWebViewVCBackRequest, SharedViewcontractSKWebViewVCRedirectParam, SharedViewcontractSKWindowPopupVCShown, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SharedViewcontractSKAlertVCButton, SharedViewcontractSKSnackBarVCAction, SharedViewcontractSKWindowPopupVCBehavior, SharedKotlinx_coroutines_coreAtomicOp<__contravariant T>, SharedKotlinx_coroutines_coreOpDescriptor, SharedKotlinx_coroutines_coreLockFreeLinkedListNode, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
+@class SharedViewmodelSKComponentCompanion, SharedKotlinx_coroutines_coreCoroutineStart, SharedKotlinException, SharedKotlinThrowable, SharedCorePoker, SharedViewmodelSKComponent<__covariant V>, SharedViewmodelSKLoader, SharedViewmodelSKScreen<V>, SharedViewmodelSKStack, SharedViewmodelSKBottomSheet, SharedOnTopGen, SharedViewmodelSKButton, SharedSplashGen, SharedViewcontractSKUri, SharedKotlinUnit, SharedViewcontractSKFeatureInitializer, SharedViewcontractStyle, SharedKotlinCancellationException, SharedKotlinEnumCompanion, SharedKotlinEnum<E>, SharedKotlinArray<T>, SharedModelcontractDatedData<D>, SharedViewmodelSKStackState, SharedKotlinRuntimeException, SharedKotlinIllegalStateException, SharedViewcontractSKComboVCChoice, SharedViewcontractIcon, SharedViewcontractSKInputVCType, SharedViewcontractSKWebViewVCConfig, SharedViewcontractSKWebViewVCOpenUrl, SharedViewcontractSKStackVCState, SharedViewcontractSKBottomSheetVCShown, SharedViewcontractSKAlertVCShown, SharedViewcontractSKListVCItem, SharedViewcontractSKSnackBarVCShown, SharedViewcontractSKWebViewVCBackRequest, SharedViewcontractSKWebViewVCRedirectParam, SharedViewcontractSKWindowPopupVCShown, SharedKotlinx_coroutines_coreAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodePrepareOp, SharedViewcontractSKAlertVCButton, SharedViewcontractSKSnackBarVCAction, SharedViewcontractSKWindowPopupVCBehavior, SharedKotlinx_coroutines_coreAtomicOp<__contravariant T>, SharedKotlinx_coroutines_coreOpDescriptor, SharedKotlinx_coroutines_coreLockFreeLinkedListNode, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAbstractAtomicDesc, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeAddLastDesc<T>, SharedKotlinx_coroutines_coreLockFreeLinkedListNodeRemoveFirstDesc<T>;
 
-@protocol SharedKotlinCoroutineContext, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreJob, SharedKotlinSuspendFunction1, SharedModelcontractSKData, SharedKotlinx_coroutines_coreCompletableJob, SharedViewcontractSKVisiblityListener, SharedViewcontractSKTransition, SharedViewcontractSKScreenVC, SharedSplashVC, SharedKotlinSuspendFunction0, SharedViewcontractSKComponentVC, SharedColors, SharedIcons, SharedModelcontractModelInjector, SharedModelcontractPlurals, SharedModelcontractStrings, SharedStyles, SharedTransitions, SharedViewInjector, SharedViewcontractCoreViewInjector, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKotlinComparable, SharedKotlinFunction, SharedKotlinx_coroutines_coreFlow, SharedViewcontractSKLoaderVC, SharedViewcontractSKStackVC, SharedViewcontractSKBottomSheetVC, SharedViewcontractSKAlertVC, SharedViewcontractSKButtonVC, SharedViewcontractSKComboVC, SharedViewcontractSKFrameVC, SharedViewcontractSKImageButtonVC, SharedViewcontractSKInputVC, SharedViewcontractSKSimpleInputVC, SharedViewcontractSKInputWithSuggestionsVC, SharedViewcontractSKPagerVC, SharedViewcontractSKPagerWithTabsVC, SharedViewcontractSKBoxVC, SharedViewcontractSKListVC, SharedViewcontractSKSnackBarVC, SharedViewcontractSKWebViewVC, SharedViewcontractSKWindowPopupVC, SharedKotlinx_coroutines_coreParentJob, SharedKotlinIterator, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinContinuation;
+@protocol SharedKotlinCoroutineContext, SharedKotlinx_coroutines_coreCoroutineScope, SharedKotlinx_coroutines_coreJob, SharedKotlinSuspendFunction1, SharedModelcontractSKData, SharedKotlinx_coroutines_coreCompletableJob, SharedViewcontractSKVisiblityListener, SharedViewcontractSKTransition, SharedViewcontractSKScreenVC, SharedViewcontractSKComponentVC, SharedOnTopVC, SharedSplashVC, SharedKotlinSuspendFunction0, SharedViewcontractSKButtonVC, SharedColors, SharedIcons, SharedModelcontractModelInjector, SharedModelcontractPlurals, SharedModelcontractStrings, SharedStyles, SharedTransitions, SharedViewInjector, SharedViewcontractCoreViewInjector, SharedKotlinCoroutineContextElement, SharedKotlinCoroutineContextKey, SharedKotlinx_coroutines_coreChildHandle, SharedKotlinx_coroutines_coreChildJob, SharedKotlinx_coroutines_coreDisposableHandle, SharedKotlinSequence, SharedKotlinx_coroutines_coreSelectClause0, SharedKotlinComparable, SharedKotlinFunction, SharedKotlinx_coroutines_coreFlow, SharedViewcontractSKLoaderVC, SharedViewcontractSKStackVC, SharedViewcontractSKBottomSheetVC, SharedViewcontractSKAlertVC, SharedViewcontractSKComboVC, SharedViewcontractSKFrameVC, SharedViewcontractSKImageButtonVC, SharedViewcontractSKInputVC, SharedViewcontractSKSimpleInputVC, SharedViewcontractSKInputWithSuggestionsVC, SharedViewcontractSKPagerVC, SharedViewcontractSKPagerWithTabsVC, SharedViewcontractSKBoxVC, SharedViewcontractSKListVC, SharedViewcontractSKSnackBarVC, SharedViewcontractSKWebViewVC, SharedViewcontractSKWindowPopupVC, SharedKotlinx_coroutines_coreParentJob, SharedKotlinIterator, SharedKotlinx_coroutines_coreSelectInstance, SharedKotlinx_coroutines_coreFlowCollector, SharedKotlinContinuation;
 
 NS_ASSUME_NONNULL_BEGIN
 #pragma clang diagnostic push
@@ -199,6 +199,23 @@ __attribute__((swift_name("ViewmodelSKScreen")))
 @property SharedViewmodelSKBottomSheet * _Nullable presenter __attribute__((swift_name("presenter")));
 @end;
 
+__attribute__((swift_name("OnTopGen")))
+@interface SharedOnTopGen : SharedViewmodelSKScreen<id<SharedOnTopVC>>
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (void)onRemove __attribute__((swift_name("onRemove()")));
+@property (readonly) SharedViewmodelSKComponent<id<SharedViewcontractSKComponentVC>> *btnClose __attribute__((swift_name("btnClose")));
+@end;
+
+__attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("OnTop")))
+@interface SharedOnTop : SharedOnTopGen
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+@property (readonly) SharedViewmodelSKButton *btnClose __attribute__((swift_name("btnClose")));
+@property (readonly) id<SharedOnTopVC> view __attribute__((swift_name("view")));
+@end;
+
 __attribute__((swift_name("SplashGen")))
 @interface SharedSplashGen : SharedViewmodelSKScreen<id<SharedSplashVC>>
 - (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
@@ -264,10 +281,17 @@ __attribute__((swift_name("ViewcontractSKScreenVC")))
 @property void (^ _Nullable onBackPressed)(void) __attribute__((swift_name("onBackPressed")));
 @end;
 
+__attribute__((swift_name("OnTopVC")))
+@protocol SharedOnTopVC <SharedViewcontractSKScreenVC>
+@required
+@property (readonly) id<SharedViewcontractSKButtonVC> btnClose __attribute__((swift_name("btnClose")));
+@end;
+
 __attribute__((swift_name("SplashVC")))
 @protocol SharedSplashVC <SharedViewcontractSKScreenVC>
 @required
 @property NSString *message __attribute__((swift_name("message")));
+@property (readonly) void (^onTapOpenOnTopScreen)(void) __attribute__((swift_name("onTapOpenOnTopScreen")));
 @end;
 
 __attribute__((swift_name("Transitions")))
@@ -278,7 +302,8 @@ __attribute__((swift_name("Transitions")))
 __attribute__((swift_name("ViewInjector")))
 @protocol SharedViewInjector
 @required
-- (id<SharedSplashVC>)splashVisibilityListener:(id<SharedViewcontractSKVisiblityListener>)visibilityListener messageInitial:(NSString *)messageInitial __attribute__((swift_name("splash(visibilityListener:messageInitial:)")));
+- (id<SharedOnTopVC>)onTopVisibilityListener:(id<SharedViewcontractSKVisiblityListener>)visibilityListener btnClose:(id<SharedViewcontractSKButtonVC>)btnClose __attribute__((swift_name("onTop(visibilityListener:btnClose:)")));
+- (id<SharedSplashVC>)splashVisibilityListener:(id<SharedViewcontractSKVisiblityListener>)visibilityListener onTapOpenOnTopScreen:(void (^)(void))onTapOpenOnTopScreen messageInitial:(NSString *)messageInitial __attribute__((swift_name("splash(visibilityListener:onTapOpenOnTopScreen:messageInitial:)")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -304,8 +329,8 @@ __attribute__((swift_name("ShortCutsKt")))
 __attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("StarterIosKt")))
 @interface SharedStarterIosKt : SharedBase
-+ (void)doInitInjector __attribute__((swift_name("doInitInjector()")));
-+ (SharedViewmodelSKStack *)startIosCoreViewInjector:(id<SharedViewcontractCoreViewInjector>)coreViewInjector viewInjector:(id<SharedViewInjector>)viewInjector __attribute__((swift_name("startIos(coreViewInjector:viewInjector:)")));
++ (void)doInitInjectorViewInjector:(id<SharedViewInjector>)viewInjector coreViewInjector:(id<SharedViewcontractCoreViewInjector>)coreViewInjector __attribute__((swift_name("doInitInjector(viewInjector:coreViewInjector:)")));
++ (SharedViewmodelSKStack *)startIos __attribute__((swift_name("startIos()")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -524,6 +549,17 @@ __attribute__((swift_name("ViewmodelSKBottomSheet")))
 @property (readonly) id<SharedViewcontractSKBottomSheetVC> view __attribute__((swift_name("view")));
 @end;
 
+__attribute__((swift_name("ViewmodelSKButton")))
+@interface SharedViewmodelSKButton : SharedViewmodelSKComponent<id<SharedViewcontractSKButtonVC>>
+- (instancetype)initWithLabel:(NSString * _Nullable)label enabled:(SharedBoolean * _Nullable)enabled hidden:(SharedBoolean * _Nullable)hidden onTap:(void (^ _Nullable)(void))onTap __attribute__((swift_name("init(label:enabled:hidden:onTap:)"))) __attribute__((objc_designated_initializer));
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer)) __attribute__((unavailable));
++ (instancetype)new __attribute__((unavailable));
+@property SharedBoolean * _Nullable enabled __attribute__((swift_name("enabled")));
+@property SharedBoolean * _Nullable hidden __attribute__((swift_name("hidden")));
+@property NSString * _Nullable label __attribute__((swift_name("label")));
+@property (readonly) id<SharedViewcontractSKButtonVC> view __attribute__((swift_name("view")));
+@end;
+
 __attribute__((swift_name("KotlinSuspendFunction0")))
 @protocol SharedKotlinSuspendFunction0 <SharedKotlinFunction>
 @required
@@ -588,6 +624,15 @@ __attribute__((swift_name("KotlinUnit")))
 + (instancetype)unit __attribute__((swift_name("init()")));
 @property (class, readonly, getter=shared) SharedKotlinUnit *shared __attribute__((swift_name("shared")));
 - (NSString *)description __attribute__((swift_name("description()")));
+@end;
+
+__attribute__((swift_name("ViewcontractSKButtonVC")))
+@protocol SharedViewcontractSKButtonVC <SharedViewcontractSKComponentVC>
+@required
+@property SharedBoolean * _Nullable enabled __attribute__((swift_name("enabled")));
+@property SharedBoolean * _Nullable hidden __attribute__((swift_name("hidden")));
+@property NSString * _Nullable label __attribute__((swift_name("label")));
+@property void (^ _Nullable onTap)(void) __attribute__((swift_name("onTap")));
 @end;
 
 __attribute__((objc_subclassing_restricted))
@@ -750,15 +795,6 @@ __attribute__((swift_name("ViewcontractSKAlertVC")))
 @property SharedViewcontractSKAlertVCShown * _Nullable state __attribute__((swift_name("state")));
 @end;
 
-__attribute__((swift_name("ViewcontractSKButtonVC")))
-@protocol SharedViewcontractSKButtonVC <SharedViewcontractSKComponentVC>
-@required
-@property SharedBoolean * _Nullable enabled __attribute__((swift_name("enabled")));
-@property SharedBoolean * _Nullable hidden __attribute__((swift_name("hidden")));
-@property NSString * _Nullable label __attribute__((swift_name("label")));
-@property void (^ _Nullable onTap)(void) __attribute__((swift_name("onTap")));
-@end;
-
 __attribute__((swift_name("ViewcontractSKComboVC")))
 @protocol SharedViewcontractSKComboVC <SharedViewcontractSKComponentVC>
 @required
@@ -843,7 +879,7 @@ __attribute__((swift_name("ViewcontractSKPagerVC")))
 @protocol SharedViewcontractSKPagerVC <SharedViewcontractSKComponentVC>
 @required
 @property (readonly) void (^ _Nullable onSwipeToPage)(SharedInt *) __attribute__((swift_name("onSwipeToPage")));
-@property (readonly) NSArray<id<SharedViewcontractSKScreenVC>> *screens __attribute__((swift_name("screens")));
+@property NSArray<id<SharedViewcontractSKScreenVC>> *screens __attribute__((swift_name("screens")));
 @property int32_t selectedPageIndex __attribute__((swift_name("selectedPageIndex")));
 @property (readonly) BOOL swipable __attribute__((swift_name("swipable")));
 @end;
@@ -851,7 +887,7 @@ __attribute__((swift_name("ViewcontractSKPagerVC")))
 __attribute__((swift_name("ViewcontractSKPagerWithTabsVC")))
 @protocol SharedViewcontractSKPagerWithTabsVC <SharedViewcontractSKComponentVC>
 @required
-@property (readonly) NSArray<NSString *> *labels __attribute__((swift_name("labels")));
+@property NSArray<NSString *> *labels __attribute__((swift_name("labels")));
 @property (readonly) id<SharedViewcontractSKPagerVC> pager __attribute__((swift_name("pager")));
 @end;
 
@@ -866,7 +902,7 @@ __attribute__((swift_name("ViewcontractSKListVC")))
 @protocol SharedViewcontractSKListVC <SharedViewcontractSKComponentVC>
 @required
 - (void)scrollToPositionPosition:(int32_t)position __attribute__((swift_name("scrollToPosition(position:)")));
-@property NSArray<SharedKotlinTriple<id<SharedViewcontractSKComponentVC>, id, SharedKotlinUnit *(^)(void)> *> *items __attribute__((swift_name("items")));
+@property NSArray<SharedViewcontractSKListVCItem *> *items __attribute__((swift_name("items")));
 @end;
 
 __attribute__((swift_name("ViewcontractSKSnackBarVC")))
@@ -1003,19 +1039,19 @@ __attribute__((swift_name("ViewcontractSKAlertVCShown")))
 @end;
 
 __attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("KotlinTriple")))
-@interface SharedKotlinTriple<__covariant A, __covariant B, __covariant C> : SharedBase
-- (instancetype)initWithFirst:(A _Nullable)first second:(B _Nullable)second third:(C _Nullable)third __attribute__((swift_name("init(first:second:third:)"))) __attribute__((objc_designated_initializer));
-- (A _Nullable)component1 __attribute__((swift_name("component1()")));
-- (B _Nullable)component2 __attribute__((swift_name("component2()")));
-- (C _Nullable)component3 __attribute__((swift_name("component3()")));
-- (SharedKotlinTriple<A, B, C> *)doCopyFirst:(A _Nullable)first second:(B _Nullable)second third:(C _Nullable)third __attribute__((swift_name("doCopy(first:second:third:)")));
-- (BOOL)equalsOther:(id _Nullable)other __attribute__((swift_name("equals(other:)")));
-- (int32_t)hashCode __attribute__((swift_name("hashCode()")));
-- (NSString *)toString __attribute__((swift_name("toString()")));
-@property (readonly) A _Nullable first __attribute__((swift_name("first")));
-@property (readonly) B _Nullable second __attribute__((swift_name("second")));
-@property (readonly) C _Nullable third __attribute__((swift_name("third")));
+__attribute__((swift_name("ViewcontractSKListVCItem")))
+@interface SharedViewcontractSKListVCItem : SharedBase
+- (instancetype)initWithComponent:(id<SharedViewcontractSKComponentVC>)component id:(id)id onSwipe:(void (^ _Nullable)(void))onSwipe __attribute__((swift_name("init(component:id:onSwipe:)"))) __attribute__((objc_designated_initializer));
+- (id<SharedViewcontractSKComponentVC>)component1 __attribute__((swift_name("component1()")));
+- (id)component2 __attribute__((swift_name("component2()")));
+- (void (^ _Nullable)(void))component3 __attribute__((swift_name("component3()")));
+- (SharedViewcontractSKListVCItem *)doCopyComponent:(id<SharedViewcontractSKComponentVC>)component id:(id)id onSwipe:(void (^ _Nullable)(void))onSwipe __attribute__((swift_name("doCopy(component:id:onSwipe:)")));
+- (BOOL)isEqual:(id _Nullable)other __attribute__((swift_name("isEqual(_:)")));
+- (NSUInteger)hash __attribute__((swift_name("hash()")));
+- (NSString *)description __attribute__((swift_name("description()")));
+@property (readonly) id<SharedViewcontractSKComponentVC> component __attribute__((swift_name("component")));
+@property (readonly) id id __attribute__((swift_name("id")));
+@property (readonly) void (^ _Nullable onSwipe)(void) __attribute__((swift_name("onSwipe")));
 @end;
 
 __attribute__((objc_subclassing_restricted))

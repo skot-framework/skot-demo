@@ -1,5 +1,7 @@
 package tech.skot.demoios
 
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import tech.skot.core.SKLog
@@ -13,30 +15,31 @@ import tech.skot.demoios.di.ModelInjector
 import tech.skot.demoios.di.ModelInjectorImpl
 import tech.skot.demoios.di.ViewInjector
 import tech.skot.demoios.di.startModel
+import tech.skot.demoios.screens.Splash
 import tech.skot.di.modelFrameworkModule
 
-fun startIos(coreViewInjector: CoreViewInjector, viewInjector: ViewInjector): SKStack {
-    injector = BaseInjector( listOf(
-        modelFrameworkModule,
-        module<BaseInjector> {
-            single<ModelInjector> { ModelInjectorImpl() }
-            single { coreViewInjector }
-            single { viewInjector }
-        }
-    ))
-    GlobalScope.launch {
+fun startIos(): SKStack {
+    CoroutineScope(Dispatchers.Main).launch {
         start(startModel())
     }
+
+    SKRootStack.content = Splash()
+
     return SKRootStack
 }
 
-fun initInjector() {
+fun initInjector(viewInjector: ViewInjector, coreViewInjector: CoreViewInjector) {
+    SKLog.d("-- injector viewInjector $viewInjector")
+    SKLog.d("-- injector coreViewInjector $coreViewInjector")
     injector = BaseInjector( listOf(
         modelFrameworkModule,
         module<BaseInjector> {
             single<ModelInjector> { ModelInjectorImpl() }
+            single<ViewInjector> { viewInjector }
+            single<CoreViewInjector> { coreViewInjector }
         }
     ))
     SKLog.d("-- injector initialized $injector")
     SKLog.d("-- injector logged")
 }
+

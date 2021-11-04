@@ -12,17 +12,24 @@ import shared
 @main
 struct iosAppApp: App {
     
+    let rootStack:SKStackViewProxy
+    
     init() {
-        print("Initialisation ....")
-        StarterIosKt.doInitInjector()
-        print(TestKMMKt.coco())
+        print("Initialization ...")
+        StarterIosKt.doInitInjector(viewInjector: ViewInjectorImpl(), coreViewInjector: CoreViewInjectorImpl())
+        print("--- injector initialized")
+        rootStack = StarterIosKt.startIos().view as! SKStackViewProxy
+       // print(TestKMMKt.coco())
        // print(Test.coucou())
+        
+        
         
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            //TestView(updater: TestModel())
+            rootStack.ui()
         }
     }
 }

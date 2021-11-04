@@ -11,11 +11,14 @@ import tech.skot.demoios.view.R
 import tech.skot.demoios.view.databinding.SplashBinding
 import tech.skot.view.live.MutableSKLiveData
 import kotlin.Boolean
+import kotlin.Function0
 import kotlin.Int
 import kotlin.String
+import kotlin.Unit
 
 class SplashViewProxy(
     override val visibilityListener: SKVisiblityListener,
+    override val onTapOpenOnTopScreen: Function0<Unit>,
     messageInitial: String
 ) : SKScreenViewProxy<SplashBinding>(), SplashVC {
     private val messageLD: MutableSKLiveData<String> = MutableSKLiveData(messageInitial)
@@ -42,6 +45,7 @@ class SplashViewProxy(
         collectingObservers: Boolean
     ): SplashView = SplashView(this, activity, fragment, binding).apply {
         collectObservers = collectingObservers
+        onOnTapOpenOnTopScreen(onTapOpenOnTopScreen)
         messageLD.observe {
             onMessage(it)
         }
@@ -49,5 +53,7 @@ class SplashViewProxy(
 }
 
 interface SplashRAI {
+    fun onOnTapOpenOnTopScreen(onTapOpenOnTopScreen: Function0<Unit>)
+
     fun onMessage(message: String)
 }
