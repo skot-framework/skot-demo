@@ -19,8 +19,6 @@ class SplashViewProxy:SKScreenViewProxy,SplashVC, ObservableObject {
         self.message = messageInitial
         self.onTapOpenOnTopScreen = onTapOpenOnTopScreen
         super.init(visibilityListener: visibilityListener)
-    
-      
     }
     
     override func ui() -> AnyView {
@@ -36,7 +34,7 @@ struct SplashView:View {
     var body: some View {
         VStack {
             //Text("SkotiOs !")
-            Text("Val swifts is: \(proxy.message)")
+            Text(proxy.message)
             Button(action: proxy.onTapOpenOnTopScreen, label:{
                 Text("Open on top")
             })

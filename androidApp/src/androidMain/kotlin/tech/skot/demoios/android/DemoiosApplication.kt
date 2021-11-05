@@ -4,6 +4,7 @@ import android.app.Application
 import tech.skot.core.di.BaseInjector
 import tech.skot.core.di.injector
 import tech.skot.demoios.di.generatedAppModules
+import tech.skot.demoios.di.modelModule
 import timber.log.Timber
 
 class DemoiosApplication : Application() {
@@ -13,6 +14,7 @@ class DemoiosApplication : Application() {
     injector = BaseInjector(this,
                         generatedAppModules +
                         listOf(
+                            modelModule
                         ))
   }
 }

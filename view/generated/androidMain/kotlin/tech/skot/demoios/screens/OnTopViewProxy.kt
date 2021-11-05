@@ -15,11 +15,13 @@ import kotlin.Int
 
 class OnTopViewProxy(
     override val visibilityListener: SKVisiblityListener,
+    override val btnBurger: SKButtonViewProxy,
     override val btnClose: SKButtonViewProxy
 ) : SKScreenViewProxy<OnTopBinding>(), OnTopVC {
     override val layoutId: Int = R.layout.on_top
 
     override fun saveState() {
+        btnBurger.saveState()
         btnClose.saveState()
     }
 
@@ -38,6 +40,7 @@ class OnTopViewProxy(
         collectingObservers: Boolean
     ): OnTopView = OnTopView(this, activity, fragment, binding).apply {
         collectObservers = collectingObservers
+        btnBurger._bindTo(activity, fragment, binding.btnBurger)
         btnClose._bindTo(activity, fragment, binding.btnClose)
     }
 }

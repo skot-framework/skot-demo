@@ -17,6 +17,7 @@ import tech.skot.demoios.Styles
 import tech.skot.demoios.StylesImpl
 import tech.skot.demoios.onDeeplink
 import tech.skot.demoios.start
+import tech.skot.demoios.states.restoreState
 import tech.skot.demoios.view.Transitions
 import tech.skot.demoios.view.TransitionsImpl
 import tech.skot.di.modelFrameworkModule
@@ -35,6 +36,10 @@ val generatedAppModules: List<Module<BaseInjector>> = listOf(
         single {
             DemoiosInitializer(
                 initialize = {
+                    restoreState().let {
+                        tech.skot.demoios.states.rootState = it
+                        tech.skot.demoios.di.rootState = it
+                    }
                     initializeView()
                 },
                 onDeepLink = {

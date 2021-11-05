@@ -29,12 +29,13 @@ class SKButtonViewProxy:SKComponentViewProxy,ViewcontractSKButtonVC, ObservableO
         AnyView(SKButtonView(proxy: self))
     }
     
+    
 }
 
 struct SKButtonView: View {
     
     @ObservedObject var proxy:SKButtonViewProxy
- 
+   
     var body: some View {
         Button(action:proxy.onTap ?? {}, label:{
             Text(proxy.label ?? "")

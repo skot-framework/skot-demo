@@ -6,6 +6,7 @@ import tech.skot.demoios.Icons
 import tech.skot.demoios.Plurals
 import tech.skot.demoios.Strings
 import tech.skot.demoios.Styles
+import tech.skot.demoios.states.RootStateContract
 import tech.skot.demoios.view.Transitions
 
 val viewInjector: ViewInjector by lazy {
@@ -39,3 +40,5 @@ val styles: Styles by lazy {
 val transitions: Transitions by lazy {
     get()
 }
+
+lateinit var rootState: RootStateContract

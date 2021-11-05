@@ -19,10 +19,7 @@ struct iosAppApp: App {
         StarterIosKt.doInitInjector(viewInjector: ViewInjectorImpl(), coreViewInjector: CoreViewInjectorImpl())
         print("--- injector initialized")
         rootStack = StarterIosKt.startIos().view as! SKStackViewProxy
-       // print(TestKMMKt.coco())
-       // print(Test.coucou())
-        
-        
+      
         
     }
     

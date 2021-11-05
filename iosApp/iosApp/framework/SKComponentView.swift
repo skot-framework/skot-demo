@@ -11,9 +11,13 @@ import SwiftUI
 
 class SKComponentViewProxy: ViewcontractSKComponentVC {
     
+    let id = UUID()
+    
     func closeKeyboard() {
         
     }
+    
+    
     
     func displayErrorMessage(message: String) {
         print("Erreur message --------- " + message)
