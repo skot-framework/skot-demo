@@ -9,6 +9,7 @@ import Foundation
 import shared
 import SwiftUI
 
+
 class BurgerScreenViewProxy:SKScreenViewProxy,BurgerScreenVC, ObservableObject {
     
     let toBasket: ViewcontractSKButtonVC
@@ -35,6 +36,8 @@ class BurgerScreenViewProxy:SKScreenViewProxy,BurgerScreenVC, ObservableObject {
     override func ui() -> AnyView {
         AnyView(BurgerScreenView(proxy:self))
     }
+    
+    
 }
 
 struct BurgerScreenView: View {

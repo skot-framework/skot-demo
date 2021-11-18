@@ -6,39 +6,48 @@ import tech.skot.demoios.Icons
 import tech.skot.demoios.Plurals
 import tech.skot.demoios.Strings
 import tech.skot.demoios.Styles
+import tech.skot.demoios.di.ViewInjector
 import tech.skot.demoios.states.RootStateContract
 import tech.skot.demoios.view.Transitions
 
 val viewInjector: ViewInjector by lazy {
-    get()
+  get()
 }
+
 
 val modelInjector: ModelInjector by lazy {
-    get()
+  get()
 }
+
 
 val strings: Strings by lazy {
-    get()
+  get()
 }
+
 
 val plurals: Plurals by lazy {
-    get()
+  get()
 }
+
 
 val icons: Icons by lazy {
-    get()
+  get()
 }
+
 
 val colors: Colors by lazy {
-    get()
+  get()
 }
+
 
 val styles: Styles by lazy {
-    get()
+  get()
 }
 
+
 val transitions: Transitions by lazy {
-    get()
+  get()
 }
+
 
 lateinit var rootState: RootStateContract

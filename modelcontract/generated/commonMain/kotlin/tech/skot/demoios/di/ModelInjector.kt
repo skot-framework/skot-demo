@@ -1,8 +1,8 @@
 package tech.skot.demoios.di
 
-import tech.skot.demoios.screens.burger.BurgerScreenMC
 import kotlin.coroutines.CoroutineContext
+import tech.skot.demoios.screens.burger.BurgerScreenMC
 
 interface ModelInjector {
-    fun burgerScreen(coroutineContext: CoroutineContext): BurgerScreenMC
+  fun burgerScreen(coroutineContext: CoroutineContext): BurgerScreenMC
 }

@@ -7,30 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC68258D27205833004947D0 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC68258C27205833004947D0 /* shared.xcframework */; };
-		BC68258E27205833004947D0 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC68258C27205833004947D0 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BC7FBA7B273283CA0092F2EC /* CoreViewInjectorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA7A273283CA0092F2EC /* CoreViewInjectorImpl.swift */; };
 		BC7FBA7D273287B80092F2EC /* ViewInjectorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA7C273287B80092F2EC /* ViewInjectorImpl.swift */; };
-		BC7FBA7F2732888F0092F2EC /* SKComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA7E2732888F0092F2EC /* SKComponentView.swift */; };
-		BC7FBA81273289600092F2EC /* SKScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA80273289600092F2EC /* SKScreenView.swift */; };
-		BC7FBA84273289F30092F2EC /* SKAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA83273289F30092F2EC /* SKAlertView.swift */; };
-		BC7FBA8627328A810092F2EC /* SKBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA8527328A810092F2EC /* SKBottomSheetView.swift */; };
-		BC7FBA8827328B350092F2EC /* SKSnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA8727328B350092F2EC /* SKSnackBarView.swift */; };
-		BC7FBA8A27328B6C0092F2EC /* SKWindowPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA8927328B6C0092F2EC /* SKWindowPopupView.swift */; };
-		BC7FBA8D27328BE20092F2EC /* SKButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA8C27328BE20092F2EC /* SKButtonView.swift */; };
-		BC7FBA8F27328C7C0092F2EC /* SKComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA8E27328C7C0092F2EC /* SKComboView.swift */; };
-		BC7FBA9127328E290092F2EC /* SKImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA9027328E290092F2EC /* SKImageButtonView.swift */; };
-		BC7FBA9327328EAE0092F2EC /* SKInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA9227328EAE0092F2EC /* SKInputView.swift */; };
-		BC7FBA9527328F930092F2EC /* SKInputWithSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA9427328F930092F2EC /* SKInputWithSuggestions.swift */; };
-		BC7FBA97273292060092F2EC /* SKSimpleInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA96273292060092F2EC /* SKSimpleInputView.swift */; };
-		BC7FBA99273294C20092F2EC /* SKFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA98273294C20092F2EC /* SKFrameView.swift */; };
-		BC7FBA9B2732966D0092F2EC /* SKLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA9A2732966D0092F2EC /* SKLoaderView.swift */; };
-		BC7FBA9D273298430092F2EC /* SKPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA9C273298430092F2EC /* SKPagerView.swift */; };
-		BC7FBA9F273298FF0092F2EC /* SKPagerWithTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA9E273298FF0092F2EC /* SKPagerWithTabsView.swift */; };
-		BC7FBAA127329A900092F2EC /* SKStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBAA027329A900092F2EC /* SKStackView.swift */; };
-		BC7FBAA327329CC90092F2EC /* SKBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBAA227329CC90092F2EC /* SKBox.swift */; };
-		BC7FBAA527329DF60092F2EC /* SKListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBAA427329DF60092F2EC /* SKListView.swift */; };
-		BC7FBAA72732D82A0092F2EC /* SKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBAA62732D82A0092F2EC /* SKWebView.swift */; };
 		BC7FBAAA2732D8EC0092F2EC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBAA92732D8EC0092F2EC /* SplashView.swift */; };
 		BC91DDC1273530C1004F6366 /* BurgerScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91DDC0273530C1004F6366 /* BurgerScreenView.swift */; };
 		BC91DDC427353918004F6366 /* CatalogItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91DDC327353918004F6366 /* CatalogItemView.swift */; };
@@ -41,6 +18,29 @@
 		BCB97BCF271F2EDB00C6F1E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB97BCE271F2EDB00C6F1E8 /* ContentView.swift */; };
 		BCB97BD1271F2EDC00C6F1E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB97BD0271F2EDC00C6F1E8 /* Assets.xcassets */; };
 		BCB97BD4271F2EDC00C6F1E8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCB97BD3271F2EDC00C6F1E8 /* Preview Assets.xcassets */; };
+		BCEEF750274576A100E99B50 /* SKFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF738274576A100E99B50 /* SKFrameView.swift */; };
+		BCEEF751274576A100E99B50 /* SKScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF739274576A100E99B50 /* SKScreenView.swift */; };
+		BCEEF752274576A100E99B50 /* SKStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF73A274576A100E99B50 /* SKStackView.swift */; };
+		BCEEF753274576A100E99B50 /* CoreViewInjectorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF73C274576A100E99B50 /* CoreViewInjectorImpl.swift */; };
+		BCEEF754274576A100E99B50 /* SKComponentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF73D274576A100E99B50 /* SKComponentView.swift */; };
+		BCEEF755274576A100E99B50 /* SKLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF73E274576A100E99B50 /* SKLoaderView.swift */; };
+		BCEEF756274576A100E99B50 /* SKWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF73F274576A100E99B50 /* SKWebView.swift */; };
+		BCEEF757274576A100E99B50 /* SKPagerWithTabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF740274576A100E99B50 /* SKPagerWithTabsView.swift */; };
+		BCEEF758274576A100E99B50 /* SKBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF741274576A100E99B50 /* SKBox.swift */; };
+		BCEEF759274576A100E99B50 /* SKPagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF742274576A100E99B50 /* SKPagerView.swift */; };
+		BCEEF75A274576A100E99B50 /* SKWindowPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF744274576A100E99B50 /* SKWindowPopupView.swift */; };
+		BCEEF75B274576A100E99B50 /* SKAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF745274576A100E99B50 /* SKAlertView.swift */; };
+		BCEEF75C274576A100E99B50 /* SKSnackBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF746274576A100E99B50 /* SKSnackBarView.swift */; };
+		BCEEF75D274576A100E99B50 /* SKBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF747274576A100E99B50 /* SKBottomSheetView.swift */; };
+		BCEEF75E274576A100E99B50 /* SKListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF748274576A100E99B50 /* SKListView.swift */; };
+		BCEEF75F274576A100E99B50 /* SKComboView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF74A274576A100E99B50 /* SKComboView.swift */; };
+		BCEEF760274576A100E99B50 /* SKButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF74B274576A100E99B50 /* SKButtonView.swift */; };
+		BCEEF761274576A100E99B50 /* SKSimpleInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF74C274576A100E99B50 /* SKSimpleInputView.swift */; };
+		BCEEF762274576A100E99B50 /* SKInputWithSuggestions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF74D274576A100E99B50 /* SKInputWithSuggestions.swift */; };
+		BCEEF763274576A100E99B50 /* SKInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF74E274576A100E99B50 /* SKInputView.swift */; };
+		BCEEF764274576A100E99B50 /* SKImageButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEEF74F274576A100E99B50 /* SKImageButtonView.swift */; };
+		BCEEF766274576EA00E99B50 /* shared.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEEF765274576EA00E99B50 /* shared.xcframework */; };
+		BCEEF767274576EA00E99B50 /* shared.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BCEEF765274576EA00E99B50 /* shared.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,7 +50,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BC68258E27205833004947D0 /* shared.xcframework in Embed Frameworks */,
+				BCEEF767274576EA00E99B50 /* shared.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -58,29 +58,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BC68258C27205833004947D0 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../shared/frameworks/debug/shared.xcframework; sourceTree = "<group>"; };
-		BC7FBA7A273283CA0092F2EC /* CoreViewInjectorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreViewInjectorImpl.swift; sourceTree = "<group>"; };
 		BC7FBA7C273287B80092F2EC /* ViewInjectorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInjectorImpl.swift; sourceTree = "<group>"; };
-		BC7FBA7E2732888F0092F2EC /* SKComponentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKComponentView.swift; sourceTree = "<group>"; };
-		BC7FBA80273289600092F2EC /* SKScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKScreenView.swift; sourceTree = "<group>"; };
-		BC7FBA83273289F30092F2EC /* SKAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKAlertView.swift; sourceTree = "<group>"; };
-		BC7FBA8527328A810092F2EC /* SKBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKBottomSheetView.swift; sourceTree = "<group>"; };
-		BC7FBA8727328B350092F2EC /* SKSnackBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSnackBarView.swift; sourceTree = "<group>"; };
-		BC7FBA8927328B6C0092F2EC /* SKWindowPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKWindowPopupView.swift; sourceTree = "<group>"; };
-		BC7FBA8C27328BE20092F2EC /* SKButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKButtonView.swift; sourceTree = "<group>"; };
-		BC7FBA8E27328C7C0092F2EC /* SKComboView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKComboView.swift; sourceTree = "<group>"; };
-		BC7FBA9027328E290092F2EC /* SKImageButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKImageButtonView.swift; sourceTree = "<group>"; };
-		BC7FBA9227328EAE0092F2EC /* SKInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKInputView.swift; sourceTree = "<group>"; };
-		BC7FBA9427328F930092F2EC /* SKInputWithSuggestions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKInputWithSuggestions.swift; sourceTree = "<group>"; };
-		BC7FBA96273292060092F2EC /* SKSimpleInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSimpleInputView.swift; sourceTree = "<group>"; };
-		BC7FBA98273294C20092F2EC /* SKFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKFrameView.swift; sourceTree = "<group>"; };
-		BC7FBA9A2732966D0092F2EC /* SKLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKLoaderView.swift; sourceTree = "<group>"; };
-		BC7FBA9C273298430092F2EC /* SKPagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPagerView.swift; sourceTree = "<group>"; };
-		BC7FBA9E273298FF0092F2EC /* SKPagerWithTabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPagerWithTabsView.swift; sourceTree = "<group>"; };
-		BC7FBAA027329A900092F2EC /* SKStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStackView.swift; sourceTree = "<group>"; };
-		BC7FBAA227329CC90092F2EC /* SKBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKBox.swift; sourceTree = "<group>"; };
-		BC7FBAA427329DF60092F2EC /* SKListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKListView.swift; sourceTree = "<group>"; };
-		BC7FBAA62732D82A0092F2EC /* SKWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKWebView.swift; sourceTree = "<group>"; };
 		BC7FBAA92732D8EC0092F2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BC91DDC0273530C1004F6366 /* BurgerScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerScreenView.swift; sourceTree = "<group>"; };
 		BC91DDC327353918004F6366 /* CatalogItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItemView.swift; sourceTree = "<group>"; };
@@ -92,6 +70,28 @@
 		BCB97BCE271F2EDB00C6F1E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BCB97BD0271F2EDC00C6F1E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCB97BD3271F2EDC00C6F1E8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCEEF738274576A100E99B50 /* SKFrameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKFrameView.swift; sourceTree = "<group>"; };
+		BCEEF739274576A100E99B50 /* SKScreenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKScreenView.swift; sourceTree = "<group>"; };
+		BCEEF73A274576A100E99B50 /* SKStackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKStackView.swift; sourceTree = "<group>"; };
+		BCEEF73C274576A100E99B50 /* CoreViewInjectorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreViewInjectorImpl.swift; sourceTree = "<group>"; };
+		BCEEF73D274576A100E99B50 /* SKComponentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKComponentView.swift; sourceTree = "<group>"; };
+		BCEEF73E274576A100E99B50 /* SKLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKLoaderView.swift; sourceTree = "<group>"; };
+		BCEEF73F274576A100E99B50 /* SKWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKWebView.swift; sourceTree = "<group>"; };
+		BCEEF740274576A100E99B50 /* SKPagerWithTabsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPagerWithTabsView.swift; sourceTree = "<group>"; };
+		BCEEF741274576A100E99B50 /* SKBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKBox.swift; sourceTree = "<group>"; };
+		BCEEF742274576A100E99B50 /* SKPagerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPagerView.swift; sourceTree = "<group>"; };
+		BCEEF744274576A100E99B50 /* SKWindowPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKWindowPopupView.swift; sourceTree = "<group>"; };
+		BCEEF745274576A100E99B50 /* SKAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKAlertView.swift; sourceTree = "<group>"; };
+		BCEEF746274576A100E99B50 /* SKSnackBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSnackBarView.swift; sourceTree = "<group>"; };
+		BCEEF747274576A100E99B50 /* SKBottomSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKBottomSheetView.swift; sourceTree = "<group>"; };
+		BCEEF748274576A100E99B50 /* SKListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKListView.swift; sourceTree = "<group>"; };
+		BCEEF74A274576A100E99B50 /* SKComboView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKComboView.swift; sourceTree = "<group>"; };
+		BCEEF74B274576A100E99B50 /* SKButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKButtonView.swift; sourceTree = "<group>"; };
+		BCEEF74C274576A100E99B50 /* SKSimpleInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKSimpleInputView.swift; sourceTree = "<group>"; };
+		BCEEF74D274576A100E99B50 /* SKInputWithSuggestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKInputWithSuggestions.swift; sourceTree = "<group>"; };
+		BCEEF74E274576A100E99B50 /* SKInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKInputView.swift; sourceTree = "<group>"; };
+		BCEEF74F274576A100E99B50 /* SKImageButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKImageButtonView.swift; sourceTree = "<group>"; };
+		BCEEF765274576EA00E99B50 /* shared.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = shared.xcframework; path = ../shared/frameworks/debug/shared.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC68258D27205833004947D0 /* shared.xcframework in Frameworks */,
+				BCEEF766274576EA00E99B50 /* shared.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,53 +109,9 @@
 		BC68258B27205833004947D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BC68258C27205833004947D0 /* shared.xcframework */,
+				BCEEF765274576EA00E99B50 /* shared.xcframework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BC7FBA792732839A0092F2EC /* framework */ = {
-			isa = PBXGroup;
-			children = (
-				BCAD92CA2734379F00E0D990 /* di */,
-				BC7FBA8B27328BC90092F2EC /* inputs */,
-				BC7FBA82273289DC0092F2EC /* presented */,
-				BC7FBA7E2732888F0092F2EC /* SKComponentView.swift */,
-				BC7FBA80273289600092F2EC /* SKScreenView.swift */,
-				BC7FBA98273294C20092F2EC /* SKFrameView.swift */,
-				BC7FBA9A2732966D0092F2EC /* SKLoaderView.swift */,
-				BC7FBA9C273298430092F2EC /* SKPagerView.swift */,
-				BC7FBA9E273298FF0092F2EC /* SKPagerWithTabsView.swift */,
-				BC7FBAA027329A900092F2EC /* SKStackView.swift */,
-				BC7FBAA227329CC90092F2EC /* SKBox.swift */,
-				BC7FBAA427329DF60092F2EC /* SKListView.swift */,
-				BC7FBAA62732D82A0092F2EC /* SKWebView.swift */,
-			);
-			path = framework;
-			sourceTree = "<group>";
-		};
-		BC7FBA82273289DC0092F2EC /* presented */ = {
-			isa = PBXGroup;
-			children = (
-				BC7FBA83273289F30092F2EC /* SKAlertView.swift */,
-				BC7FBA8527328A810092F2EC /* SKBottomSheetView.swift */,
-				BC7FBA8727328B350092F2EC /* SKSnackBarView.swift */,
-				BC7FBA8927328B6C0092F2EC /* SKWindowPopupView.swift */,
-			);
-			path = presented;
-			sourceTree = "<group>";
-		};
-		BC7FBA8B27328BC90092F2EC /* inputs */ = {
-			isa = PBXGroup;
-			children = (
-				BC7FBA8C27328BE20092F2EC /* SKButtonView.swift */,
-				BC7FBA8E27328C7C0092F2EC /* SKComboView.swift */,
-				BC7FBA9027328E290092F2EC /* SKImageButtonView.swift */,
-				BC7FBA9227328EAE0092F2EC /* SKInputView.swift */,
-				BC7FBA9427328F930092F2EC /* SKInputWithSuggestions.swift */,
-				BC7FBA96273292060092F2EC /* SKSimpleInputView.swift */,
-			);
-			path = inputs;
 			sourceTree = "<group>";
 		};
 		BC7FBAA82732D8DD0092F2EC /* screens */ = {
@@ -194,17 +150,10 @@
 			path = test;
 			sourceTree = "<group>";
 		};
-		BCAD92CA2734379F00E0D990 /* di */ = {
-			isa = PBXGroup;
-			children = (
-				BC7FBA7A273283CA0092F2EC /* CoreViewInjectorImpl.swift */,
-			);
-			path = di;
-			sourceTree = "<group>";
-		};
 		BCB97BC0271F2EDB00C6F1E8 = {
 			isa = PBXGroup;
 			children = (
+				BCEEF737274576A100E99B50 /* viewios */,
 				BCB97BCB271F2EDB00C6F1E8 /* iosApp */,
 				BCB97BCA271F2EDB00C6F1E8 /* Products */,
 				BC68258B27205833004947D0 /* Frameworks */,
@@ -224,7 +173,6 @@
 			children = (
 				BCAD92BE2733CEB300E0D990 /* test */,
 				BC7FBAA82732D8DD0092F2EC /* screens */,
-				BC7FBA792732839A0092F2EC /* framework */,
 				BCB97BDA271F2F7C00C6F1E8 /* di */,
 				BCB97BCC271F2EDB00C6F1E8 /* iosAppApp.swift */,
 				BCB97BCE271F2EDB00C6F1E8 /* ContentView.swift */,
@@ -248,6 +196,58 @@
 				BC7FBA7C273287B80092F2EC /* ViewInjectorImpl.swift */,
 			);
 			name = di;
+			sourceTree = "<group>";
+		};
+		BCEEF737274576A100E99B50 /* viewios */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEF738274576A100E99B50 /* SKFrameView.swift */,
+				BCEEF739274576A100E99B50 /* SKScreenView.swift */,
+				BCEEF73A274576A100E99B50 /* SKStackView.swift */,
+				BCEEF73B274576A100E99B50 /* di */,
+				BCEEF73D274576A100E99B50 /* SKComponentView.swift */,
+				BCEEF73E274576A100E99B50 /* SKLoaderView.swift */,
+				BCEEF73F274576A100E99B50 /* SKWebView.swift */,
+				BCEEF740274576A100E99B50 /* SKPagerWithTabsView.swift */,
+				BCEEF741274576A100E99B50 /* SKBox.swift */,
+				BCEEF742274576A100E99B50 /* SKPagerView.swift */,
+				BCEEF743274576A100E99B50 /* presented */,
+				BCEEF748274576A100E99B50 /* SKListView.swift */,
+				BCEEF749274576A100E99B50 /* inputs */,
+			);
+			path = viewios;
+			sourceTree = "<group>";
+		};
+		BCEEF73B274576A100E99B50 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEF73C274576A100E99B50 /* CoreViewInjectorImpl.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		BCEEF743274576A100E99B50 /* presented */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEF744274576A100E99B50 /* SKWindowPopupView.swift */,
+				BCEEF745274576A100E99B50 /* SKAlertView.swift */,
+				BCEEF746274576A100E99B50 /* SKSnackBarView.swift */,
+				BCEEF747274576A100E99B50 /* SKBottomSheetView.swift */,
+			);
+			path = presented;
+			sourceTree = "<group>";
+		};
+		BCEEF749274576A100E99B50 /* inputs */ = {
+			isa = PBXGroup;
+			children = (
+				BCEEF74A274576A100E99B50 /* SKComboView.swift */,
+				BCEEF74B274576A100E99B50 /* SKButtonView.swift */,
+				BCEEF74C274576A100E99B50 /* SKSimpleInputView.swift */,
+				BCEEF74D274576A100E99B50 /* SKInputWithSuggestions.swift */,
+				BCEEF74E274576A100E99B50 /* SKInputView.swift */,
+				BCEEF74F274576A100E99B50 /* SKImageButtonView.swift */,
+			);
+			path = inputs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,36 +321,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEEF761274576A100E99B50 /* SKSimpleInputView.swift in Sources */,
 				BC7FBA7D273287B80092F2EC /* ViewInjectorImpl.swift in Sources */,
+				BCEEF758274576A100E99B50 /* SKBox.swift in Sources */,
+				BCEEF756274576A100E99B50 /* SKWebView.swift in Sources */,
+				BCEEF755274576A100E99B50 /* SKLoaderView.swift in Sources */,
+				BCEEF75F274576A100E99B50 /* SKComboView.swift in Sources */,
 				BC91DDC427353918004F6366 /* CatalogItemView.swift in Sources */,
-				BC7FBAA127329A900092F2EC /* SKStackView.swift in Sources */,
+				BCEEF75C274576A100E99B50 /* SKSnackBarView.swift in Sources */,
+				BCEEF763274576A100E99B50 /* SKInputView.swift in Sources */,
+				BCEEF759274576A100E99B50 /* SKPagerView.swift in Sources */,
+				BCEEF75B274576A100E99B50 /* SKAlertView.swift in Sources */,
+				BCEEF75E274576A100E99B50 /* SKListView.swift in Sources */,
 				BC7FBAAA2732D8EC0092F2EC /* SplashView.swift in Sources */,
-				BC7FBA9B2732966D0092F2EC /* SKLoaderView.swift in Sources */,
-				BC7FBA8F27328C7C0092F2EC /* SKComboView.swift in Sources */,
+				BCEEF75A274576A100E99B50 /* SKWindowPopupView.swift in Sources */,
+				BCEEF764274576A100E99B50 /* SKImageButtonView.swift in Sources */,
 				BCAD92C02733CEC900E0D990 /* TestModel.swift in Sources */,
-				BC7FBA99273294C20092F2EC /* SKFrameView.swift in Sources */,
-				BC7FBA8627328A810092F2EC /* SKBottomSheetView.swift in Sources */,
-				BC7FBA9D273298430092F2EC /* SKPagerView.swift in Sources */,
-				BC7FBA7F2732888F0092F2EC /* SKComponentView.swift in Sources */,
-				BC7FBA9F273298FF0092F2EC /* SKPagerWithTabsView.swift in Sources */,
+				BCEEF751274576A100E99B50 /* SKScreenView.swift in Sources */,
 				BCB97BCF271F2EDB00C6F1E8 /* ContentView.swift in Sources */,
-				BC7FBA97273292060092F2EC /* SKSimpleInputView.swift in Sources */,
-				BC7FBA7B273283CA0092F2EC /* CoreViewInjectorImpl.swift in Sources */,
-				BC7FBA8D27328BE20092F2EC /* SKButtonView.swift in Sources */,
-				BC7FBA8827328B350092F2EC /* SKSnackBarView.swift in Sources */,
-				BC7FBA81273289600092F2EC /* SKScreenView.swift in Sources */,
+				BCEEF754274576A100E99B50 /* SKComponentView.swift in Sources */,
+				BCEEF757274576A100E99B50 /* SKPagerWithTabsView.swift in Sources */,
 				BC91DDC1273530C1004F6366 /* BurgerScreenView.swift in Sources */,
+				BCEEF752274576A100E99B50 /* SKStackView.swift in Sources */,
+				BCEEF762274576A100E99B50 /* SKInputWithSuggestions.swift in Sources */,
+				BCEEF753274576A100E99B50 /* CoreViewInjectorImpl.swift in Sources */,
+				BCEEF760274576A100E99B50 /* SKButtonView.swift in Sources */,
 				BCAD92C92733DF0800E0D990 /* OnTopView.swift in Sources */,
-				BC7FBA8A27328B6C0092F2EC /* SKWindowPopupView.swift in Sources */,
-				BC7FBA9127328E290092F2EC /* SKImageButtonView.swift in Sources */,
-				BC7FBAA72732D82A0092F2EC /* SKWebView.swift in Sources */,
-				BC7FBAA527329DF60092F2EC /* SKListView.swift in Sources */,
+				BCEEF75D274576A100E99B50 /* SKBottomSheetView.swift in Sources */,
 				BCB97BCD271F2EDB00C6F1E8 /* iosAppApp.swift in Sources */,
-				BC7FBA9527328F930092F2EC /* SKInputWithSuggestions.swift in Sources */,
-				BC7FBAA327329CC90092F2EC /* SKBox.swift in Sources */,
+				BCEEF750274576A100E99B50 /* SKFrameView.swift in Sources */,
 				BCAD92C22733CEF900E0D990 /* TestView.swift in Sources */,
-				BC7FBA84273289F30092F2EC /* SKAlertView.swift in Sources */,
-				BC7FBA9327328EAE0092F2EC /* SKInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

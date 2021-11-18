@@ -1,9 +1,9 @@
 package tech.skot.demoios.states
 
-import kotlinx.serialization.Serializable
 import kotlin.String
+import kotlinx.serialization.Serializable
 
 @Serializable
 data class CartStateInfos(
-    val basketId: String
+  val basketId: String
 )

@@ -4,5 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class RootStateInfos(
-    val cart: CartStateInfos? = null
+  val cart: CartStateInfos? = null
 )
