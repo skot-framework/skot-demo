@@ -45,9 +45,9 @@ class SKListViewProxy:SKComponentViewProxy,ViewcontractSKListVC, ObservableObjec
     }
     
     
-    override func ui() -> AnyView
+    func ui() -> SKListView
     {
-        AnyView(SKListView(proxy:self))
+        SKListView(proxy:self)
     }
    
 }
@@ -58,10 +58,11 @@ struct SKListView:View {
     
     
     var body: some View {
+        let viewLocator = ViewLocator()
         ScrollView {
             LazyVStack(alignment: HorizontalAlignment.leading) {
                 ForEach(proxy.itemsProxy, id:\.component.id) { item in
-                    item.component.ui()
+                    viewLocator.getView(proxy: item.component)
                 }
             }
         }

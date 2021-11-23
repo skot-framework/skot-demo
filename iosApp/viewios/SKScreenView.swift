@@ -14,9 +14,9 @@ class SKScreenViewProxy: SKComponentViewProxy,ViewcontractSKScreenVC {
     
     let visibilityListener:ViewcontractSKVisiblityListener
     
-    override func ui() -> AnyView {
+    /*override func ui() -> AnyView {
         AnyView(Text("Screen"))
-    }
+    }*/
     
     init(visibilityListener:ViewcontractSKVisiblityListener) {
         self.visibilityListener = visibilityListener

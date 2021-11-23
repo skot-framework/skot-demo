@@ -33,8 +33,8 @@ class BurgerScreenViewProxy:SKScreenViewProxy,BurgerScreenVC, ObservableObject {
         
     }
     
-    override func ui() -> AnyView {
-        AnyView(BurgerScreenView(proxy:self))
+    func ui() -> BurgerScreenView {
+        BurgerScreenView(proxy:self)
     }
     
     

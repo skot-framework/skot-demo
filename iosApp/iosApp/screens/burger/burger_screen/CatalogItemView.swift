@@ -27,8 +27,8 @@ class CatalogItemViewProxy:SKComponentViewProxy,CatalogItemVC, ObservableObject 
         super.init()
     }
     
-    override func ui() -> AnyView {
-        AnyView(CatalogItemView(proxy:self))
+    func ui() -> CatalogItemView {
+        CatalogItemView(proxy:self)
     }
 }
 

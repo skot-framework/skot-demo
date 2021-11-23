@@ -27,8 +27,8 @@ class OnTopViewProxy:SKScreenViewProxy,OnTopVC, ObservableObject {
     }
     
 
-    override func ui() -> AnyView {
-        AnyView(OnTopView(proxy:self))
+    func ui() -> OnTopView {
+        OnTopView(proxy:self)
     }
   
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC1AB13D274D1A3D0086F320 /* ViewLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1AB13C274D1A3D0086F320 /* ViewLocator.swift */; };
 		BC7FBA7D273287B80092F2EC /* ViewInjectorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBA7C273287B80092F2EC /* ViewInjectorImpl.swift */; };
 		BC7FBAAA2732D8EC0092F2EC /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC7FBAA92732D8EC0092F2EC /* SplashView.swift */; };
 		BC91DDC1273530C1004F6366 /* BurgerScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC91DDC0273530C1004F6366 /* BurgerScreenView.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BC1AB13C274D1A3D0086F320 /* ViewLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLocator.swift; sourceTree = "<group>"; };
 		BC7FBA7C273287B80092F2EC /* ViewInjectorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInjectorImpl.swift; sourceTree = "<group>"; };
 		BC7FBAA92732D8EC0092F2EC /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BC91DDC0273530C1004F6366 /* BurgerScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurgerScreenView.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				BC7FBA7C273287B80092F2EC /* ViewInjectorImpl.swift */,
+				BC1AB13C274D1A3D0086F320 /* ViewLocator.swift */,
 			);
 			name = di;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				BCEEF75A274576A100E99B50 /* SKWindowPopupView.swift in Sources */,
 				BCEEF764274576A100E99B50 /* SKImageButtonView.swift in Sources */,
 				BCAD92C02733CEC900E0D990 /* TestModel.swift in Sources */,
+				BC1AB13D274D1A3D0086F320 /* ViewLocator.swift in Sources */,
 				BCEEF751274576A100E99B50 /* SKScreenView.swift in Sources */,
 				BCB97BCF271F2EDB00C6F1E8 /* ContentView.swift in Sources */,
 				BCEEF754274576A100E99B50 /* SKComponentView.swift in Sources */,

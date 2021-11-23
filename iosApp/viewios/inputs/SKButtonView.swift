@@ -25,8 +25,8 @@ class SKButtonViewProxy:SKComponentViewProxy,ViewcontractSKButtonVC, ObservableO
         self.hidden = hiddenInitial
     }
     
-    override func ui() -> AnyView {
-        AnyView(SKButtonView(proxy: self))
+    func ui() -> SKButtonView {
+        SKButtonView(proxy: self)
     }
     
     

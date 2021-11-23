@@ -21,8 +21,8 @@ class SplashViewProxy:SKScreenViewProxy,SplashVC, ObservableObject {
         super.init(visibilityListener: visibilityListener)
     }
     
-    override func ui() -> AnyView {
-        AnyView(SplashView(proxy:self))
+    func ui() -> SplashView {
+        SplashView(proxy:self)
     }
 }
 
